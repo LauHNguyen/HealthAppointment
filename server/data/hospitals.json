@@ -1,0 +1,442 @@
+[
+   {
+     "name": "Bệnh viện Từ Dũ",
+     "address": "284 Cống Quỳnh",
+     "district": "Quận 1",
+     "number": "(028) 5404 2829",
+     "specialty": "Sản khoa, phụ sản, hiếm muộn"
+   },
+
+   {
+     "name": "Bệnh viện Đa khoa Sài Gòn",
+     "address": "125 Lê Lợi",
+     "district": "Quận 1",
+     "number": "(028) 3829 1711",
+     "specialty": "Đa khoa, nội khoa, cấp cứu"
+   },
+
+   {
+     "name": "Bệnh viện Răng Hàm Mặt TP.HCM",
+     "address": "263 - 265 Trần Hưng Đạo B",
+     "district": "Quận 1",
+     "number": "(028) 3836 0191",
+     "specialty": "Răng hàm mặt, chỉnh nha"
+   },
+   {
+      "name":"Bệnh viện Mắt Sài Gòn Lê Thị Riêng",
+      "address":"100 Lê Thị Riêng",
+      "district":"Quận 1",
+      "number":"(024) 7301 0688",
+      "specialty":"Nhãn khoa"
+   },
+
+   {
+     "name": "Bệnh viện Quận 1",
+     "address": "338 Hai Bà Trưng",
+     "district": "Quận 1",
+     "number": "(028) 3820 2006",
+     "specialty": "Đa khoa, khám tổng quát"
+   },
+
+   {
+      "name": "Bệnh viện Tai Mũi Họng Sài Gòn",
+      "address": "1 - 3 Trịnh Văn Cấn",
+      "district": "Quận 1",
+      "number": "(028) 3821 3456",
+      "specialty": "Tai mũi họng, phẫu thuật nội soi"
+   },
+
+   {
+      "name":"Bệnh viện phụ sản Quốc Tế Sài Gòn",
+      "address":"63 Bùi Thị Xuân",
+      "district":"Quận 1",
+      "number":"(089) 9909 268",
+      "specialty":"Sản khoa, chăm sóc sức khỏe phụ nữ, sinh sản"
+   },
+
+   {
+      "name":"Bệnh viện Quận 1 - Cơ sở 2",
+      "address":"237 Trần Hưng Đạo",
+      "district":"Quận 1",
+      "number":"(028) 3920 7527",
+      "specialty":"Đa khoa, khám và điều trị nội trú"
+   },
+
+   {
+      "name": "Bệnh Viện Quốc Tế Thảo Điền",
+      "address": "95 Thảo Điền",
+      "district": "Quận 2",
+      "number": "(028) 3744 2000",
+      "specialty": "Nội tổng hợp, khám tổng quát"
+    },
+
+    {
+      "name": "Bệnh viện Quốc Tế Mỹ (AIH)",
+      "address": "199 Nguyễn Hoàng",
+      "district": "Quận 2",
+      "number": "(028) 3910 9999",
+      "specialty": "Đa khoa, dịch vụ sức khỏe quốc tế"
+    },
+
+    {
+      "name": "Bệnh viện Bưu Điện",
+      "address": "2 Nguyễn Duy Hiệu",
+      "district": "Quận 2",
+      "number": "(028) 3898 9080",
+      "specialty": "Đa khoa"
+    },
+
+    {
+      "name": "Bệnh viện Da Liễu ",
+      "address": "2 Nguyễn Thông",
+      "district": "Quận 3",
+      "number": "(028) 3930 8131",
+      "specialty": "Da liễu"
+   },
+
+   {
+      "name": "Bệnh viện Bình Dân",
+      "address": "371 Điện Biên Phủ",
+      "district": "Quận 3",
+      "number": "(028) 3839 4747",
+      "specialty": "Đa khoa, Ngoại khoa"
+   },
+
+   {
+      "name": "Bệnh viện Mắt ",
+      "address": "280 Điện Biên Phủ",
+      "district": "Quận 3",
+      "number": "(028) 3932 6789",
+      "specialty": "Nhãn khoa"
+   },
+
+   {
+      "name": "Bệnh viện Tai Mũi Họng ",
+      "address": "153 Trần Quốc Thảo",
+      "district": "Quận 3",
+      "number": "(028) 3931 7381",
+      "specialty": "Tai Mũi Họng"
+   },
+
+   {
+      "name": "Bệnh viện Y học Cổ truyền ",
+      "address": "179 Nam Kỳ Khởi Nghĩa",
+      "district": "Quận 3",
+      "number": "(028) 3932 6579",
+      "specialty": "Y học cổ truyền"
+   },
+
+   {
+      "name": "Phòng khám Đa khoa Trần Quốc Thảo",
+      "address": "114 Trần Quốc Thảo",
+      "district": "Quận 3",
+      "number": "(028) 3932 6666",
+      "specialty": "Đa khoa"
+   },
+
+   {
+      "name": "Bệnh viện An Sinh",
+      "address": "70 Bà Huyện Thanh Quan",
+      "district": "Quận 3",
+      "number": "(028) 3930 0055",
+      "specialty": "Đa khoa"
+   },
+
+   {
+      "name": "Bệnh viện Quận 4",
+      "address": "65 Bến Vân Đồn",
+      "district": "Quận 4",
+      "number": "(028) 3940 0706",
+      "specialty": "Đa khoa"
+   },
+
+   {
+      "name": "Bệnh viện Chợ Rẫy",
+      "address": "201B Nguyễn Chí Thanh",
+      "district": "Quận 5",
+      "number": "(028) 3855 4137",
+      "specialty": "Đa khoa"
+   },
+   {
+      "name": "Bệnh viện Đại học Y Dược TP.HCM - Cơ sở 1",
+      "address": "215 Hồng Bàng",
+      "district": "Quận 5",
+      "number": "(028) 3855 4269",
+      "specialty": "Đa khoa"
+   },
+   {
+      "name": "Viện Y Dược học Dân tộc TP.HCM",
+      "address": "9 Lý Thường Kiệt",
+      "district": "Quận 5",
+      "number": "(028) 3855 2001",
+      "specialty": "Y học cổ truyền"
+   },
+   {
+      "name": "Bệnh viện Truyền máu Huyết học",
+      "address": "118 Hồng Bàng",
+      "district": "Quận 5",
+      "number": "(028) 3957 0072",
+      "specialty": "Huyết học"
+   },
+   {
+      "name": "Bệnh viện An Bình",
+      "address": "146 An Bình",
+      "district": "Quận 5",
+      "number": "(028) 3923 4428",
+      "specialty": "Đa khoa"
+   },
+   {
+      "name": "Bệnh viện Phạm Ngọc Thạch",
+      "address": "120 Hồng Bàng",
+      "district": "Quận 5",
+      "number": "(028) 3855 0207",
+      "specialty": "Lao và bệnh phổi"
+   },
+   {
+      "name": "Bệnh viện Nguyễn Tri Phương",
+      "address": "468 Nguyễn Trãi",
+      "district": "Quận 5",
+      "number": "(028) 3923 4332",
+      "specialty": "Đa khoa"
+   },
+   {
+      "name": "Bệnh viện Chấn thương Chỉnh hình TP.HCM",
+      "address": "929 Trần Hưng Đạo",
+      "district": "Quận 5",
+      "number": "(028) 3923 5791",
+      "specialty": "Chấn thương chỉnh hình"
+   },
+   {
+      "name": "Bệnh viện 115",
+      "address": "686 Trần Hưng Đạo",
+      "district": "Quận 5",
+      "number": "(028) 3855 1155",
+      "specialty": "Đa khoa"
+   },
+   {
+      "name": "Bệnh viện Hùng Vương",
+      "address": "128 Hồng Bàng",
+      "district": "Quận 5",
+      "number": "(028) 3855 1204",
+      "specialty": "Phụ sản"
+   },
+   {
+      "name": "Bệnh viện quận 6",
+      "address": "2D Chợ Lớn",
+      "district": "Quận 6",
+      "number": "(028) 3962 0045",
+      "specialty": "Đa khoa"
+   },
+   {
+      "name": "Bệnh viện Quận 7",
+      "address": "101 Nguyễn Thị Thập",
+      "district": "Quận 7",
+      "number": "(028) 3771 1470",
+      "specialty": "Đa khoa"
+   },
+   {
+      "name": "Bệnh viện Phương Nam",
+      "address": "02 Nguyễn Lương Bằng",
+      "district": "Quận 7",
+      "number": "(028) 7109 9999",
+      "specialty": "Đa khoa"
+   },
+   {
+      "name": "Bệnh viện Tim Tâm Đức",
+      "address": "4 Nguyễn Lương Bằng",
+      "district": "Quận 7",
+      "number": "(028) 3770 2188",
+      "specialty": "Tim mạch"
+   },
+   {
+      "name": "Bệnh viện Pháp Việt",
+      "address": "6 Nguyễn Lương Bằng",
+      "district": "Quận 7",
+      "number": "(028) 5413 1414",
+      "specialty": "Đa khoa"
+   },
+   
+   {
+      "name": "Bệnh viện Tân Hưng",
+      "address": "871 Trần Xuân Soạn",
+      "district": "Quận 7",
+      "number": "(028) 5411 3333",
+      "specialty": "Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Quận 8",
+      "address":"82 Cao Lỗ",
+      "district":"Quận 8",
+      "number":"(028) 3850 6133",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Phục hồi chức năng",
+      "address":"313 Âu Dương Lân",
+      "district":"Quận 8",
+      "number":"(028) 3856 9147",
+      "specialty":"Đa khoa, phục hồi chức năng"
+   },
+   {
+      "name":"Bệnh viện Lao",
+      "address":"1724 Phạm Thế Hiển",
+      "district":"Quận 8",
+      "number":"",
+      "specialty":"Lao và bệnh phổi"
+   },
+   {
+      "name":"Bệnh viện Quân Dân Y Miền Đông",
+      "address":"50 Lê Văn Việt",
+      "district":"Quận 9",
+      "number":"(028) 3730 7125",
+      "specialty":"Ngoại khoa, nội khoa"
+   },
+   {
+      "name":"Bệnh viện Lê Văn Việt - Bệnh viện Quận 9",
+      "address":"387 Lê Văn Việt",
+      "district":"Quận 9",
+      "number":"(028)3897 3628",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Quận 10",
+      "address":"571 Sư Vạn Hạnh",
+      "district":"Quận 10",
+      "number":"(028) 3930 9912",
+      "specialty":"Đa Khoa"
+   },
+   {
+      "name":"Bệnh viện Đa khoa Vạn Hạnh",
+      "address":"781 Sư Vạn Hạnh",
+      "district":"Quận 10",
+      "number":"(028) 3863 2553",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Nhân Dân 115 Đa Khoa",
+      "address":"527 Sư Vạn Hạnh",
+      "district":"Quận 10",
+      "number":"(019) 0009 9983",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Trưng Vương",
+      "address":"266 Lý Thường Kiệt",
+      "district":"Quận 10",
+      "number":"(028) 3865 6744",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Nhi đồng 1",
+      "address":"341 Sư Vạn Hạnh",
+      "district":"Quận 10",
+      "number":"(028) 3927 1119",
+      "specialty":"Khoa nhi"
+   },
+   {
+      "name":"Bệnh viện Đa Khoa Bưu Điệ",
+      "address":"Lô B9 Thành Thái",
+      "district":"Quận 10",
+      "number":"(028) 3864 9834",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name": "Viện Tim TP.HCM",
+      "address": "4 Dương Quang Trung",
+      "district": "Quận 10",
+      "number": "(028) 3865 1586",
+      "specialty": "Tim mạch"
+   },
+   {
+      "name":"Bệnh viện Mắt Quốc tế Việt-Nga",
+      "address":"1 3/2 (Ba tháng Hai)",
+      "district":"Quận 10",
+      "number":"(093) 1888 801",
+      "specialty":"Nhãn khoa"
+   },
+   {
+      "name":"Bệnh viện Quận 11",
+      "address":"7 Số 5",
+      "district":"Quận 11",
+      "number":"(093) 2711 722",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Quận 12",
+      "address":"111 Thị Mười",
+      "district":"Quận 12",
+      "number":"(028) 6250 7955",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Đa khoa Hồng Đức II",
+      "address":"259 An Phú Đông",
+      "district":"Quận 12",
+      "number":"(028) 8886 9999",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Quân Y 175",
+      "address":"786 Nguyễn Kiệm",
+      "district":"Quận Gò Vấp",
+      "number":"1900 1175",
+      "specialty":"Đa Khoa"
+   },
+   {
+      "name":"Bệnh viện Đa khoa Hồng Đức III",
+      "address":"32/2 Thôngs Nhất",
+      "district":"Quận Gò Vấp",
+      "number":"(028) 3996 9999",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Quận Gò Vấp",
+      "address":"641 Quang Trung",
+      "district":"Quận Gò Vấp",
+      "number":"(028) 3589 1799",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Quận Tân Bình",
+      "address":"605 Hoàng Văn Thụ",
+      "district":"Quận Tân Bình",
+      "number":"(096) 6381 010",
+      "specialty":"Đa Khoa"
+   },
+   {
+      "name":"Bệnh viện Thống Nhất",
+      "address":"1 Lý Thường Kiệt",
+      "district":"Quận Tân Bình",
+      "number":"(028) 3869 0277",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện 1A",
+      "address":"542 Lý Thường Kiệt",
+      "district":"Quận Tân Bình",
+      "number":"(028) 3971 2960",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Đa khoa Tâm Anh",
+      "address":"2B Phổ Quang",
+      "district":"Quận Tân Bình",
+      "number":"(028) 7102 6789",
+      "specialty":"Đa khoa"
+   },
+   {
+      "name":"Bệnh viện Chuyên Khoa Ngoại Thần Kinh Quốc Tế",
+      "address":"65A Lũy Bán Bích",
+      "district":"Quận Tân Phú",
+      "number":"(028) 3961 6977",
+      "specialty":"Khoa ngoại, thần kinh"
+   },
+   {
+      "name":"Bệnh viện Quận Tân Phú",
+      "address":"611 Âu Cơ",
+      "district":"Quận Tân Phú",
+      "number":"(028) 5408 8924",
+      "specialty":"Đa khoa"
+   }
+ ]
+ 
