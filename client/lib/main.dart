@@ -1,6 +1,7 @@
+import 'package:client/routes/Routes.dart';
+import 'package:client/screen/hospital_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:ha/screen/hospital_screen.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: ".env");
@@ -13,12 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Navigation Demo',
+      initialRoute: AppRoutes.login,
+      routes: AppRoutes.routes,
     );
   }
 }
