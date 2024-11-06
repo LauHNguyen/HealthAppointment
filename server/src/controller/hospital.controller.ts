@@ -5,8 +5,14 @@ import { HospitalService } from '../services/hospital.service';
 export class HospitalController {
   constructor(private readonly hospitalService: HospitalService) {}
 
-  @Get()
-  async getHospitals() {
+  @Get('/load')
+  async loadHospitals() {
     return this.hospitalService.loadHospitals();
   }
+
+  @Get()
+  async getHospitals() {
+  return this.hospitalService.getHospitals();
+}
+
 }

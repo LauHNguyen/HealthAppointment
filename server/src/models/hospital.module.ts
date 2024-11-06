@@ -8,5 +8,6 @@ import { Hospital, HospitalSchema } from 'src/schema/hospital.schema';
   imports: [MongooseModule.forFeature([{ name: Hospital.name, schema: HospitalSchema }])],
   controllers: [HospitalController],
   providers: [HospitalService],
+  exports: [HospitalService],
 })
 export class HospitalModule {}

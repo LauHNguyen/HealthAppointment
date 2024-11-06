@@ -87,7 +87,7 @@
     },
 
     {
-      "name": "Bệnh viện Da Liễu ",
+      "name": "Bệnh viện Da Liễu",
       "address": "2 Nguyễn Thông",
       "district": "Quận 3",
       "number": "(028) 3930 8131",
@@ -103,7 +103,7 @@
    },
 
    {
-      "name": "Bệnh viện Mắt ",
+      "name": "Bệnh viện Mắt",
       "address": "280 Điện Biên Phủ",
       "district": "Quận 3",
       "number": "(028) 3932 6789",
@@ -111,7 +111,7 @@
    },
 
    {
-      "name": "Bệnh viện Tai Mũi Họng ",
+      "name": "Bệnh viện Tai Mũi Họng",
       "address": "153 Trần Quốc Thảo",
       "district": "Quận 3",
       "number": "(028) 3931 7381",
@@ -119,19 +119,11 @@
    },
 
    {
-      "name": "Bệnh viện Y học Cổ truyền ",
+      "name": "Bệnh viện Y học Cổ truyền",
       "address": "179 Nam Kỳ Khởi Nghĩa",
       "district": "Quận 3",
       "number": "(028) 3932 6579",
       "specialty": "Y học cổ truyền"
-   },
-
-   {
-      "name": "Phòng khám Đa khoa Trần Quốc Thảo",
-      "address": "114 Trần Quốc Thảo",
-      "district": "Quận 3",
-      "number": "(028) 3932 6666",
-      "specialty": "Đa khoa"
    },
 
    {
@@ -158,18 +150,11 @@
       "specialty": "Đa khoa"
    },
    {
-      "name": "Bệnh viện Đại học Y Dược TP.HCM - Cơ sở 1",
+      "name": "Bệnh viện Đại học Y Dược TP.HCM",
       "address": "215 Hồng Bàng",
       "district": "Quận 5",
       "number": "(028) 3855 4269",
       "specialty": "Đa khoa"
-   },
-   {
-      "name": "Viện Y Dược học Dân tộc TP.HCM",
-      "address": "9 Lý Thường Kiệt",
-      "district": "Quận 5",
-      "number": "(028) 3855 2001",
-      "specialty": "Y học cổ truyền"
    },
    {
       "name": "Bệnh viện Truyền máu Huyết học",
@@ -207,7 +192,7 @@
       "specialty": "Chấn thương chỉnh hình"
    },
    {
-      "name": "Bệnh viện 115",
+      "name": "Bệnh viện Thân Dân",
       "address": "686 Trần Hưng Đạo",
       "district": "Quận 5",
       "number": "(028) 3855 1155",
@@ -276,13 +261,6 @@
       "district":"Quận 8",
       "number":"(028) 3856 9147",
       "specialty":"Đa khoa, phục hồi chức năng"
-   },
-   {
-      "name":"Bệnh viện Lao",
-      "address":"1724 Phạm Thế Hiển",
-      "district":"Quận 8",
-      "number":"",
-      "specialty":"Lao và bệnh phổi"
    },
    {
       "name":"Bệnh viện Quân Dân Y Miền Đông",

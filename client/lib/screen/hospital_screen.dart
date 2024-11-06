@@ -12,6 +12,7 @@ class _HospitalDemoState extends State<HospitalDemo> {
   List<dynamic> hospitals = [];
   List<dynamic> districts = [];
   List<dynamic> hospitalNames = [];
+  List<dynamic> doctors = [];
 
   String? selectedDistrict;
   String? selectedHospitalName;
@@ -19,18 +20,38 @@ class _HospitalDemoState extends State<HospitalDemo> {
   @override
   void initState() {
     super.initState();
-    fetchHospitals();
+    loadInitialData();
+  }
+
+  Future<void> loadInitialData() async {
+    await fetchHospitals();
+    await fetchDoctors();
+  }
+
+  Future<void> fetchDoctors() async {
+    try {
+      final response =
+          await http.get(Uri.parse('${dotenv.env['LOCALHOST']}/doctor/load'));
+      if (response.statusCode == 200) {
+        setState(() {
+          doctors = json.decode(response.body);
+        });
+      } else {
+        throw Exception('Failed to load doctors');
+      }
+    } catch (e) {
+      print("Error fetching doctors: $e");
+    }
   }
 
   Future<void> fetchHospitals() async {
     try {
       final response =
-          await http.get(Uri.parse('${dotenv.env['LOCALHOST']}/hospital'));
+          await http.get(Uri.parse('${dotenv.env['LOCALHOST']}/hospital/load'));
       if (response.statusCode == 200) {
         setState(() {
           hospitals = json.decode(response.body);
 
-          // Lấy danh sách các quận/huyện từ danh sách bệnh viện
           districts = hospitals
               .map((hospital) => hospital['district'] ?? 'Unknown District')
               .toSet()
@@ -51,8 +72,40 @@ class _HospitalDemoState extends State<HospitalDemo> {
             .where((hospital) => hospital['district'] == selectedDistrict)
             .map((hospital) => hospital['name'] ?? 'Unknown Hospital')
             .toList();
-        selectedHospitalName = null; // Reset lựa chọn bệnh viện khi đổi quận
+        selectedHospitalName = null;
       });
+    }
+  }
+
+  Future<void> filterDoctors() async {
+    try {
+      // Xây dựng URL động dựa trên giá trị của district và hospitalName
+      String url = '${dotenv.env['LOCALHOST']}/doctor/filter';
+      List<String> queryParams = [];
+
+      if (selectedDistrict != null && selectedDistrict!.isNotEmpty) {
+        queryParams.add('district=${Uri.encodeComponent(selectedDistrict!)}');
+      }
+      if (selectedHospitalName != null && selectedHospitalName!.isNotEmpty) {
+        queryParams
+            .add('hospitalName=${Uri.encodeComponent(selectedHospitalName!)}');
+      }
+
+      if (queryParams.isNotEmpty) {
+        url += '?' + queryParams.join('&');
+      }
+
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        setState(() {
+          doctors = json.decode(response.body);
+        });
+      } else {
+        throw Exception('Failed to load doctors');
+      }
+    } catch (e) {
+      print("Error fetching doctors: $e");
     }
   }
 
@@ -65,7 +118,6 @@ class _HospitalDemoState extends State<HospitalDemo> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Dropdown chọn Quận/Huyện
             DropdownButton<String>(
               value: selectedDistrict,
               hint: Text("Hãy chọn Quận/Huyện"),
@@ -84,8 +136,6 @@ class _HospitalDemoState extends State<HospitalDemo> {
               },
             ),
             const SizedBox(height: 20),
-
-            // Dropdown chọn Tên Bệnh Viện (hiện sau khi chọn Quận/Huyện)
             DropdownButton<String>(
               value: selectedHospitalName,
               hint: Text("Hãy chọn Bệnh viện"),
@@ -105,12 +155,24 @@ class _HospitalDemoState extends State<HospitalDemo> {
                     },
             ),
             const SizedBox(height: 20),
-
-            // Hiển thị thông tin đã chọn
-            if (selectedDistrict != null && selectedHospitalName != null)
-              Text(
-                'Bạn đã chọn: Quận/Huyện - $selectedDistrict, Bệnh viện - $selectedHospitalName',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ElevatedButton(
+              onPressed: filterDoctors,
+              child: Text("Lọc"),
+            ),
+            const SizedBox(height: 20),
+            if (doctors.isNotEmpty)
+              Expanded(
+                child: ListView.builder(
+                  itemCount: doctors.length,
+                  itemBuilder: (context, index) {
+                    final doctor = doctors[index];
+                    return ListTile(
+                      title: Text(doctor['name'] ?? 'Unknown Doctor'),
+                      subtitle:
+                          Text(doctor['specialty'] ?? 'Unknown Specialty'),
+                    );
+                  },
+                ),
               ),
           ],
         ),

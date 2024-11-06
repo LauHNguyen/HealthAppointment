@@ -48,4 +48,13 @@ export class HospitalService {
   async getHospitals() {
     return this.hospitalModel.find().exec();
   }
+  
+  async findByDistrict(district: string) {
+    return this.hospitalModel.find({ district }).exec();
+  }
+  
+  async findByName(hospitalName: string) {
+    return this.hospitalModel.findOne({ name: hospitalName }).exec();
+  }
+  
 }
