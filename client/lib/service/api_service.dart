@@ -1,11 +1,13 @@
 import 'dart:convert';
 import 'package:client/service/token_service.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
   final String baseUrl;
   final TokenService tokenService = TokenService();
+  final storage = FlutterSecureStorage();
 
   ApiService(this.baseUrl);
 
@@ -23,6 +25,8 @@ class ApiService {
         final data = jsonDecode(response.body);
         String accessToken = data['access_token'];
         String refreshToken = data['refresh_token'];
+        String userId = data['userId'];
+        await storage.write(key: 'userId', value: userId);
 
         return {
           'accessToken': accessToken,
@@ -82,96 +86,6 @@ class ApiService {
 
     if (response.statusCode != 200) {
       throw Exception('Failed to update user');
-    }
-  }
-
-  Future<bool> checkIfAnswerExists(
-      String userId, String diseaseId, String questionId) async {
-    try {
-      final response = await http.get(
-        Uri.parse(
-            '${dotenv.env['LOCALHOST']}/answer/check?userId=$userId&diseaseId=$diseaseId&questionId=$questionId'),
-      );
-
-      if (response.statusCode == 200) {
-        // Giả định rằng API trả về một object JSON với một field `exists`
-        final data = jsonDecode(response.body);
-        return data['exists'] ??
-            false; // Nếu `exists` là null, mặc định trả về false
-      } else {
-        return false; // Trả về false nếu API không thành công
-      }
-    } catch (e) {
-      print('Lỗi khi kiểm tra câu trả lời: $e');
-      return false; // Trả về false nếu có lỗi xảy ra
-    }
-  }
-
-  Future<String> getExistingAnswer(
-      String userID, String diseaseID, String questionID) async {
-    final response = await http.get(
-      Uri.parse(
-          '${dotenv.env['LOCALHOST']}/answer/by-ids?userID=$userID&diseaseID=$diseaseID&questionID=$questionID'),
-      headers: {
-        'Authorization': 'Bearer ${await tokenService.getValidAccessToken()}',
-      },
-    );
-
-    if (response.statusCode == 200) {
-      if (response.body.isEmpty) {
-        return ""; // Nếu phản hồi là chuỗi rỗng, trả về chuỗi rỗng
-      }
-      print('Response body: ${response.body}'); // Kiểm tra phản hồi
-      final result = json.decode(response.body);
-      return result['answer'] ?? ""; // Trả về answer hoặc chuỗi rỗng
-    } else if (response.statusCode == 404) {
-      return ""; // Không tìm thấy câu trả lời
-    } else {
-      print('Error: ${response.statusCode} - ${response.body}'); // Ghi nhận lỗi
-      throw Exception('Failed to fetch existing answer');
-    }
-  }
-
-  Future<void> createAnswer(
-      String questionId, String answer, String userId, String diseaseId) async {
-    final response = await http.post(
-      Uri.parse('${dotenv.env['LOCALHOST']}/answer'),
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization':
-            'Bearer ${await tokenService.getValidAccessToken()}', // Đặt token
-      },
-      body: json.encode({
-        'questionID': questionId,
-        'answer': answer,
-        'userID': userId, // Thêm userId
-        'diseaseID': diseaseId, // Thêm diseaseId
-      }),
-    );
-
-    if (response.statusCode != 201) {
-      throw Exception('Failed to create answer: ${response.body}');
-    }
-  }
-
-  // Hàm cập nhật câu trả lời
-  Future<void> updateAnswer(String userId, String diseaseId, String questionId,
-      String newAnswer) async {
-    final response = await http.put(
-      Uri.parse(
-          '${dotenv.env['LOCALHOST']}/answer/update?userID=$userId&diseaseID=$diseaseId&questionID=$questionId'),
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization':
-            'Bearer ${await tokenService.getValidAccessToken()}', // Đặt token
-      },
-      body: json.encode({
-        'answer': newAnswer, // Cập nhật câu trả lời mới
-      }),
-    );
-
-    if (response.statusCode != 200) {
-      throw Exception('Failed to update answer: ${response.body}');
     }
   }
 

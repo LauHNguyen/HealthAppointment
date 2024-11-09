@@ -7,7 +7,7 @@ import * as path from 'path';
 
 @Injectable()
 export class HospitalService {
-  private readonly filePath = path.join(__dirname, '../../data/hospitals.json');
+  private readonly filePath = path.join(process.cwd(), 'data/hospitals.json');
 
   constructor(@InjectModel(Hospital.name) private hospitalModel: Model<Hospital>) {}
 

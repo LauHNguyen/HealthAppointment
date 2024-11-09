@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:client/models/Login.dto.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import 'package:http/http.dart' as http;
 
-class ApiService {
+class LoginService {
+  final storage = FlutterSecureStorage();
   final String baseUrl = '${dotenv.env['LOCALHOST']}'; // Đặt URL của server API
 
   // Phương thức đăng ký
@@ -82,8 +84,11 @@ class ApiService {
         final data = jsonDecode(response.body);
         String accessToken = data['access_token'];
         String refreshToken = data['refresh_token'];
+        String userId = data['userId'];
 
-        print('Đăng nhập thành công');
+        await storage.write(key: 'userId', value: userId);
+
+        print('Đăng nhập thành công $userId');
         return {
           'accessToken': accessToken,
           'refreshToken': refreshToken,

@@ -1,14 +1,18 @@
 import 'dart:convert';
+import 'package:client/screen/appointment_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
-class HospitalDemo extends StatefulWidget {
+class ChooseDoctor extends StatefulWidget {
   @override
-  _HospitalDemoState createState() => _HospitalDemoState();
+  _ChooseDoctorState createState() => _ChooseDoctorState();
 }
 
-class _HospitalDemoState extends State<HospitalDemo> {
+class _ChooseDoctorState extends State<ChooseDoctor> {
+  final storage = FlutterSecureStorage();
+
   List<dynamic> hospitals = [];
   List<dynamic> districts = [];
   List<dynamic> hospitalNames = [];
@@ -16,6 +20,7 @@ class _HospitalDemoState extends State<HospitalDemo> {
 
   String? selectedDistrict;
   String? selectedHospitalName;
+  String? userId = '67233bfb196c0855e66d87a0';
 
   @override
   void initState() {
@@ -24,9 +29,14 @@ class _HospitalDemoState extends State<HospitalDemo> {
   }
 
   Future<void> loadInitialData() async {
+    // await fetchUserId();
     await fetchHospitals();
     await fetchDoctors();
   }
+
+  // Future<void> fetchUserId() async {
+  //   userId = await storage.read(key: 'userId');
+  // }
 
   Future<void> fetchDoctors() async {
     try {
@@ -79,7 +89,6 @@ class _HospitalDemoState extends State<HospitalDemo> {
 
   Future<void> filterDoctors() async {
     try {
-      // Xây dựng URL động dựa trên giá trị của district và hospitalName
       String url = '${dotenv.env['LOCALHOST']}/doctor/filter';
       List<String> queryParams = [];
 
@@ -107,6 +116,28 @@ class _HospitalDemoState extends State<HospitalDemo> {
     } catch (e) {
       print("Error fetching doctors: $e");
     }
+  }
+
+  void navigateToDoctorDetail(dynamic doctor) {
+    // if (userId != null) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Appointment(
+          userId: userId!,
+          doctorId: doctor['_id'],
+          doctorName: doctor['name'],
+          hospitalName: doctor['hospitalName'],
+          workingHoursStart: doctor['startTime'],
+          workingHoursEnd: doctor['endTime'],
+        ),
+      ),
+    );
+    // } else {
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     SnackBar(content: Text('Không tìm thấy userId!')),
+    //   );
+    // }
   }
 
   @override
@@ -168,8 +199,17 @@ class _HospitalDemoState extends State<HospitalDemo> {
                     final doctor = doctors[index];
                     return ListTile(
                       title: Text(doctor['name'] ?? 'Unknown Doctor'),
-                      subtitle:
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
                           Text(doctor['specialty'] ?? 'Unknown Specialty'),
+                          Text(
+                              "Giờ làm: ${doctor['startTime'] ?? 'N/A'} - ${doctor['endTime'] ?? 'N/A'}"),
+                          Text(
+                              "Ngày làm: ${(doctor['workingDays'] ?? []).join(', ')}"),
+                        ],
+                      ),
+                      onTap: () => navigateToDoctorDetail(doctor),
                     );
                   },
                 ),
