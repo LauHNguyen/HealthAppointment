@@ -11,6 +11,7 @@ class Appointment extends StatefulWidget {
   final String hospitalName;
   final String workingHoursStart;
   final String workingHoursEnd;
+  final List<String> workingDays;
 
   const Appointment({
     required this.userId,
@@ -19,14 +20,17 @@ class Appointment extends StatefulWidget {
     required this.hospitalName,
     required this.workingHoursStart,
     required this.workingHoursEnd,
-  });
+    List<String>? workingDays, // Cho phép null ở đây
+  }) : workingDays = workingDays ?? const [];
 
   @override
   _AppointmentState createState() => _AppointmentState();
 }
 
 class _AppointmentState extends State<Appointment> {
-  DateTime selectedDate = DateTime.now();
+  DateTime selectedDate =
+      DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+
   TimeOfDay? selectedTime;
 
   // Chuyển đổi chuỗi thời gian dạng "HH:mm" thành TimeOfDay
@@ -52,17 +56,67 @@ class _AppointmentState extends State<Appointment> {
   }
 
   Future<void> pickDate(BuildContext context) async {
+    // Chuyển mảng workingDays từ String thành weekday
+    List<int> validWeekdays = getValidWeekdaysFromString();
+
+    // Đảm bảo initialDate nằm trong validWeekdays
+    DateTime validInitialDate =
+        _getNextValidDate(DateTime.now(), validWeekdays);
+
     final DateTime? picked = await showDatePicker(
       context: context,
-      initialDate: selectedDate,
+      initialDate: validInitialDate, // Dùng ngày hợp lệ
       firstDate: DateTime.now(),
       lastDate: DateTime.now().add(Duration(days: 365)),
+      selectableDayPredicate: (DateTime day) {
+        // Chỉ cho phép các ngày có trong validWeekdays
+        return validWeekdays.contains(day.weekday);
+      },
     );
+
     if (picked != null) {
       setState(() {
         selectedDate = picked;
       });
     }
+  }
+
+  DateTime _getNextValidDate(DateTime startDate, List<int> validWeekdays) {
+    DateTime currentDate = startDate;
+
+    // Tìm ngày hợp lệ tiếp theo
+    while (!validWeekdays.contains(currentDate.weekday)) {
+      currentDate =
+          currentDate.add(Duration(days: 1)); // Chuyển sang ngày tiếp theo
+    }
+
+    return currentDate;
+  }
+
+  List<int> getValidWeekdaysFromString() {
+    // Đoạn mã này chuyển đổi từ tên ngày sang weekday
+    Map<String, int> weekdays = {
+      "Monday": 1,
+      "Tuesday": 2,
+      "Wednesday": 3,
+      "Thursday": 4,
+      "Friday": 5,
+      "Saturday": 6,
+      "Sunday": 7
+    };
+
+    // Mảng workingDays của bạn, bạn cần thay thế từ phía backend hoặc truyền vào
+    List<String> workDays = widget.workingDays;
+
+    // Chuyển đổi từ workingDays sang weekday
+    List<int> validWeekdays = [];
+    for (String day in workDays) {
+      if (weekdays.containsKey(day)) {
+        validWeekdays.add(weekdays[day]!);
+      }
+    }
+
+    return validWeekdays;
   }
 
   List<TimeOfDay> generateAvailableTimeSlots() {
@@ -143,6 +197,8 @@ class _AppointmentState extends State<Appointment> {
             Text("Người dùng: ${widget.userId}", textAlign: TextAlign.center),
             Text("Bác sĩ: ${widget.doctorName}", textAlign: TextAlign.center),
             Text("Bệnh viện: ${widget.hospitalName}",
+                textAlign: TextAlign.center),
+            Text("Ngày làm: ${widget.workingDays}",
                 textAlign: TextAlign.center),
             const SizedBox(height: 20),
             GestureDetector(

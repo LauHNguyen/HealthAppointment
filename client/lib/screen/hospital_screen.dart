@@ -130,6 +130,7 @@ class _ChooseDoctorState extends State<ChooseDoctor> {
           hospitalName: doctor['hospitalName'],
           workingHoursStart: doctor['startTime'],
           workingHoursEnd: doctor['endTime'],
+          workingDays: List<String>.from(doctor['workingDays'] ?? []),
         ),
       ),
     );
