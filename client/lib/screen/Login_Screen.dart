@@ -1,5 +1,5 @@
 import 'package:client/service/api_service.dart';
-import 'package:client/service/login_API.dart';
+import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -23,47 +23,49 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final LoginService _loginService = LoginService();
+  final SecureStorageService _secureStorageService = SecureStorageService();
+  final ApiService _apiService = ApiService();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _isPasswordVisible = false;
 
-  final ApiService _apiService = ApiService('${dotenv.env['LOCALHOST']}');
   final storage = FlutterSecureStorage();
 
   Future<void> login() async {
     // Lấy dữ liệu từ TextField
     final username = _usernameController.text;
     final password = _passwordController.text;
+    print('Username: $username');
+    print('Password: $password');
 
     // Gọi API để đăng nhập và lấy cả access token và refresh token
-    // Map<String, String>? tokens =
-    //     await _apiService.loginUser(username, password);
+    Map<String, String>? tokens =
+        await _apiService.loginUser(username, password);
 
-    // if (tokens != null) {
-    //   // Lấy access token và refresh token từ phản hồi của API
-    //   String accessToken = tokens['accessToken']!;
-    //   String refreshToken = tokens['refreshToken']!;
+    if (tokens != null) {
+      //   // Lấy access token và refresh token từ phản hồi của API
+      String? accessToken = tokens['accessToken']!;
+      //String refreshToken = tokens['refreshToken']!;
 
-    //   // Hiển thị thông báo đăng nhập thành công
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     SnackBar(content: Text('Đăng nhập thành công!')),
-    //   );
+      //   // Hiển thị thông báo đăng nhập thành công
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Đăng nhập thành công!')),
+      );
 
-    //   // Lưu cả access token và refresh token vào storage
-    //   await _secureStorageService.saveToken(accessToken);
-    //   await _secureStorageService.saveRefreshToken(refreshToken);
+      //   // Lưu cả access token và refresh token vào storage
+      await _secureStorageService.saveToken(accessToken);
+      //await _secureStorageService.saveRefreshToken(refreshToken);
 
-    // Chuyển hướng sang màn hình khác
-    // String? userId = tokens?['userId'];
-    // await storage.write(key: 'userId', value: userId);
-    Navigator.pushNamed(context, '/home');
-    // } else {
-    //   // Xử lý khi đăng nhập thất bại
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     SnackBar(content: Text('Đăng nhập thất bại!')),
-    //   );
-    // }
+      // Chuyển hướng sang màn hình khác
+      // String? userId = tokens?['userId'];
+      // await storage.write(key: 'userId', value: userId);
+      Navigator.pushNamed(context, '/home');
+    } else {
+      // Xử lý khi đăng nhập thất bại
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Đăng nhập thất bại!')),
+      );
+    }
   }
 
   @override
@@ -136,6 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                                         bottom: BorderSide(
                                             color: Colors.grey.shade200))),
                                 child: TextField(
+                                  controller: _usernameController,
                                   decoration: InputDecoration(
                                       hintText: "Email or Phone number",
                                       hintStyle: TextStyle(color: Colors.grey),
@@ -149,6 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                                         bottom: BorderSide(
                                             color: Colors.grey.shade200))),
                                 child: TextField(
+                                  controller: _passwordController,
                                   obscureText: true,
                                   decoration: InputDecoration(
                                       hintText: "Password",

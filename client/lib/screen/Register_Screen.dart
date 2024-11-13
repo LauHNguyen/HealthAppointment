@@ -1,3 +1,6 @@
+import 'package:client/main.dart';
+import 'package:client/models/Login.dto.dart';
+import 'package:client/service/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 
@@ -7,15 +10,16 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
 
-  void _register() {
-    String email = _emailController.text;
+  void _register() async {
+    String username = _usernameController.text;
     String password = _passwordController.text;
     String confirmPassword = _confirmPasswordController.text;
+    final ApiService _apiService = ApiService();
 
     if (password != confirmPassword) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -24,8 +28,29 @@ class _RegisterPageState extends State<RegisterPage> {
       );
       return;
     }
+    User user = User(username: username /*, email: email*/, password: password);
 
-    Navigator.pushReplacementNamed(context, '/home');
+    // Gọi API để đăng ký
+    bool success = await _apiService.registerUser(user);
+
+    // Hiển thị kết quả
+    if (success) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) => MyApp(
+                // title: 'MyApp',
+                )),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Đăng ký thành công!')),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Đăng ký thất bại!')),
+      );
+    }
+    //Navigator.pushReplacementNamed(context, '/home');
   }
 
   @override
@@ -111,7 +136,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   ),
                                 ),
                                 child: TextField(
-                                  controller: _emailController,
+                                  controller: _usernameController,
                                   decoration: const InputDecoration(
                                     hintText: "Email",
                                     hintStyle: TextStyle(color: Colors.grey),
