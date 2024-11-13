@@ -1,17 +1,18 @@
 import 'dart:convert';
+import 'package:client/models/Login.dto.dart';
 import 'package:client/service/token_service.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  final String baseUrl;
   final TokenService tokenService = TokenService();
   final storage = FlutterSecureStorage();
 
-  ApiService(this.baseUrl);
+  final String baseUrl = '${dotenv.env['LOCALHOST']}'; // Đặt URL của server API
 
   // Hàm đăng nhập người dùng
+
   Future<Map<String, String>?> loginUser(
       String username, String password) async {
     try {
@@ -24,13 +25,11 @@ class ApiService {
       if (response.statusCode == 201) {
         final data = jsonDecode(response.body);
         String accessToken = data['access_token'];
-        String refreshToken = data['refresh_token'];
-        String userId = data['userId'];
-        await storage.write(key: 'userId', value: userId);
+        //String refreshToken = data['refresh_token'];
 
         return {
           'accessToken': accessToken,
-          'refreshToken': refreshToken,
+          //'refreshToken': refreshToken,
         };
       } else {
         print('Login failed: ${response.body}');
@@ -38,7 +37,37 @@ class ApiService {
     } catch (e) {
       print('Error during login: $e');
     }
+
     return null; // Nếu đăng nhập thất bại
+  }
+
+  Future<bool> registerUser(User user) async {
+    final String endpoint = '/auth/register'; // Endpoint của API đăng ký
+
+    final Uri url = Uri.parse('$baseUrl$endpoint');
+
+    try {
+      // Gửi yêu cầu POST tới server
+      final response = await http.post(
+        url,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode(user.toJson()), // Chuyển dữ liệu thành JSON
+      );
+
+      // Kiểm tra phản hồi từ server
+      if (response.statusCode == 201) {
+        print('Đăng ký thành công');
+        return true; // Thành công
+      } else {
+        print('Lỗi: ${response.body}');
+        return false; // Lỗi
+      }
+    } catch (error) {
+      print('Lỗi khi kết nối tới server: $error');
+      return false; // Lỗi kết nối
+    }
   }
 
   // Hàm lấy tỷ lệ hoàn thành
