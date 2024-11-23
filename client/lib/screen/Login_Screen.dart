@@ -53,12 +53,14 @@ class _LoginPageState extends State<LoginPage> {
       );
 
       //   // Lưu cả access token và refresh token vào storage
-      await _secureStorageService.saveToken(accessToken);
+      await _secureStorageService.saveAccessToken(accessToken);
       //await _secureStorageService.saveRefreshToken(refreshToken);
 
       // Chuyển hướng sang màn hình khác
-      // String? userId = tokens?['userId'];
-      // await storage.write(key: 'userId', value: userId);
+      // String? userId = tokens['userId'];
+      // if (userId != null) {
+      //   await _secureStorageService.saveUserId(userId);
+      // }
       Navigator.pushNamed(context, '/home');
     } else {
       // Xử lý khi đăng nhập thất bại

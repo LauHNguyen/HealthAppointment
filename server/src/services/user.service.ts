@@ -16,6 +16,13 @@ export class UserService {
       return this.userModel.findOne({ username }).exec();
    }
 
+   async getUserName(userId: string) : Promise<User>{
+       const username = await this.userModel.findById(userId).select('username');
+       console.log(username);
+       return username; 
+      // return await this.userModel.findById(userId).select('username');
+   }
+
    async updateUser(userId: string, updateData: Partial<User>): Promise<User> {
       return this.userModel.findByIdAndUpdate(userId, updateData, { new: true }).select('_id __v password IsDelete');
    }

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
@@ -28,6 +29,14 @@ class Appointment extends StatefulWidget {
 }
 
 class _AppointmentState extends State<Appointment> {
+  @override
+  void initState() {
+    super.initState();
+    getUserName();
+  }
+
+  String? userName;
+  final SecureStorageService storage = SecureStorageService();
   DateTime selectedDate =
       DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
 
@@ -183,6 +192,32 @@ class _AppointmentState extends State<Appointment> {
     }
   }
 
+  Future<void> getUserName() async {
+    try {
+      String? token = await storage.getAccessToken();
+      if (token == null) {
+        throw Exception('No token found');
+      }
+      final response = await http.get(
+        Uri.parse('${dotenv.env['LOCALHOST']}/user/name'),
+        headers: {
+          'Authorization': 'Bearer $token',
+        },
+      );
+      if (response.statusCode == 200) {
+        // print('user---:${response.body}');
+        final data = json.decode(response.body);
+        setState(() {
+          userName = data['username'];
+        });
+      } else {
+        throw Exception('Failed to get user name');
+      }
+    } catch (e) {
+      print('Error when get user name: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     List<TimeOfDay> timeSlots = generateAvailableTimeSlots();
@@ -194,7 +229,7 @@ class _AppointmentState extends State<Appointment> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Người dùng: ${widget.userId}", textAlign: TextAlign.center),
+            Text("Người dùng: $userName", textAlign: TextAlign.center),
             Text("Bác sĩ: ${widget.doctorName}", textAlign: TextAlign.center),
             Text("Bệnh viện: ${widget.hospitalName}",
                 textAlign: TextAlign.center),

@@ -21,9 +21,10 @@ export class AuthService {
    }
    async login(username: string, password: string) {
       const user = await this.userModel.findOne({ username });
-      console.log('Found user:', user);
+      console.log('Found user:', user);// test thông tin user có được lấy đúng không
       if (user && (await bcrypt.compare(password, user.password))) {
          const accessToken = this.generateAccessToken(user);
+         console.log('Access token: ',accessToken);// để lấy token khi test trên postman
          // const refreshToken = this.generateRefreshToken(user);
 
          return {
