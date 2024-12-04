@@ -3,13 +3,19 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
+import { OAuth2Client } from 'google-auth-library';
 import { User, UserDocument } from 'src/schema/user.schema';
+
 @Injectable()
 export class AuthService {
+   private googleClient: OAuth2Client;
+
    constructor(
       @InjectModel(User.name) private userModel: Model<UserDocument>,
       private jwtService: JwtService,
-   ) {}
+   ) {
+      this.googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID); // Sử dụng Google Client ID từ biến môi trường
+   }
 
    async register(username: string, password: string) {
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -19,39 +25,47 @@ export class AuthService {
       });
       return newUser.save();
    }
+
    async login(username: string, password: string) {
       const user = await this.userModel.findOne({ username });
-      console.log('Found user:', user);// test thông tin user có được lấy đúng không
+      console.log('Found user:', user); // Test thông tin user có được lấy đúng không
       if (user && (await bcrypt.compare(password, user.password))) {
          const accessToken = this.generateAccessToken(user);
-         console.log('Access token: ',accessToken);// để lấy token khi test trên postman
-         // const refreshToken = this.generateRefreshToken(user);
-
+         console.log('Access token: ', accessToken); // Để lấy token khi test trên Postman
          return {
             access_token: accessToken,
-            //refresh_token: refreshToken,
          };
       }
       throw new Error('Invalid credentials');
    }
 
-   generateAccessToken(user: UserDocument) {
-      const payload = { username: user.username };
-      return this.jwtService.sign(payload, { secret: process.env.SECRETKEY, expiresIn: '30m' });
+   async loginWithGoogle(username: string, email: string) {
+
+      // Kiểm tra user trong database
+      let user = await this.userModel.findOne({ email });
+
+      if (!user) {
+         // Nếu user chưa tồn tại, tạo mới
+         const hashedPassword = await bcrypt.hash(email, 10);
+         user = new this.userModel({
+            username: username, // Tên từ Google
+            password: hashedPassword,
+            email: email,
+            authProvider: 'google', // Đánh dấu user đăng nhập bằng Google
+         });
+         await user.save();
+      }
+
+      // Tạo Access Token
+      const accessToken = this.generateAccessToken(user);
+      return {
+         access_token: accessToken,
+         user,
+      };
    }
 
-   // generateRefreshToken(user: UserDocument) {
-   //    const payload = { username: user.username };
-   //    return this.jwtService.sign(payload, { secret: process.env.JWT_REFRESH_SECRET, expiresIn: '30d' });
-   // }
-
-   // // Phương thức để xác thực Refresh Token
-   // async validateRefreshToken(token: string) {
-   //    try {
-   //       const payload = this.jwtService.verify(token, { secret: process.env.JWT_REFRESH_SECRET });
-   //       return await this.userModel.findOne({ username: payload.username });
-   //    } catch (error) {
-   //       throw new Error('Invalid refresh token');
-   //    }
-   // }
+   generateAccessToken(user: UserDocument) {
+      const payload = { username: user.username, email: user.email };
+      return this.jwtService.sign(payload, { secret: process.env.SECRETKEY, expiresIn: '30m' });
+   }
 }

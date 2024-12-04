@@ -2,8 +2,7 @@ import 'package:client/service/api_service.dart';
 import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -27,9 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   final ApiService _apiService = ApiService();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  bool _isPasswordVisible = false;
-
-  final storage = FlutterSecureStorage();
+  // bool _isPasswordVisible = false;
 
   Future<void> login() async {
     // Lấy dữ liệu từ TextField
@@ -56,16 +53,45 @@ class _LoginPageState extends State<LoginPage> {
       await _secureStorageService.saveAccessToken(accessToken);
       //await _secureStorageService.saveRefreshToken(refreshToken);
 
-      // Chuyển hướng sang màn hình khác
-      // String? userId = tokens['userId'];
-      // if (userId != null) {
-      //   await _secureStorageService.saveUserId(userId);
-      // }
       Navigator.pushNamed(context, '/home');
     } else {
       // Xử lý khi đăng nhập thất bại
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Đăng nhập thất bại!')),
+      );
+    }
+  }
+
+  Future<void> loginWithGoogle() async {
+    try {
+      final GoogleSignIn _googleSignIn = GoogleSignIn(
+        scopes: <String>[
+          'email',
+        ],
+      );
+      var account = await _googleSignIn.signIn();
+      print(account);
+      Map<String, String>? tokens = await _apiService.loginWithGoogle(
+          account?.displayName, account!.email);
+
+      if (tokens != null) {
+        String accessToken = tokens['accessToken']!;
+        await _secureStorageService.saveAccessToken(accessToken);
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Google Login Successful!')),
+        );
+
+        Navigator.pushNamed(context, '/home');
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Google Login Failed!')),
+        );
+      }
+    } catch (e) {
+      print('Error during Google login: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('An error occurred. Please try again.')),
       );
     }
   }
@@ -166,12 +192,11 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 40),
+                      SizedBox(height: 60),
                       FadeInUp(
                         duration: Duration(milliseconds: 1500),
                         child: MaterialButton(
-                          onPressed: login, // Gọi hàm đăng nhập khi nhấn nút
-
+                          onPressed: login, // Gọi hàm đăng nhập thông thường
                           height: 50,
                           color: Colors.orange[900],
                           shape: RoundedRectangleBorder(
@@ -199,6 +224,37 @@ class _LoginPageState extends State<LoginPage> {
                             style: TextStyle(
                                 color: Colors.grey,
                                 decoration: TextDecoration.underline),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      FadeInUp(
+                        duration: Duration(milliseconds: 1700),
+                        child: MaterialButton(
+                          onPressed:
+                              loginWithGoogle, // Thêm hàm đăng nhập với Google
+                          height: 50,
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.grey.shade300),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              // Image.asset(
+                              //   'assets/images/google_logo.png', // Đảm bảo hình ảnh logo Google đã được thêm vào
+                              //   height: 24,
+                              //   width: 24,
+                              // ),
+                              SizedBox(width: 10),
+                              Text(
+                                "Sign in with Google",
+                                style: TextStyle(
+                                    color: Colors.grey.shade800,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
                           ),
                         ),
                       ),

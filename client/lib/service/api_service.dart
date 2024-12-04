@@ -70,6 +70,36 @@ class ApiService {
     }
   }
 
+  Future<Map<String, String>?> loginWithGoogle(
+      String? username, String email) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/auth/google'),
+        body: jsonEncode({'username': username, 'email': email}),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 201) {
+        final data = jsonDecode(response.body);
+        String accessToken = data['access_token'];
+        // String refreshToken = data['refresh_token'];
+
+        // await storage.write(key: 'accessToken', value: accessToken);
+
+        return {
+          'accessToken': accessToken,
+          // 'refreshToken': refreshToken,
+        };
+      } else {
+        print('Google login failed: ${response.body}');
+      }
+    } catch (e) {
+      print('Error during Google login: $e');
+    }
+
+    return null; // Nếu đăng nhập thất bại
+  }
+
   // Hàm lấy tỷ lệ hoàn thành
   // Future<double?> getProfileCompletionbytoken(String token) async {
   //   final response = await http.get(
