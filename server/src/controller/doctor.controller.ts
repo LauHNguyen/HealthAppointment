@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, NotFoundException, Param, Query } from '@nestjs/common';
 import { DoctorService } from '../services/doctor.service';
 
 @Controller('doctor')
@@ -13,6 +13,15 @@ export class DoctorController {
   @Get()
   async getDoctors() {
     return this.doctorService.getDoctors();
+  }
+
+  @Get(':id')
+  async getDoctorById(@Param('id') id: string) {
+    const doctor = await this.doctorService.getDoctorById(id);
+    if (!doctor) {
+      throw new NotFoundException(`Doctor with ID ${id} not found`);
+    }
+    return doctor;
   }
 
   @Get('filter')

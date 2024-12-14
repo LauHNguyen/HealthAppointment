@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:client/screen/Taskbar_screen.dart';
 import 'package:client/screen/appointment_screen.dart';
 import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
@@ -20,11 +21,12 @@ class _ChooseDoctorState extends State<ChooseDoctor> {
 
   String? selectedDistrict;
   String? selectedHospitalName;
-  String? userId; // = '67233bfb196c0855e66d87a0';
+  String? userId;
+  String? _accessToken;
 
-  bool isChatOpen = false;
-  List<Map<String, String>> _messages = [];
-  TextEditingController _controller = TextEditingController();
+  // bool isChatOpen = false;
+  // List<Map<String, String>> _messages = [];
+  // TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
@@ -36,6 +38,16 @@ class _ChooseDoctorState extends State<ChooseDoctor> {
     await fetchUserId();
     await fetchHospitals();
     await fetchDoctors();
+    _fetchTokens();
+  }
+
+  Future<void> _fetchTokens() async {
+    // Lấy access token và refresh token từ TokenService
+    String? accessToken = await storage.getAccessToken();
+
+    setState(() {
+      _accessToken = accessToken;
+    });
   }
 
   Future<void> fetchUserId() async {
@@ -204,6 +216,7 @@ class _ChooseDoctorState extends State<ChooseDoctor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Danh sách Bệnh Viện")),
+      drawer: _accessToken != null ? AppTaskbar(token: _accessToken!) : null,
       body: Stack(
         children: [
           Padding(

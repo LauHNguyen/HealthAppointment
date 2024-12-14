@@ -188,30 +188,62 @@ class _AppointmentState extends State<Appointment> {
                   itemCount: slots.length,
                   itemBuilder: (context, index) {
                     final slot = slots[index];
+                    final today = DateTime.now();
+
+                    // Kiểm tra ngày được chọn có phải hôm nay không
+                    final isToday = selectedDate.year == today.year &&
+                        selectedDate.month == today.month &&
+                        selectedDate.day == today.day;
+
+                    // Lấy giờ hiện tại
+                    final now = TimeOfDay.now();
+                    final nowDateTime = DateTime(
+                      DateTime.now().year,
+                      DateTime.now().month,
+                      DateTime.now().day,
+                      now.hour,
+                      now.minute,
+                    );
+
+                    // Chuyển slot thành DateTime
+                    final slotStartDateTime = DateTime(
+                      DateTime.now().year,
+                      DateTime.now().month,
+                      DateTime.now().day,
+                      slot['start']!.hour,
+                      slot['start']!.minute,
+                    );
+
+                    // Chỉ kiểm tra giờ nếu ngày được chọn là hôm nay
+                    final bool isPast =
+                        isToday && slotStartDateTime.isBefore(nowDateTime);
 
                     final bool booked =
                         isBooked(slot['start']!, slot['end']!, bookedTime);
+
+                    final DateFormat timeFormat = DateFormat.Hm();
 
                     return Container(
                       margin: const EdgeInsets.symmetric(vertical: 4),
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: booked ? Colors.red : Colors.green,
+                          color: booked || isPast ? Colors.red : Colors.green,
                         ),
                         borderRadius: BorderRadius.circular(8),
-                        color: booked
+                        color: booked || isPast
                             ? Colors.red.withOpacity(0.1)
                             : Colors.green.withOpacity(0.1),
                       ),
                       child: ListTile(
                         title: Text(
-                          '${slot['start']!.format(context)} - ${slot['end']!.format(context)}',
+                          '${timeFormat.format(DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, slot['start']!.hour, slot['start']!.minute))} - '
+                          '${timeFormat.format(DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, slot['end']!.hour, slot['end']!.minute))}',
                           style: TextStyle(
-                            color: booked ? Colors.red : Colors.green,
+                            color: booked || isPast ? Colors.red : Colors.green,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        onTap: booked
+                        onTap: booked || isPast
                             ? null
                             : () {
                                 setState(() {
@@ -245,7 +277,7 @@ class _AppointmentState extends State<Appointment> {
       "hospitalName": widget.hospitalName,
       "appointmentDate": DateFormat('yyyy-MM-dd').format(selectedDate),
       "appointmentTime":
-          "${selectedTime!.format(context)} - ${selectedEndTime!.format(context)}",
+          "${DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedTime!.hour, selectedTime!.minute))} - ${DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedEndTime!.hour, selectedEndTime!.minute))}",
       "createdAt": DateTime.now().toIso8601String(),
     };
 
@@ -305,23 +337,16 @@ class _AppointmentState extends State<Appointment> {
         throw Exception('No token found');
       }
       final response = await http.get(
-        Uri.parse(
-            '${dotenv.env['LOCALHOST']}/appointment/user/${widget.userId}'),
+        Uri.parse('${dotenv.env['LOCALHOST']}/appointment'),
         headers: {
           'Authorization': 'Bearer $token',
         },
       );
       if (response.statusCode == 200) {
         final List<dynamic> appointments = jsonDecode(response.body);
-        print('Number of appointments: ${appointments.length}');
-        print('Doctor ID: ${widget.doctorId}');
-        print(
-            'Selected Date: ${DateFormat('yyyy-MM-dd').format(selectedDate)}');
 
         bookedTime = appointments.where((appointment) {
           bool doctorMatch = appointment['doctor']['_id'] == widget.doctorId;
-          print(
-              'Doctor match for appointment ${appointment['_id']}: $doctorMatch');
 
           DateTime appointmentDate =
               DateTime.parse(appointment['appointmentDate']);
@@ -330,9 +355,6 @@ class _AppointmentState extends State<Appointment> {
           String formattedSelectedDate =
               DateFormat('yyyy-MM-dd').format(selectedDate);
           bool dateMatch = formattedAppointmentDate == formattedSelectedDate;
-          print('Date match for appointment ${appointment['_id']}: $dateMatch');
-          print(
-              'Appointment date: $formattedAppointmentDate, Selected date: $formattedSelectedDate');
 
           return doctorMatch && dateMatch;
         }).map((appointment) {
@@ -348,8 +370,13 @@ class _AppointmentState extends State<Appointment> {
     }
   }
 
+  String _formatTimeOfDay(TimeOfDay time) {
+    return '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}';
+  }
+
   bool isBooked(TimeOfDay start, TimeOfDay end, List<String> bookedTime) {
-    String formattedSlot = '${start.format(context)} - ${end.format(context)}';
+    String formattedSlot =
+        '${_formatTimeOfDay(start)} - ${_formatTimeOfDay(end)}';
     return bookedTime.contains(formattedSlot);
   }
 
@@ -404,7 +431,7 @@ class _AppointmentState extends State<Appointment> {
                   children: [
                     Text(
                       selectedTime != null && selectedEndTime != null
-                          ? "Khoảng thời gian: ${selectedTime!.format(context)} - ${selectedEndTime!.format(context)}"
+                          ? "Khoảng thời gian: ${DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedTime!.hour, selectedTime!.minute))} - ${DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedEndTime!.hour, selectedEndTime!.minute))}"
                           : "Chọn khoảng thời gian",
                       style: TextStyle(fontSize: 16),
                     ),
@@ -417,7 +444,10 @@ class _AppointmentState extends State<Appointment> {
             ElevatedButton(
               onPressed: confirmAppointment,
               child: Text(
-                  "Xác nhận đặt lịch\n Từ ${selectedTime?.format(context)} đến ${selectedEndTime?.format(context)}\n Ngày ${DateFormat('dd/MM/yyyy').format(selectedDate)}"),
+                "Xác nhận đặt lịch\n Từ ${selectedTime != null ? DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedTime!.hour, selectedTime!.minute)) : 'Null'}"
+                " đến ${selectedEndTime != null ? DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedEndTime!.hour, selectedEndTime!.minute)) : 'Null'}"
+                "\n Ngày ${selectedDate != null ? DateFormat('dd/MM/yyyy').format(selectedDate!) : 'Chưa chọn'}",
+              ),
             ),
           ],
         ),

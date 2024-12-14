@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Delete, Patch } from '@nestjs/common';
 import { AppointmentService } from '../services/appointment.service';
 import { CreateAppointmentDto } from 'dto/create-appoitment.dto';
 
@@ -32,5 +32,18 @@ export class AppointmentController {
   @Post('create')
   async create(@Body() createAppointmentDto: CreateAppointmentDto) {
     return this.appointmentService.create(createAppointmentDto);
+  }
+
+  @Delete(':appointmentId')
+  async cancelAppointment(@Param('appointmentId') appointmentId: string) {
+    return this.appointmentService.cancelAppointment(appointmentId);
+  }
+
+  @Patch(':appointmentId')
+  async updateAppointment(
+    @Param('appointmentId') appointmentId: string,
+    @Body() updateAppointmentDto: Partial<CreateAppointmentDto>,
+  ) {
+    return this.appointmentService.updateAppointment(appointmentId, updateAppointmentDto);
   }
 }

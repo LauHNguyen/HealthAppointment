@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'package:client/models/Login.dto.dart';
+import 'package:client/service/flutter_secure_storage.dart';
 // import 'package:client/service/token_service.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
   // final TokenService tokenService = TokenService();
-  final storage = FlutterSecureStorage();
+  final SecureStorageService storage = SecureStorageService();
 
   final String baseUrl = '${dotenv.env['LOCALHOST']}'; // Đặt URL của server API
 
@@ -148,13 +148,13 @@ class ApiService {
     }
   }
 
-  // Future<void> logout() async {
-  //   try {
-  //     await _secureStorageService.removeAccessToken();
-  //     await _secureStorageService.removeRefreshToken();
-  //     print('Logged out successfully');
-  //   } catch (e) {
-  //     print(' logout error: $e');
-  //   }
-  // }
+  Future<void> logout() async {
+    try {
+      await storage.removeAccessToken();
+      //await storage.removeRefreshToken();
+      print('Logged out successfully');
+    } catch (e) {
+      print(' logout error: $e');
+    }
+  }
 }
