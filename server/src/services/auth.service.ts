@@ -5,6 +5,7 @@ import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { OAuth2Client } from 'google-auth-library';
 import { User, UserDocument } from 'src/schema/user.schema';
+import { Doctor, DoctorDocument } from 'src/schema/doctor.schema';
 
 @Injectable()
 export class AuthService {
@@ -12,10 +13,11 @@ export class AuthService {
 
    constructor(
       @InjectModel(User.name) private userModel: Model<UserDocument>,
+      @InjectModel(Doctor.name) private doctorModel: Model<DoctorDocument>,
       private jwtService: JwtService,
-   ) {
-      this.googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID); // Sử dụng Google Client ID từ biến môi trường
-   }
+    ){}// {
+   //    this.googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID); // Sử dụng Google Client ID từ biến môi trường
+   // }
 
    async register(username: string, password: string) {
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -26,8 +28,18 @@ export class AuthService {
       return newUser.save();
    }
 
-   async login(username: string, password: string) {
-      const user = await this.userModel.findOne({ username });
+   async login(username: string, password: string, role: string) {
+      let user;
+
+   // Kiểm tra vai trò (user hay doctor)
+   let name = username;
+   if (role === 'user') {
+      user = await this.userModel.findOne({ username });
+   } else if (role === 'doctor') {
+      user = await this.doctorModel.findOne({ name });
+   } else {
+      throw new Error('Invalid role');
+   }
       console.log('Found user:', user); // Test thông tin user có được lấy đúng không
       if (user && (await bcrypt.compare(password, user.password))) {
          const accessToken = this.generateAccessToken(user);
@@ -64,8 +76,8 @@ export class AuthService {
       };
    }
 
-   generateAccessToken(user: UserDocument) {
-      const payload = { username: user.username, email: user.email };
+   generateAccessToken(user: UserDocument | DoctorDocument) {
+      const payload = { username: 'username' in user ? user.username : user.name, role: user.role  };
       return this.jwtService.sign(payload, { secret: process.env.SECRETKEY, expiresIn: '30m' });
    }
 }

@@ -21,8 +21,10 @@ export class User {
    gender: string; 
 
    @Prop({ default: 'local' }) // 'local' hoặc 'google'
-  authProvider: string;
+   authProvider: string;
 
+   @Prop({required: true, default: 'user'})
+   role: string
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

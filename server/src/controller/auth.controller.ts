@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, BadRequestException } from '@nestjs/common';
 import { AuthService } from 'src/services/auth.service';
 
 @Controller('auth')
@@ -9,10 +9,21 @@ export class AuthController {
   async register(@Body() body: { username: string; password: string }) {
     return this.authService.register(body.username, body.password);
   }
+  
   @Post('login')
-  async login(@Body() body: { username: string; password: string }) {
-    return this.authService.login(body.username, body.password);
+  async login(
+    @Body() body: { username: string; password: string; role: string },
+  ) {
+    const { username, password, role } = body;
+
+    // Kiểm tra role hợp lệ
+    if (role !== 'user' && role !== 'doctor') {
+      throw new BadRequestException('Invalid role');
+    }
+
+    return this.authService.login(username, password, role);
   }
+  
   @Post('google')
   async loginWithGoogle(@Body() body: { username: string; email: string }) {
     return this.authService.loginWithGoogle(body.username, body.email);

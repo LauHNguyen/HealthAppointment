@@ -53,7 +53,7 @@ export class AppointmentService {
   if (!appointment) {
     throw new Error('Appointment not found');
   }
-  await appointment.save();
+  await appointment.deleteOne();
   return { message: 'Appointment cancelled successfully' };
 }
 

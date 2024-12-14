@@ -125,10 +125,11 @@ class AppointmentDetail extends StatelessWidget {
       );
 
       if (response.statusCode == 200) {
+        Navigator.pushReplacementNamed(context, '/home');
+
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Lịch hẹn đã được hủy thành công.')),
         );
-        Navigator.pop(context); // Quay lại màn hình trước
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(

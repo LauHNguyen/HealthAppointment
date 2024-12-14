@@ -55,6 +55,9 @@ export class DoctorService {
   async getDoctors() {
     return this.doctorModel.find().exec();
   }
+  async findByDoctorname(name: string): Promise<Doctor | null> {
+    return this.doctorModel.findOne({ name }).exec();
+  }
 
   async getDoctorById(id: string): Promise<Doctor> {
     const doctor = await this.doctorModel.findById(id).exec();

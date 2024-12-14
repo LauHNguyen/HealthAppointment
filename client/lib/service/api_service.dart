@@ -14,11 +14,41 @@ class ApiService {
   // Hàm đăng nhập người dùng
 
   Future<Map<String, String>?> loginUser(
-      String username, String password) async {
+      String username, String password, String role) async {
     try {
       final response = await http.post(
         Uri.parse('$baseUrl/auth/login'),
-        body: jsonEncode({'username': username, 'password': password}),
+        body: jsonEncode(
+            {'username': username, 'password': password, 'role': role}),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 201) {
+        final data = jsonDecode(response.body);
+        String accessToken = data['access_token'];
+        //String refreshToken = data['refresh_token'];
+
+        return {
+          'accessToken': accessToken,
+          //'refreshToken': refreshToken,
+        };
+      } else {
+        print('Login failed: ${response.body}');
+      }
+    } catch (e) {
+      print('Error during login: $e');
+    }
+
+    return null; // Nếu đăng nhập thất bại
+  }
+
+  Future<Map<String, String>?> loginDoctor(
+      String username, String password, String role) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/auth/login'),
+        body:
+            jsonEncode({'name': username, 'password': password, 'role': role}),
         headers: {'Content-Type': 'application/json'},
       );
 

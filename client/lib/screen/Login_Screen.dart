@@ -27,17 +27,21 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   // bool _isPasswordVisible = false;
-
+  String _role = 'user';
   Future<void> login() async {
     // Lấy dữ liệu từ TextField
     final username = _usernameController.text;
     final password = _passwordController.text;
     print('Username: $username');
     print('Password: $password');
-
-    // Gọi API để đăng nhập và lấy cả access token và refresh token
-    Map<String, String>? tokens =
-        await _apiService.loginUser(username, password);
+    Map<String, String>? tokens;
+    if (_role == 'doctor') {
+      tokens = await _apiService.loginUser(username, password, _role);
+      print('Đăng nhập với vai trò bác sĩ');
+    } else {
+      tokens = await _apiService.loginUser(username, password, _role);
+      print('Đăng nhập với vai trò người dùng');
+    }
 
     if (tokens != null) {
       //   // Lấy access token và refresh token từ phản hồi của API
@@ -186,6 +190,32 @@ class _LoginPageState extends State<LoginPage> {
                                       hintText: "Password",
                                       hintStyle: TextStyle(color: Colors.grey),
                                       border: InputBorder.none),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom:
+                                        BorderSide(color: Colors.grey.shade200),
+                                  ),
+                                ),
+                                child: DropdownButton<String>(
+                                  value: _role,
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      _role = newValue!;
+                                    });
+                                  },
+                                  items: <String>['user', 'doctor']
+                                      .map<DropdownMenuItem<String>>(
+                                          (String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(
+                                          value == 'user' ? 'User' : 'Doctor'),
+                                    );
+                                  }).toList(),
                                 ),
                               ),
                             ],
