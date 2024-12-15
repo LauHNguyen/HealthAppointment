@@ -13,6 +13,7 @@ export class AuthController {
   async login(@Body() body: { username: string; password: string }) {
     return this.authService.login(body.username, body.password);
   }
+
   @Post('google')
   async loginWithGoogle(@Body() body: { username: string; email: string }) {
     return this.authService.loginWithGoogle(body.username, body.email);

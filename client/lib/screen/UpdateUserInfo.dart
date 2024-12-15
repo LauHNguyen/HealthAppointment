@@ -1,0 +1,194 @@
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:client/service/flutter_secure_storage.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:intl/intl.dart';
+
+class UpdateUserInfo extends StatefulWidget {
+  @override
+  _UpdateUserInfoState createState() => _UpdateUserInfoState();
+}
+
+class _UpdateUserInfoState extends State<UpdateUserInfo> {
+  final SecureStorageService storage = SecureStorageService();
+  final _formKey = GlobalKey<FormState>();
+  bool _isLoading = false;
+
+  // Controllers
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _genderController = TextEditingController();
+  final TextEditingController _birthOfDateController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchCurrentUserInfo();
+  }
+
+  Future<void> _fetchCurrentUserInfo() async {
+    String? token = await storage.getAccessToken();
+    if (token == null) {
+      throw Exception('No token found');
+    }
+
+    final response = await http.get(
+      Uri.parse('${dotenv.env['LOCALHOST']}/user/profile'),
+      headers: {
+        'Authorization': 'Bearer $token',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      setState(() {
+        _usernameController.text = data['username'] ?? '';
+        _emailController.text = data['email'] ?? '';
+        _genderController.text = data['gender'] ?? '';
+        _birthOfDateController.text = data['birthOfDate'] ?? '';
+      });
+    } else {
+      throw Exception('Failed to load user info');
+    }
+  }
+
+  Future<void> _updateUserInfo() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    String? token = await storage.getAccessToken();
+    if (token == null) {
+      throw Exception('No token found');
+    }
+
+    final response = await http.put(
+      Uri.parse('${dotenv.env['LOCALHOST']}/user/update'),
+      headers: {
+        'Authorization': 'Bearer $token',
+        'Content-Type': 'application/json',
+      },
+      body: json.encode({
+        'username': _usernameController.text,
+        'email': _emailController.text,
+        'gender': _genderController.text,
+        'birthOfDate': _birthOfDateController.text,
+      }),
+    );
+
+    setState(() {
+      _isLoading = false;
+    });
+
+    if (response.statusCode == 200) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Cập nhật thông tin thành công!')),
+      );
+      Navigator.pop(context);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Cập nhật thất bại. Vui lòng thử lại!')),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Cập Nhật Thông Tin'),
+        backgroundColor: Colors.teal,
+      ),
+      body: _isLoading
+          ? Center(child: CircularProgressIndicator())
+          : Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Form(
+                key: _formKey,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _buildInputField(
+                        label: 'Tên người dùng',
+                        controller: _usernameController,
+                      ),
+                      _buildInputField(
+                        label: 'Email',
+                        controller: _emailController,
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                      _buildInputField(
+                        label: 'Giới tính',
+                        controller: _genderController,
+                      ),
+                      _buildInputField(
+                        label: 'Ngày sinh',
+                        controller: _birthOfDateController,
+                        keyboardType: TextInputType.datetime,
+                      ),
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.teal,
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 14.0, horizontal: 24.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ),
+                        onPressed: _updateUserInfo,
+                        child: Text(
+                          'Lưu Thay Đổi',
+                          style: TextStyle(fontSize: 16, color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+    );
+  }
+
+  String formatDate(String? rawDate) {
+    if (rawDate == null || rawDate.isEmpty) return 'Không có dữ liệu';
+
+    try {
+      DateTime dateTime = DateTime.parse(rawDate);
+      return DateFormat('dd/MM/yyyy').format(dateTime);
+    } catch (e) {
+      return 'Không hợp lệ';
+    }
+  }
+
+  Widget _buildInputField({
+    required String label,
+    required TextEditingController controller,
+    TextInputType keyboardType = TextInputType.text,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: TextFormField(
+        controller: controller,
+        keyboardType: keyboardType,
+        validator: (value) =>
+            value == null || value.isEmpty ? 'Vui lòng nhập $label' : null,
+        decoration: InputDecoration(
+          labelText: label,
+          labelStyle: TextStyle(fontSize: 14, color: Colors.grey[700]),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 16.0,
+            horizontal: 12.0,
+          ),
+        ),
+        style: TextStyle(fontSize: 16, color: Colors.black),
+      ),
+    );
+  }
+}
