@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
       );
 
       //   // Lưu cả access token và refresh token vào storage
-      await _secureStorageService.saveToken(accessToken);
+      await _secureStorageService.saveAccessToken(accessToken);
       //await _secureStorageService.saveRefreshToken(refreshToken);
 
       // Chuyển hướng sang màn hình khác

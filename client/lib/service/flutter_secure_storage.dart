@@ -3,8 +3,8 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 class SecureStorageService {
   final _secureStorage = FlutterSecureStorage();
   // Lưu token vào Secure Storage
-  Future<void> saveToken(String token) async {
-    await _secureStorage.write(key: 'jwt_token', value: token);
+  Future<void> saveAccessToken(String accessToken) async {
+    await _secureStorage.write(key: 'access_token', value: accessToken);
   }
 
   // Lấy token từ Secure Storage
@@ -32,4 +32,18 @@ class SecureStorageService {
   Future<void> removeRefreshToken() async {
     await _secureStorage.delete(key: 'refresh_token');
   }
+
+  //lưu id người dùng khi đăng nhập
+  // Future<void> saveUserId(String userId) async {
+  //   await _secureStorage.write(key: 'userId', value: userId);
+  // }
+
+  // Future<String?> getUserId() async {
+  //   return await _secureStorage.read(key: 'userId');
+  // }
+
+  //đăng xuất => xóa hết các token và id trong storage ||| này tham khảo !
+  // Future<void> deleteAll() async {
+  //   await _secureStorage.deleteAll();
+  // }
 }

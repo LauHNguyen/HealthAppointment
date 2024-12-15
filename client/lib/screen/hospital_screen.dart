@@ -1,42 +1,112 @@
 import 'dart:convert';
+import 'package:client/screen/App_taskbar.dart';
+import 'package:client/screen/DoctorListScreen.dart';
 import 'package:client/screen/appointment_screen.dart';
+import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
-class ChooseDoctor extends StatefulWidget {
+class ChooseHospital extends StatefulWidget {
   @override
-  _ChooseDoctorState createState() => _ChooseDoctorState();
+  _ChooseHospitalState createState() => _ChooseHospitalState();
 }
 
-class _ChooseDoctorState extends State<ChooseDoctor> {
-  final storage = FlutterSecureStorage();
+class _ChooseHospitalState extends State<ChooseHospital> {
+  final SecureStorageService storage = SecureStorageService();
 
-  List<dynamic> hospitals = [];
-  List<dynamic> districts = [];
-  List<dynamic> hospitalNames = [];
-  List<dynamic> doctors = [];
+  List<dynamic> hospitals = []; // Danh sách bệnh viện
+  List<dynamic> doctors = []; // Danh sách bác sĩ
+  List<dynamic> districts = []; // Danh sách quận/huyện
+  List<dynamic> filteredHospitals = []; // Danh sách bệnh viện đã lọc
 
-  String? selectedDistrict;
-  String? selectedHospitalName;
-  String? userId = '67233bfb196c0855e66d87a0';
+  String? userId;
+  String? selectedDistrict; // Quận được chọn
+  String? selectedHospitalName; // Bệnh viện được chọn
+  String? _accessToken;
 
   @override
   void initState() {
     super.initState();
-    loadInitialData();
+    loadInitialData(); // Gọi hàm tải dữ liệu ban đầu
   }
 
   Future<void> loadInitialData() async {
-    // await fetchUserId();
     await fetchHospitals();
     await fetchDoctors();
+    await fetchUserId();
+    _fetchTokens();
   }
 
-  // Future<void> fetchUserId() async {
-  //   userId = await storage.read(key: 'userId');
-  // }
+  Future<void> _fetchTokens() async {
+    // Lấy access token và refresh token từ TokenService
+    String? accessToken = await storage.getAccessToken();
+
+    setState(() {
+      _accessToken = accessToken;
+    });
+  }
+
+  Future<void> fetchUserId() async {
+    try {
+      String? token = await storage.getAccessToken();
+      if (token == null) {
+        throw Exception('No token found');
+      }
+      final response = await http.get(
+        Uri.parse('${dotenv.env['LOCALHOST']}/user/id'),
+        headers: {
+          'Authorization': 'Bearer $token',
+        },
+      );
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        setState(() {
+          userId = data['userId']; // Trích xuất giá trị userId
+        });
+      } else {
+        throw Exception('Failed to get user ID');
+      }
+    } catch (e) {
+      print("Error fetching User Id: $e");
+    }
+  }
+
+  Future<void> fetchHospitals() async {
+    try {
+      final response =
+          await http.get(Uri.parse('${dotenv.env['LOCALHOST']}/hospital/load'));
+      if (response.statusCode == 200) {
+        setState(() {
+          hospitals = json.decode(response.body);
+          districts = hospitals
+              .map((hospital) => hospital['district'] ?? 'Unknown District')
+              .toSet()
+              .toList();
+          filteredHospitals = hospitals; // Khởi tạo danh sách bệnh viện đã lọc
+        });
+      } else {
+        throw Exception('Failed to load hospitals');
+      }
+    } catch (e) {
+      print("Error fetching hospitals: $e");
+    }
+  }
+
+  void filterHospitalsByDistrict(String? district) {
+    setState(() {
+      if (district == 'Tất cả') {
+        // Nếu chọn "Tất cả", hiển thị tất cả bệnh viện
+        filteredHospitals = hospitals;
+      } else {
+        // Lọc bệnh viện theo quận
+        filteredHospitals = hospitals
+            .where((hospital) => hospital['district'] == district)
+            .toList();
+      }
+    });
+  }
 
   Future<void> fetchDoctors() async {
     try {
@@ -54,72 +124,7 @@ class _ChooseDoctorState extends State<ChooseDoctor> {
     }
   }
 
-  Future<void> fetchHospitals() async {
-    try {
-      final response =
-          await http.get(Uri.parse('${dotenv.env['LOCALHOST']}/hospital/load'));
-      if (response.statusCode == 200) {
-        setState(() {
-          hospitals = json.decode(response.body);
-
-          districts = hospitals
-              .map((hospital) => hospital['district'] ?? 'Unknown District')
-              .toSet()
-              .toList();
-        });
-      } else {
-        throw Exception('Failed to load hospitals');
-      }
-    } catch (e) {
-      print("Error fetching hospitals: $e");
-    }
-  }
-
-  void updateHospitalNames() {
-    if (selectedDistrict != null) {
-      setState(() {
-        hospitalNames = hospitals
-            .where((hospital) => hospital['district'] == selectedDistrict)
-            .map((hospital) => hospital['name'] ?? 'Unknown Hospital')
-            .toList();
-        selectedHospitalName = null;
-      });
-    }
-  }
-
-  Future<void> filterDoctors() async {
-    try {
-      String url = '${dotenv.env['LOCALHOST']}/doctor/filter';
-      List<String> queryParams = [];
-
-      if (selectedDistrict != null && selectedDistrict!.isNotEmpty) {
-        queryParams.add('district=${Uri.encodeComponent(selectedDistrict!)}');
-      }
-      if (selectedHospitalName != null && selectedHospitalName!.isNotEmpty) {
-        queryParams
-            .add('hospitalName=${Uri.encodeComponent(selectedHospitalName!)}');
-      }
-
-      if (queryParams.isNotEmpty) {
-        url += '?' + queryParams.join('&');
-      }
-
-      final response = await http.get(Uri.parse(url));
-
-      if (response.statusCode == 200) {
-        setState(() {
-          doctors = json.decode(response.body);
-        });
-      } else {
-        throw Exception('Failed to load doctors');
-      }
-    } catch (e) {
-      print("Error fetching doctors: $e");
-    }
-  }
-
   void navigateToDoctorDetail(dynamic doctor) {
-    // if (userId != null) {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -134,87 +139,153 @@ class _ChooseDoctorState extends State<ChooseDoctor> {
         ),
       ),
     );
-    // } else {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     SnackBar(content: Text('Không tìm thấy userId!')),
-    //   );
-    // }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Danh sách Bệnh Viện")),
+      appBar: AppBar(
+        title: Text("Danh sách Bệnh Viện"),
+        backgroundColor: Colors.teal,
+      ),
+      drawer: _accessToken != null ? AppTaskbar(token: _accessToken!) : null,
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DropdownButton<String>(
-              value: selectedDistrict,
-              hint: Text("Hãy chọn Quận/Huyện"),
-              isExpanded: true,
-              items: districts.map((district) {
-                return DropdownMenuItem<String>(
-                  value: district,
-                  child: Text(district),
-                );
-              }).toList(),
-              onChanged: (value) {
-                setState(() {
-                  selectedDistrict = value;
-                  updateHospitalNames();
-                });
-              },
-            ),
-            const SizedBox(height: 20),
-            DropdownButton<String>(
-              value: selectedHospitalName,
-              hint: Text("Hãy chọn Bệnh viện"),
-              isExpanded: true,
-              items: hospitalNames.map((name) {
-                return DropdownMenuItem<String>(
-                  value: name,
-                  child: Text(name),
-                );
-              }).toList(),
-              onChanged: selectedDistrict == null
-                  ? null
-                  : (value) {
+            // Thanh tìm kiếm và Dropdown cho quận
+            Row(
+              children: [
+                // Thanh tìm kiếm
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Nhập tên bệnh viện",
+                      prefixIcon: Icon(Icons.search),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onChanged: (value) {
+                      value = value
+                          .trim()
+                          .toLowerCase(); // Xử lý chuỗi tìm kiếm, loại bỏ khoảng trắng và chuyển thành chữ thường
                       setState(() {
-                        selectedHospitalName = value;
+                        filteredHospitals = hospitals
+                            .where((hospital) =>
+                                hospital['name'] != null &&
+                                hospital['name']!.toLowerCase().contains(
+                                    value)) // Tìm kiếm không phân biệt hoa/thường
+                            .toList();
                       });
                     },
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: filterDoctors,
-              child: Text("Lọc"),
-            ),
-            const SizedBox(height: 20),
-            if (doctors.isNotEmpty)
-              Expanded(
-                child: ListView.builder(
-                  itemCount: doctors.length,
-                  itemBuilder: (context, index) {
-                    final doctor = doctors[index];
-                    return ListTile(
-                      title: Text(doctor['name'] ?? 'Unknown Doctor'),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(doctor['specialty'] ?? 'Unknown Specialty'),
-                          Text(
-                              "Giờ làm: ${doctor['startTime'] ?? 'N/A'} - ${doctor['endTime'] ?? 'N/A'}"),
-                          Text(
-                              "Ngày làm: ${(doctor['workingDays'] ?? []).join(', ')}"),
-                        ],
-                      ),
-                      onTap: () => navigateToDoctorDetail(doctor),
-                    );
-                  },
+                  ),
                 ),
-              ),
+                const SizedBox(width: 20),
+                // Dropdown cho quận
+                DropdownButton<String>(
+                  hint: Text("Chọn quận"),
+                  value: selectedDistrict,
+                  onChanged: (value) {
+                    setState(() {
+                      selectedDistrict = value;
+                      filterHospitalsByDistrict(value);
+                    });
+                  },
+                  items: [
+                    // Thêm giá trị "Tất cả"
+                    DropdownMenuItem<String>(
+                      value: 'Tất cả',
+                      child: Text('Tất cả'),
+                    ),
+                    // Thêm các quận từ danh sách districts
+                    ...districts.toSet().map((district) {
+                      return DropdownMenuItem<String>(
+                        value: district,
+                        child: Text(district),
+                      );
+                    }).toList(),
+                  ],
+                )
+              ],
+            ),
+            const SizedBox(height: 20),
+
+            // Danh sách bệnh viện
+            Expanded(
+              child: filteredHospitals.isNotEmpty
+                  ? ListView.builder(
+                      itemCount: filteredHospitals.length,
+                      itemBuilder: (context, index) {
+                        final hospital = filteredHospitals[index];
+                        return InkWell(
+                          onTap: () {
+                            // Chuyển đến màn hình danh sách bác sĩ của bệnh viện này
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DoctorListScreen(
+                                  hospitalName:
+                                      hospital['name'], // Truyền tên bệnh viện
+                                ),
+                              ),
+                            );
+                          },
+                          child: Card(
+                            elevation: 4,
+                            margin: const EdgeInsets.symmetric(vertical: 10),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor: Colors.teal[100],
+                                    child: Icon(
+                                      Icons.local_hospital,
+                                      color: Colors.teal,
+                                      size: 30,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 16),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          hospital['name'] ?? "Tên bệnh viện",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                            color: Colors.teal[900],
+                                          ),
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          "Chuyên khoa: ${hospital['specialty'] ?? 'Không rõ'}",
+                                          style: TextStyle(
+                                              color: Colors.grey[600]),
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          "Địa chỉ: ${hospital['address'] ?? 'Không rõ'}",
+                                          style: TextStyle(
+                                              color: Colors.grey[600]),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : Center(child: Text("Không tìm thấy bệnh viện")),
+            )
           ],
         ),
       ),

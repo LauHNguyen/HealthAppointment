@@ -16,10 +16,7 @@ export class DoctorController {
   }
 
   @Get('filter')
-  async filterDoctors(
-    @Query('district') district?: string,
-    @Query('hospitalName') hospitalName?: string,
-  ) {
-    return this.doctorService.filterDoctors(district, hospitalName);
+  async filterDoctors(@Query('hospitalName') hospitalName?: string) {
+    return this.doctorService.filterDoctors(hospitalName);
   }
 }

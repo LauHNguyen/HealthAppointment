@@ -1,5 +1,5 @@
 import 'package:client/routes/Routes.dart';
-import 'package:client/screen/hospital_screen.dart';
+import 'package:client/screen/Hospital_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _navigateToHospitalScreen() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ChooseDoctor()),
+      MaterialPageRoute(builder: (context) => ChooseHospital()),
     );
   }
 
