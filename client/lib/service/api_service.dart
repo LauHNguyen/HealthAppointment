@@ -1,10 +1,15 @@
 import 'dart:convert';
 import 'package:client/models/Login.dto.dart';
 import 'package:client/service/flutter_secure_storage.dart';
+
+=======
+
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
+
+
   final SecureStorageService storage = SecureStorageService();
 
   final String baseUrl = '${dotenv.env['LOCALHOST']}'; // Đặt URL của server API
@@ -65,37 +70,67 @@ class ApiService {
     }
   }
 
-  // Hàm lấy tỷ lệ hoàn thành
-  Future<double?> getProfileCompletionbytoken(String token) async {
-    final response = await http.get(
-      Uri.parse('$baseUrl/user/profile-completion'),
-      headers: {
-        'Authorization': 'Bearer $token', // Thêm token vào header
-      },
-    );
+  Future<Map<String, String>?> loginWithGoogle(
+      String? username, String email) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/auth/google'),
+        body: jsonEncode({'username': username, 'email': email}),
+        headers: {'Content-Type': 'application/json'},
+      );
 
-    if (response.statusCode == 200) {
-      final responseData = json.decode(response.body);
-      // Kiểm tra xem dữ liệu trả về có phải là một object hay không
-      if (responseData is Map<String, dynamic>) {
-        final completion = responseData['completion'];
-        if (completion is int) {
-          return completion.toDouble(); // Ép kiểu int sang double nếu cần
-        } else if (completion is double) {
-          return completion; // Trả về nếu đã là double
-        } else {
-          print('Unexpected data type for completion');
-          return null;
-        }
+      if (response.statusCode == 201) {
+        final data = jsonDecode(response.body);
+        String accessToken = data['access_token'];
+        // String refreshToken = data['refresh_token'];
+
+        // await storage.write(key: 'accessToken', value: accessToken);
+
+        return {
+          'accessToken': accessToken,
+          // 'refreshToken': refreshToken,
+        };
       } else {
-        print('Unexpected response format');
-        return null;
+        print('Google login failed: ${response.body}');
       }
-    } else {
-      print('Failed to fetch profile completion: ${response.statusCode}');
-      return null;
+    } catch (e) {
+      print('Error during Google login: $e');
     }
+
+    return null; // Nếu đăng nhập thất bại
   }
+
+    // Kiểm tra xem dữ liệu trả về có phải là một object hay không
+  //     if (responseData is Map<String, dynamic>) {
+  //       final completion = responseData['completion'];
+  //       if (completion is int) {
+  //        // Hàm lấy tỷ lệ hoàn thành
+  // Future<double?> getProfileCompletionbytoken(String token) async {
+  //   final response = await http.get(
+  //     Uri.parse('$baseUrl/user/profile-completion'),
+  //     headers: {
+  //       'Authorization': 'Bearer $token', // Thêm token vào header
+  //     },
+  //   );
+
+  //   if (response.statusCode == 200) {
+  //     final responseData = json.decode(response.body);
+  //    return completion.toDouble(); // Ép kiểu int sang double nếu cần
+  //       } else if (completion is double) {
+  //         return completion; // Trả về nếu đã là double
+  //       } else {
+  //         print('Unexpected data type for completion');
+  //         return null;
+  //       }
+  //     } else {
+  //       print('Unexpected response format');
+  //       return null;
+  //     }
+  //   } else {
+  //     print('Failed to fetch profile completion: ${response.statusCode}');
+  //     return null;
+  //   }
+  // }
 
   Future<void> updateUser(
       String token, Map<String, dynamic> updatedUserData) async {
@@ -116,6 +151,8 @@ class ApiService {
   Future<void> logout() async {
     try {
       await storage.removeAccessToken();
+
+
 
       print('Logged out successfully');
     } catch (e) {

@@ -1,6 +1,8 @@
 import 'dart:convert';
+
 import 'package:client/screen/App_taskbar.dart';
 import 'package:client/screen/DoctorListScreen.dart';
+
 import 'package:client/screen/appointment_screen.dart';
 import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
@@ -13,12 +15,14 @@ class ChooseHospital extends StatefulWidget {
 }
 
 class _ChooseHospitalState extends State<ChooseHospital> {
+
   final SecureStorageService storage = SecureStorageService();
 
   List<dynamic> hospitals = []; // Danh sách bệnh viện
   List<dynamic> doctors = []; // Danh sách bác sĩ
   List<dynamic> districts = []; // Danh sách quận/huyện
   List<dynamic> filteredHospitals = []; // Danh sách bệnh viện đã lọc
+
 
   String? userId;
   String? selectedDistrict; // Quận được chọn
@@ -32,15 +36,21 @@ class _ChooseHospitalState extends State<ChooseHospital> {
   }
 
   Future<void> loadInitialData() async {
+
     await fetchHospitals();
     await fetchDoctors();
     await fetchUserId();
+
     _fetchTokens();
   }
 
   Future<void> _fetchTokens() async {
     // Lấy access token và refresh token từ TokenService
     String? accessToken = await storage.getAccessToken();
+
+
+
+  
 
     setState(() {
       _accessToken = accessToken;
@@ -141,9 +151,11 @@ class _ChooseHospitalState extends State<ChooseHospital> {
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         title: Text("Danh sách Bệnh Viện"),
         backgroundColor: Colors.teal,

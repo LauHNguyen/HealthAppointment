@@ -47,4 +47,27 @@ export class AppointmentService {
      .populate('user doctor')
      .exec();
  }
+
+ async cancelAppointment(appointmentId: string): Promise<any> {
+  const appointment = await this.appointmentModel.findById(appointmentId);
+  if (!appointment) {
+    throw new Error('Appointment not found');
+  }
+  await appointment.save();
+  return { message: 'Appointment cancelled successfully' };
+}
+
+async updateAppointment(appointmentId: string, updateData: Partial<CreateAppointmentDto>): Promise<any> {
+  const appointment = await this.appointmentModel.findByIdAndUpdate(
+    appointmentId,
+    updateData,
+    { new: true }, // Trả về document đã cập nhật
+  );
+  if (!appointment) {
+    throw new Error('Appointment not found');
+  }
+  return appointment;
+}
+
+
 }

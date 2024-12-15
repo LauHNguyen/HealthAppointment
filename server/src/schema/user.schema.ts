@@ -20,6 +20,9 @@ export class User {
    @Prop()
    gender: string; 
 
+   @Prop({ default: 'local' }) // 'local' hoặc 'google'
+  authProvider: string;
+
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
