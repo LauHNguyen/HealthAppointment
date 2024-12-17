@@ -23,7 +23,6 @@ export class AuthController {
 
     return this.authService.login(username, password, role);
   }
-  
   @Post('google')
   async loginWithGoogle(@Body() body: { username: string; email: string }) {
     return this.authService.loginWithGoogle(body.username, body.email);

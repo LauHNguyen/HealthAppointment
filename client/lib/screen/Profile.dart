@@ -110,7 +110,8 @@ class _UserProfile extends State<UserInfo> {
                         // Birth of Date
                         _buildInputField(
                           label: 'Ngày sinh',
-                          value: _formatDate(userData?['birthOfDate']),
+                          value: _formatDate(userData?['birthOfDate']) ??
+                              'Chưa cung cấp',
                         ),
 
                         SizedBox(height: 20),

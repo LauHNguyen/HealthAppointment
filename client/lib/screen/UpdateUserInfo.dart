@@ -60,7 +60,7 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
         _usernameController.text = data['username'] ?? '';
         _emailController.text = data['email'] ?? '';
         _genderController.text = data['gender'] ?? '';
-        _birthOfDateController.text = _formatDate(data?['birthOfDate']);
+        _birthOfDateController.text = _formatDate(data?['birthOfDate'] ?? '');
       });
     } else {
       throw Exception('Failed to load user info');
@@ -78,6 +78,7 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
     if (token == null) {
       throw Exception('No token found');
     }
+
     String formattedBirthDate = '';
     try {
       DateTime parsedDate =
@@ -92,6 +93,7 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
       });
       return;
     }
+
     final response = await http.put(
       Uri.parse('${dotenv.env['LOCALHOST']}/user/update'),
       headers: {

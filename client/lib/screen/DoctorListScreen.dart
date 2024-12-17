@@ -62,6 +62,7 @@ class _DoctorListScreenState extends State<DoctorListScreen> {
       if (token == null) {
         throw Exception('No token found');
       }
+
       String url = '${dotenv.env['LOCALHOST']}/doctor/filter';
 
       // Tạo Map chứa các tham số query

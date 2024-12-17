@@ -1,18 +1,15 @@
 import 'dart:convert';
 import 'package:client/models/Login.dto.dart';
 import 'package:client/service/flutter_secure_storage.dart';
-// import 'package:client/service/token_service.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  // final TokenService tokenService = TokenService();
   final SecureStorageService storage = SecureStorageService();
 
   final String baseUrl = '${dotenv.env['LOCALHOST']}'; // Đặt URL của server API
 
   // Hàm đăng nhập người dùng
-
   Future<Map<String, String>?> loginUser(
       String username, String password, String role) async {
     try {
@@ -56,7 +53,6 @@ class ApiService {
         final data = jsonDecode(response.body);
         String accessToken = data['access_token'];
         //String refreshToken = data['refresh_token'];
-
         return {
           'accessToken': accessToken,
           //'refreshToken': refreshToken,
@@ -67,7 +63,6 @@ class ApiService {
     } catch (e) {
       print('Error during login: $e');
     }
-
     return null; // Nếu đăng nhập thất bại
   }
 
@@ -130,7 +125,11 @@ class ApiService {
     return null; // Nếu đăng nhập thất bại
   }
 
-  // Hàm lấy tỷ lệ hoàn thành
+  // Kiểm tra xem dữ liệu trả về có phải là một object hay không
+  //     if (responseData is Map<String, dynamic>) {
+  //       final completion = responseData['completion'];
+  //       if (completion is int) {
+  //        // Hàm lấy tỷ lệ hoàn thành
   // Future<double?> getProfileCompletionbytoken(String token) async {
   //   final response = await http.get(
   //     Uri.parse('$baseUrl/user/profile-completion'),
@@ -141,11 +140,7 @@ class ApiService {
 
   //   if (response.statusCode == 200) {
   //     final responseData = json.decode(response.body);
-  //     // Kiểm tra xem dữ liệu trả về có phải là một object hay không
-  //     if (responseData is Map<String, dynamic>) {
-  //       final completion = responseData['completion'];
-  //       if (completion is int) {
-  //         return completion.toDouble(); // Ép kiểu int sang double nếu cần
+  //    return completion.toDouble(); // Ép kiểu int sang double nếu cần
   //       } else if (completion is double) {
   //         return completion; // Trả về nếu đã là double
   //       } else {
@@ -181,7 +176,7 @@ class ApiService {
   Future<void> logout() async {
     try {
       await storage.removeAccessToken();
-      //await storage.removeRefreshToken();
+
       print('Logged out successfully');
     } catch (e) {
       print(' logout error: $e');

@@ -37,7 +37,6 @@ class _ChooseHospitalState extends State<ChooseHospital> {
     await fetchHospitals();
     // await fetchDoctors();
     await fetchUserId();
-
     _fetchTokens();
   }
 
