@@ -1,11 +1,19 @@
+import 'package:client/providers/chat_provider.dart';
 import 'package:client/routes/Routes.dart';
-import 'package:client/screen/hospital_screen.dart';
+import 'package:client/screen/Hospital_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ChatProvider(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -43,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _navigateToHospitalScreen() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ChooseDoctor()),
+      MaterialPageRoute(builder: (context) => ChooseHospital()),
     );
   }
 

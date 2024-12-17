@@ -1,13 +1,15 @@
 import 'dart:convert';
-import 'package:client/screen/appointment_detail.dart';
+import 'package:client/screen/Appointment_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class AppointmentList extends StatefulWidget {
   final String userId;
+  final String role;
 
-  const AppointmentList({required this.userId});
+  const AppointmentList({required this.userId, required this.role, Key? key})
+      : super(key: key);
 
   @override
   State<AppointmentList> createState() => _AppointmentListState();
@@ -25,11 +27,11 @@ class _AppointmentListState extends State<AppointmentList> {
 
   Future<void> _fetchAppointments() async {
     try {
-      final response = await http.get(
-        Uri.parse(
-          '${dotenv.env['LOCALHOST']}/appointment/user/${widget.userId}',
-        ),
-      );
+      final String endpoint = widget.role == 'doctor'
+          ? '${dotenv.env['LOCALHOST']}/appointment/doctor/${widget.userId}'
+          : '${dotenv.env['LOCALHOST']}/appointment/user/${widget.userId}';
+
+      final response = await http.get(Uri.parse(endpoint));
 
       if (response.statusCode == 200) {
         setState(() {
@@ -58,7 +60,9 @@ class _AppointmentListState extends State<AppointmentList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lịch hẹn của bạn'),
+        title: Text(widget.role == 'doctor'
+            ? 'Lịch hẹn của bác sĩ'
+            : 'Lịch hẹn của bạn'),
       ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -68,10 +72,11 @@ class _AppointmentListState extends State<AppointmentList> {
                   itemCount: appointments.length,
                   itemBuilder: (context, index) {
                     final appointment = appointments[index];
-                    final doctor = appointment['doctor'];
-                    final hospital = appointment['hospitalName'];
                     final appointmentDate = appointment['appointmentDate'];
                     final appointmentTime = appointment['appointmentTime'];
+                    final otherName = widget.role == 'doctor'
+                        ? appointment['user']['username']
+                        : appointment['doctor']['name'];
 
                     return Card(
                       margin: const EdgeInsets.symmetric(
@@ -79,26 +84,19 @@ class _AppointmentListState extends State<AppointmentList> {
                         vertical: 8,
                       ),
                       child: ListTile(
-                        title:
-                            //Text('${doctor['name']} (${doctor['specialty']})'),
-                            Text(
-                                'Ngày: ${formatDate(appointmentDate)}\nGiờ: $appointmentTime'),
-                        //Text('Giờ: $appointmentTime'),
-                        // subtitle: Column(
-                        //   crossAxisAlignment: CrossAxisAlignment.start,
-                        //   children: [
-                        //     Text('Bệnh viện: $hospital'),
-                        //     Text('Ngày: ${formatDate(appointmentDate)}'),
-                        //     Text('Giờ: $appointmentTime'),
-                        //   ],
-                        // ),
+                        title: Text(
+                            'Ngày: ${formatDate(appointmentDate)}\nGiờ: $appointmentTime'),
+                        subtitle: Text(widget.role == 'doctor'
+                            ? 'Bệnh nhân: $otherName'
+                            : 'Bác sĩ: $otherName'),
                         trailing: const Icon(Icons.arrow_forward_ios),
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  AppointmentDetail(appointment: appointment),
+                              builder: (context) => AppointmentDetail(
+                                  appointment: appointment,
+                                  userRole: widget.role),
                             ),
                           );
                         },

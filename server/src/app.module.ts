@@ -8,6 +8,7 @@ import { AuthModule } from './models/auth.module';
 import { HospitalModule } from './models/hospital.module';
 import { DoctorModule } from './models/doctor.module';
 import { AppointmentModule } from './models/appointment.module';
+import { ChatModule } from './chat/chat.module';
 
 
 
@@ -21,6 +22,7 @@ import { AppointmentModule } from './models/appointment.module';
     HospitalModule,
     DoctorModule,
     AppointmentModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [AppService],

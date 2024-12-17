@@ -1,43 +1,43 @@
 import 'dart:convert';
-import 'package:client/screen/Taskbar_screen.dart';
+
+import 'package:client/screen/App_taskbar.dart';
+import 'package:client/screen/DoctorListScreen.dart';
+
 import 'package:client/screen/appointment_screen.dart';
 import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
-class ChooseDoctor extends StatefulWidget {
+class ChooseHospital extends StatefulWidget {
   @override
-  _ChooseDoctorState createState() => _ChooseDoctorState();
+  _ChooseHospitalState createState() => _ChooseHospitalState();
 }
 
-class _ChooseDoctorState extends State<ChooseDoctor> {
+class _ChooseHospitalState extends State<ChooseHospital> {
   final SecureStorageService storage = SecureStorageService();
 
-  List<dynamic> hospitals = [];
-  List<dynamic> districts = [];
-  List<dynamic> hospitalNames = [];
-  List<dynamic> doctors = [];
+  List<dynamic> hospitals = []; // Danh sách bệnh viện
+  List<dynamic> doctors = []; // Danh sách bác sĩ
+  List<dynamic> districts = []; // Danh sách quận/huyện
+  List<dynamic> filteredHospitals = []; // Danh sách bệnh viện đã lọc
 
-  String? selectedDistrict;
-  String? selectedHospitalName;
   String? userId;
+  String? selectedDistrict; // Quận được chọn
+  String? selectedHospitalName; // Bệnh viện được chọn
   String? _accessToken;
-
-  // bool isChatOpen = false;
-  // List<Map<String, String>> _messages = [];
-  // TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    loadInitialData();
+    loadInitialData(); // Gọi hàm tải dữ liệu ban đầu
   }
 
   Future<void> loadInitialData() async {
-    await fetchUserId();
     await fetchHospitals();
-    await fetchDoctors();
+    // await fetchDoctors();
+    await fetchUserId();
+
     _fetchTokens();
   }
 
@@ -76,22 +76,6 @@ class _ChooseDoctorState extends State<ChooseDoctor> {
     }
   }
 
-  Future<void> fetchDoctors() async {
-    try {
-      final response =
-          await http.get(Uri.parse('${dotenv.env['LOCALHOST']}/doctor/load'));
-      if (response.statusCode == 200) {
-        setState(() {
-          doctors = json.decode(response.body);
-        });
-      } else {
-        throw Exception('Failed to load doctors');
-      }
-    } catch (e) {
-      print("Error fetching doctors: $e");
-    }
-  }
-
   Future<void> fetchHospitals() async {
     try {
       final response =
@@ -99,11 +83,11 @@ class _ChooseDoctorState extends State<ChooseDoctor> {
       if (response.statusCode == 200) {
         setState(() {
           hospitals = json.decode(response.body);
-
           districts = hospitals
               .map((hospital) => hospital['district'] ?? 'Unknown District')
               .toSet()
               .toList();
+          filteredHospitals = hospitals; // Khởi tạo danh sách bệnh viện đã lọc
         });
       } else {
         throw Exception('Failed to load hospitals');
@@ -113,273 +97,200 @@ class _ChooseDoctorState extends State<ChooseDoctor> {
     }
   }
 
-  void updateHospitalNames() {
-    if (selectedDistrict != null) {
-      setState(() {
-        hospitalNames = hospitals
-            .where((hospital) => hospital['district'] == selectedDistrict)
-            .map((hospital) => hospital['name'] ?? 'Unknown Hospital')
-            .toList();
-        selectedHospitalName = null;
-      });
-    }
-  }
-
-  Future<void> filterDoctors() async {
-    try {
-      String url = '${dotenv.env['LOCALHOST']}/doctor/filter';
-      List<String> queryParams = [];
-
-      if (selectedDistrict != null && selectedDistrict!.isNotEmpty) {
-        queryParams.add('district=${Uri.encodeComponent(selectedDistrict!)}');
-      }
-      if (selectedHospitalName != null && selectedHospitalName!.isNotEmpty) {
-        queryParams
-            .add('hospitalName=${Uri.encodeComponent(selectedHospitalName!)}');
-      }
-
-      if (queryParams.isNotEmpty) {
-        url += '?' + queryParams.join('&');
-      }
-
-      final response = await http.get(Uri.parse(url));
-
-      if (response.statusCode == 200) {
-        setState(() {
-          doctors = json.decode(response.body);
-        });
+  void filterHospitalsByDistrict(String? district) {
+    setState(() {
+      if (district == 'Tất cả') {
+        // Nếu chọn "Tất cả", hiển thị tất cả bệnh viện
+        filteredHospitals = hospitals;
       } else {
-        throw Exception('Failed to load doctors');
+        // Lọc bệnh viện theo quận
+        filteredHospitals = hospitals
+            .where((hospital) => hospital['district'] == district)
+            .toList();
       }
-    } catch (e) {
-      print("Error fetching doctors: $e");
-    }
+    });
   }
 
-  void navigateToDoctorDetail(dynamic doctor) {
-    // if (userId != null) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => Appointment(
-          userId: userId!,
-          doctorId: doctor['_id'],
-          doctorName: doctor['name'],
-          hospitalName: doctor['hospitalName'],
-          workingHoursStart: doctor['startTime'],
-          workingHoursEnd: doctor['endTime'],
-          workingDays: List<String>.from(doctor['workingDays'] ?? []),
-        ),
-      ),
-    );
-    // } else {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     SnackBar(content: Text('Không tìm thấy userId!')),
-    //   );
-    // }
-  }
-
-  // Future<void> _sendMessage() async {
-  //   String question = _controller.text;
-  //   _controller.clear();
-
-  //   setState(() {
-  //     _messages.add({"sender": "user", "text": question});
-  //   });
-
-  //   final response = await http.post(
-  //     Uri.parse('${dotenv.env['LOCALHOST']}/ask-ai'),
-  //     headers: {"Content-Type": "application/json"},
-  //     body: jsonEncode({"question": question}),
-  //   );
-
-  //   if (response.statusCode == 200) {
-  //     final data = jsonDecode(response.body);
-  //     setState(() {
-  //       _messages.add({"sender": "ai", "text": data['answer']});
-  //     });
-  //   } else {
-  //     setState(() {
-  //       _messages.add(
-  //           {"sender": "ai", "text": "Xin lỗi, không thể trả lời lúc này."});
-  //     });
+  // Future<void> fetchDoctors() async {
+  //   try {
+  //     final response =
+  //         await http.get(Uri.parse('${dotenv.env['LOCALHOST']}/doctor/load'));
+  //     if (response.statusCode == 200) {
+  //       setState(() {
+  //         doctors = json.decode(response.body);
+  //       });
+  //     } else {
+  //       throw Exception('Failed to load doctors');
+  //     }
+  //   } catch (e) {
+  //     print("Error fetching doctors: $e");
   //   }
   // }
 
-  // void toggleChat() {
-  //   setState(() {
-  //     isChatOpen = !isChatOpen;
-  //   });
+  // void navigateToDoctorDetail(dynamic doctor) {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) => Appointment(
+  //         userId: userId!,
+  //         doctorId: doctor['_id'],
+  //         doctorName: doctor['name'],
+  //         hospitalName: doctor['hospitalName'],
+  //         workingHoursStart: doctor['startTime'],
+  //         workingHoursEnd: doctor['endTime'],
+  //         workingDays: List<String>.from(doctor['workingDays'] ?? []),
+  //       ),
+  //     ),
+  //   );
   // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Danh sách Bệnh Viện")),
+      appBar: AppBar(
+        title: Text("Danh sách Bệnh Viện"),
+        backgroundColor: Colors.teal,
+      ),
       drawer: _accessToken != null ? AppTaskbar(token: _accessToken!) : null,
-      body: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            // Thanh tìm kiếm và Dropdown cho quận
+            Row(
               children: [
+                // Thanh tìm kiếm
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Nhập tên bệnh viện",
+                      prefixIcon: Icon(Icons.search),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onChanged: (value) {
+                      value = value
+                          .trim()
+                          .toLowerCase(); // Xử lý chuỗi tìm kiếm, loại bỏ khoảng trắng và chuyển thành chữ thường
+                      setState(() {
+                        filteredHospitals = hospitals
+                            .where((hospital) =>
+                                hospital['name'] != null &&
+                                hospital['name']!.toLowerCase().contains(
+                                    value)) // Tìm kiếm không phân biệt hoa/thường
+                            .toList();
+                      });
+                    },
+                  ),
+                ),
+                const SizedBox(width: 20),
+                // Dropdown cho quận
                 DropdownButton<String>(
+                  hint: Text("Chọn quận"),
                   value: selectedDistrict,
-                  hint: Text("Hãy chọn Quận/Huyện"),
-                  isExpanded: true,
-                  items: districts.map((district) {
-                    return DropdownMenuItem<String>(
-                      value: district,
-                      child: Text(district),
-                    );
-                  }).toList(),
                   onChanged: (value) {
                     setState(() {
                       selectedDistrict = value;
-                      updateHospitalNames();
+                      filterHospitalsByDistrict(value);
                     });
                   },
-                ),
-                const SizedBox(height: 20),
-                DropdownButton<String>(
-                  value: selectedHospitalName,
-                  hint: Text("Hãy chọn Bệnh viện"),
-                  isExpanded: true,
-                  items: hospitalNames.map((name) {
-                    return DropdownMenuItem<String>(
-                      value: name,
-                      child: Text(name),
-                    );
-                  }).toList(),
-                  onChanged: selectedDistrict == null
-                      ? null
-                      : (value) {
-                          setState(() {
-                            selectedHospitalName = value;
-                          });
-                        },
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: filterDoctors,
-                  child: Text("Lọc"),
-                ),
-                const SizedBox(height: 20),
-                if (doctors.isNotEmpty)
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: doctors.length,
-                      itemBuilder: (context, index) {
-                        final doctor = doctors[index];
-                        return ListTile(
-                          title: Text(doctor['name'] ?? 'Unknown Doctor'),
-                          subtitle: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(doctor['specialty'] ?? 'Unknown Specialty'),
-                              Text(
-                                  "Giờ làm: ${doctor['startTime'] ?? 'N/A'} - ${doctor['endTime'] ?? 'N/A'}"),
-                              Text(
-                                  "Ngày làm: ${(doctor['workingDays'] ?? []).join(', ')}"),
-                            ],
-                          ),
-                          onTap: () => navigateToDoctorDetail(doctor),
-                        );
-                      },
+                  items: [
+                    // Thêm giá trị "Tất cả"
+                    DropdownMenuItem<String>(
+                      value: 'Tất cả',
+                      child: Text('Tất cả'),
                     ),
-                  ),
+                    // Thêm các quận từ danh sách districts
+                    ...districts.toSet().map((district) {
+                      return DropdownMenuItem<String>(
+                        value: district,
+                        child: Text(district),
+                      );
+                    }).toList(),
+                  ],
+                )
               ],
             ),
-          ),
+            const SizedBox(height: 20),
 
-          // Nút mở hộp chat ở góc dưới
-          //   Positioned(
-          //     right: 16,
-          //     bottom: 16,
-          //     child: FloatingActionButton(
-          //       onPressed: toggleChat,
-          //       child: Icon(Icons.chat),
-          //     ),
-          //   ),
-
-          //   // Hộp chat hiển thị khi bật isChatOpen
-          //   if (isChatOpen)
-          //     Positioned(
-          //       right: 16,
-          //       bottom: 80,
-          //       child: Container(
-          //         width: MediaQuery.of(context).size.width * 0.8,
-          //         height: MediaQuery.of(context).size.height * 0.5,
-          //         padding: EdgeInsets.all(8.0),
-          //         decoration: BoxDecoration(
-          //           color: Colors.white,
-          //           borderRadius: BorderRadius.circular(10),
-          //           boxShadow: [
-          //             BoxShadow(
-          //               color: Colors.black26,
-          //               blurRadius: 10,
-          //               spreadRadius: 5,
-          //             ),
-          //           ],
-          //         ),
-          //         child: Column(
-          //           children: [
-          //             Row(
-          //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //               children: [
-          //                 Text(
-          //                   "Chat AI",
-          //                   style: TextStyle(
-          //                     fontSize: 18,
-          //                     fontWeight: FontWeight.bold,
-          //                   ),
-          //                 ),
-          //                 IconButton(
-          //                   icon: Icon(Icons.close),
-          //                   onPressed: toggleChat,
-          //                 ),
-          //               ],
-          //             ),
-          //             Divider(),
-          //             Expanded(
-          //               child: ListView.builder(
-          //                 itemCount: _messages.length,
-          //                 itemBuilder: (context, index) {
-          //                   return ListTile(
-          //                     title: Text(_messages[index]["text"]!),
-          //                     subtitle: Text(_messages[index]["sender"] == "user"
-          //                         ? "Bạn"
-          //                         : "AI"),
-          //                   );
-          //                 },
-          //               ),
-          //             ),
-          //             Padding(
-          //               padding: const EdgeInsets.only(top: 8.0),
-          //               child: Row(
-          //                 children: [
-          //                   Expanded(
-          //                     child: TextField(
-          //                       controller: _controller,
-          //                       decoration: InputDecoration(
-          //                         hintText: "Nhập câu hỏi...",
-          //                         border: OutlineInputBorder(),
-          //                       ),
-          //                     ),
-          //                   ),
-          //                   IconButton(
-          //                     icon: Icon(Icons.send),
-          //                     onPressed: _sendMessage,
-          //                   ),
-          //                 ],
-          //               ),
-          //             ),
-          //           ],
-          //         ),
-          //       ),
-          //     ),
-        ],
+            // Danh sách bệnh viện
+            Expanded(
+              child: filteredHospitals.isNotEmpty
+                  ? ListView.builder(
+                      itemCount: filteredHospitals.length,
+                      itemBuilder: (context, index) {
+                        final hospital = filteredHospitals[index];
+                        return InkWell(
+                          onTap: () {
+                            // Chuyển đến màn hình danh sách bác sĩ của bệnh viện này
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DoctorListScreen(
+                                  hospitalName:
+                                      hospital['name'], // Truyền tên bệnh viện
+                                ),
+                              ),
+                            );
+                          },
+                          child: Card(
+                            elevation: 4,
+                            margin: const EdgeInsets.symmetric(vertical: 10),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor: Colors.teal[100],
+                                    child: Icon(
+                                      Icons.local_hospital,
+                                      color: Colors.teal,
+                                      size: 30,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 16),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          hospital['name'] ?? "Tên bệnh viện",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                            color: Colors.teal[900],
+                                          ),
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          "Chuyên khoa: ${hospital['specialty'] ?? 'Không rõ'}",
+                                          style: TextStyle(
+                                              color: Colors.grey[600]),
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          "Địa chỉ: ${hospital['address'] ?? 'Không rõ'}",
+                                          style: TextStyle(
+                                              color: Colors.grey[600]),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : Center(child: Text("Không tìm thấy bệnh viện")),
+            )
+          ],
+        ),
       ),
     );
   }

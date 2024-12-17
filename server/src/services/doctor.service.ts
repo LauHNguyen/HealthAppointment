@@ -67,31 +67,14 @@ export class DoctorService {
     return doctor;
   }
 
-  async filterDoctors(district?: string, hospitalName?: string) {
-   // Nếu không có tên bệnh viện nhưng có quận
-   if (!hospitalName && district) {
-     const hospitalsInDistrict = await this.hospitalModel.findByDistrict(district);
-     
-     // Lấy danh sách tên bệnh viện trong quận
-     const hospitalNamesInDistrict = hospitalsInDistrict.map(hospital => hospital.name);
- 
-     // Lọc bác sĩ theo danh sách tên bệnh viện
-     return this.doctorModel.find({ hospitalName: { $in: hospitalNamesInDistrict } }).exec();
-   }
- 
-   // Nếu có tên bệnh viện
-   if (hospitalName) {
-     const hospital = await this.hospitalModel.findByName(hospitalName);
-     if (!hospital) {
-       return []; // Hoặc throw new NotFoundException('Hospital not found');
-     }
- 
-     // Lọc bác sĩ theo tên bệnh viện (không cần kiểm tra specialty)
-     return this.doctorModel.find({ hospitalName }).exec();
-   }
- 
-   // Nếu không có điều kiện nào thì trả về tất cả bác sĩ
-   return this.doctorModel.find().exec();
- }
+  async filterDoctors(hospitalName?: string) {
+    const hospital = await this.hospitalModel.findByName(hospitalName);
+    if (!hospital) {
+      return []; // Hoặc throw new NotFoundException('Hospital not found');
+    }
+
+    // Lọc bác sĩ theo tên bệnh viện (không cần kiểm tra specialty)
+    return this.doctorModel.find({ hospitalName }).exec();
+  }
  
 }

@@ -39,21 +39,21 @@ export class UserController {
   return { username: user.username}
   }
 
-  //    // Update
-  //    @Put('update')
-  //    async updateUser(@Req() req: Request,@Body() updateData: Partial<User>){
-  //     // Lấy userId từ token đã xác thực
-  //     const userId = req.user['id'];
+     // Update
+     @Put('update')
+     async updateUser(@Req() req: Request,@Body() updateData: Partial<User>){
+      // Lấy userId từ token đã xác thực
+      const userId = req.user['id'];
 
-  //     // Gọi service để cập nhật thông tin
-  //     return this.userService.updateUser(userId, updateData);
-  //    }
+      // Gọi service để cập nhật thông tin
+      return this.userService.updateUser(userId, updateData);
+     }
 
-  //    @Get('profile')
-  //   async getProfile(@Req() req: Request) {
-  //     // Lấy user từ request đã được giải mã thông qua JWT Guard
-  //     const user: any = req.user;
-  //     //const userId = user._id;
-  //     return await this.userService.getUserProfile(user.id);
-  //   }
+     @Get('profile')
+    async getProfile(@Req() req: Request) {
+      // Lấy user từ request đã được giải mã thông qua JWT Guard
+      const user: any = req.user;
+      //const userId = user._id;
+      return await this.userService.getUserProfile(user.id);
+    }
 }

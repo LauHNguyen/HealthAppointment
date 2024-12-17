@@ -4,7 +4,7 @@ import { Model } from 'mongoose';
 import { Appointment, AppointmentDocument } from '../schema/appointment.schema';
 import { User, UserDocument } from '../schema/user.schema';
 import { Doctor, DoctorDocument } from '../schema/doctor.schema';
-import { CreateAppointmentDto } from 'dto/create-appoitment.dto';
+import { CreateAppointmentDto } from 'src/dto/create-appoitment.dto';
 
 @Injectable()
 export class AppointmentService {

@@ -22,7 +22,8 @@ class _TaskbarState extends State<AppTaskbar> {
   String username = '';
   String email = '';
   double completionPercentage = 0;
-  String? userId;
+  String userId = '';
+  String role = '';
 
   @override
   void initState() {
@@ -34,8 +35,15 @@ class _TaskbarState extends State<AppTaskbar> {
   Future<void> _fetchUserInfo() async {
     String? token = await storage.getAccessToken();
     if (token != null) {
+      Map<String, dynamic> userInfo = Jwt.parseJwt(token);
+      setState(() {
+        print(userInfo);
+        role = userInfo['role'] ?? '';
+        userId = userInfo['userId'] ?? '';
+      });
       final response = await http.get(
-        Uri.parse('${dotenv.env['LOCALHOST']}/user/id'),
+        Uri.parse(
+            '${dotenv.env['LOCALHOST']}/${role == 'doctor' ? 'doctor' : 'user'}/id'),
         headers: {
           'Authorization': 'Bearer $token',
         },
@@ -73,13 +81,15 @@ class _TaskbarState extends State<AppTaskbar> {
           ),
           ListTile(
             leading: Icon(Icons.checklist_rounded),
-            title: Text('Danh sách lịch hẹn'),
+            title: Text(role == 'doctor'
+                ? 'Danh sách lịch hẹn bác sĩ'
+                : 'Danh sách lịch hẹn'),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      AppointmentList(userId: userId!), //sửa lại _fetchUserInfo
+                      AppointmentList(userId: userId, role: role),
                 ),
               );
             },

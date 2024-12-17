@@ -1,13 +1,18 @@
-import 'package:client/screen/appointment_edit.dart';
+import 'package:client/screen/Appointment_edit.dart';
+import 'package:client/screen/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class AppointmentDetail extends StatelessWidget {
   final Map<String, dynamic> appointment;
+  final String userRole;
 
-  const AppointmentDetail({required this.appointment, Key? key})
-      : super(key: key);
+  const AppointmentDetail({
+    required this.appointment,
+    required this.userRole,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,64 +50,108 @@ class AppointmentDetail extends StatelessWidget {
 
     // Kiểm tra nếu lịch hẹn chưa qua
     final bool canModify = isAppointmentUpcoming(
-      appointment['appointmentDate'],
-      appointment['appointmentTime'],
-    );
+          appointment['appointmentDate'],
+          appointment['appointmentTime'],
+        ) &&
+        userRole == 'user';
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Chi tiết lịch hẹn'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Bác sĩ: ${doctor['name']} (${doctor['specialty']})',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            const SizedBox(height: 8),
-            Text('Bệnh viện: $hospital'),
-            const SizedBox(height: 8),
-            Text('Ngày: ${formatDate(appointmentDate)}'),
-            const SizedBox(height: 8),
-            Text('Giờ: $appointmentTime'),
-            if (canModify) ...[
-              ElevatedButton(
-                onPressed: () {
-                  _cancelAppointment(context);
-                },
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-                child: const Text('Hủy lịch hẹn'),
+      body: Column(
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Bác sĩ: ${doctor['name']} (${doctor['specialty']})',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    const SizedBox(height: 8),
+                    Text('Bệnh viện: $hospital'),
+                    const SizedBox(height: 8),
+                    Text('Ngày: ${formatDate(appointmentDate)}'),
+                    const SizedBox(height: 8),
+                    Text('Giờ: $appointmentTime'),
+                    if (userRole == 'user') ...[
+                      if (canModify) ...[
+                        const SizedBox(height: 16),
+                        ElevatedButton(
+                          onPressed: () {
+                            _cancelAppointment(context);
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.orange),
+                          child: const Text('Hủy lịch hẹn'),
+                        ),
+                        const SizedBox(height: 8),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => EditAppointment(
+                                  appointment: appointment,
+                                  doctorId: doctor['_id'],
+                                  doctorName: doctor['name'],
+                                  hospitalName: hospital,
+                                  workingHoursStart: doctor['startTime'],
+                                  workingHoursEnd: doctor['endTime'],
+                                  workingDays:
+                                      List<String>.from(doctor['workingDays']),
+                                ),
+                              ),
+                            );
+                          },
+                          child: const Text('Chỉnh sửa lịch hẹn'),
+                        ),
+                      ] else
+                        const Text(
+                          'Bạn không thể hủy hoặc chỉnh sửa lịch hẹn đã qua.',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                    ],
+                  ],
+                ),
               ),
-              const SizedBox(height: 8),
-              ElevatedButton(
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.message),
+                label: Text(userRole == 'user'
+                    ? 'Nhắn tin với bác sĩ'
+                    : 'Nhắn tin với bệnh nhân'),
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => EditAppointment(
-                        appointment: appointment,
+                      builder: (context) => ChatScreen(
+                        userId: userRole == 'user'
+                            ? appointment['user']['_id']
+                            : doctor['_id'],
                         doctorId: doctor['_id'],
-                        doctorName: doctor['name'],
-                        hospitalName: hospital,
-                        workingHoursStart: doctor['startTime'],
-                        workingHoursEnd: doctor['endTime'],
-                        workingDays: List<String>.from(doctor['workingDays']),
                       ),
                     ),
                   );
+                  print(
+                      'Mở chức năng nhắn tin với ${userRole == 'user' ? 'bác sĩ' : 'bệnh nhân'} ${userRole == 'user' ? doctor['name'] : appointment['user']['username']}');
                 },
-                child: const Text('Chỉnh sửa lịch hẹn'),
               ),
-            ] else
-              const Text(
-                'Bạn không thể hủy hoặc chỉnh sửa lịch hẹn đã qua.',
-                style: TextStyle(color: Colors.grey),
-              ),
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }
