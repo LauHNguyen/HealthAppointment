@@ -2,8 +2,6 @@ import 'dart:convert';
 
 import 'package:client/screen/App_taskbar.dart';
 import 'package:client/screen/DoctorListScreen.dart';
-
-import 'package:client/screen/appointment_screen.dart';
 import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
