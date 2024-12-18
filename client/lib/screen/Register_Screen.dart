@@ -62,9 +62,8 @@ class _RegisterPageState extends State<RegisterPage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             colors: [
-              Colors.orange.shade900,
-              Colors.orange.shade800,
-              Colors.orange.shade400,
+              Colors.teal,
+              Colors.tealAccent,
             ],
           ),
         ),
@@ -80,7 +79,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   FadeInUp(
                     duration: const Duration(milliseconds: 1000),
                     child: const Text(
-                      "Register",
+                      "Đăng Ký",
                       style: TextStyle(color: Colors.white, fontSize: 40),
                     ),
                   ),
@@ -88,7 +87,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   FadeInUp(
                     duration: const Duration(milliseconds: 1300),
                     child: const Text(
-                      "Create a new account",
+                      "Tạo một tài khoản mới",
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
@@ -157,7 +156,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   controller: _passwordController,
                                   obscureText: true,
                                   decoration: const InputDecoration(
-                                    hintText: "Password",
+                                    hintText: "Mật Khẩu",
                                     hintStyle: TextStyle(color: Colors.grey),
                                     border: InputBorder.none,
                                   ),
@@ -169,7 +168,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   controller: _confirmPasswordController,
                                   obscureText: true,
                                   decoration: const InputDecoration(
-                                    hintText: "Confirm Password",
+                                    hintText: "Xác Nhận Mật Khẩu",
                                     hintStyle: TextStyle(color: Colors.grey),
                                     border: InputBorder.none,
                                   ),
@@ -185,7 +184,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: MaterialButton(
                           onPressed: _register,
                           height: 50,
-                          color: Colors.orange[900],
+                          color: Colors.teal[400],
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50),
                           ),
@@ -208,7 +207,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             Navigator.pop(context);
                           },
                           child: const Text(
-                            "Already have an account? Login",
+                            "Đã có tài khoản? Đăng nhập",
                             style: TextStyle(
                               color: Colors.grey,
                               decoration: TextDecoration.underline,

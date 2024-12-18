@@ -107,9 +107,8 @@ class _LoginPageState extends State<LoginPage> {
         width: double.infinity,
         decoration: BoxDecoration(
             gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-          Colors.orange.shade900,
-          Colors.orange.shade800,
-          Colors.orange.shade400
+          Colors.teal,
+          Colors.tealAccent,
         ])),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,14 +122,14 @@ class _LoginPageState extends State<LoginPage> {
                   FadeInUp(
                       duration: Duration(milliseconds: 1000),
                       child: Text(
-                        "Login",
+                        "Đăng Nhập",
                         style: TextStyle(color: Colors.white, fontSize: 40),
                       )),
                   SizedBox(height: 10),
                   FadeInUp(
                       duration: Duration(milliseconds: 1300),
                       child: Text(
-                        "Welcome Back",
+                        "Chào mừng trở lại!",
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       )),
                 ],
@@ -172,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                                 child: TextField(
                                   controller: _usernameController,
                                   decoration: InputDecoration(
-                                      hintText: "Email or Phone number",
+                                      hintText: "Email or số điện thoại",
                                       hintStyle: TextStyle(color: Colors.grey),
                                       border: InputBorder.none),
                                 ),
@@ -187,7 +186,7 @@ class _LoginPageState extends State<LoginPage> {
                                   controller: _passwordController,
                                   obscureText: true,
                                   decoration: InputDecoration(
-                                      hintText: "Password",
+                                      hintText: "Mật Khẩu",
                                       hintStyle: TextStyle(color: Colors.grey),
                                       border: InputBorder.none),
                                 ),
@@ -228,13 +227,13 @@ class _LoginPageState extends State<LoginPage> {
                         child: MaterialButton(
                           onPressed: login, // Gọi hàm đăng nhập thông thường
                           height: 50,
-                          color: Colors.orange[900],
+                          color: Colors.teal[400],
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: Center(
                             child: Text(
-                              "Login",
+                              "Đăng Nhập",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold),
