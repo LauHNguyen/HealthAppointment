@@ -141,7 +141,10 @@ class AppointmentDetail extends StatelessWidget {
                         userId: userRole == 'user'
                             ? appointment['user']['_id']
                             : doctor['_id'],
-                        doctorId: doctor['_id'],
+                        doctorId: userRole == 'doctor'
+                            ? appointment['user']['_id']
+                            : doctor['_id'],
+                        userRole: userRole,
                       ),
                     ),
                   );

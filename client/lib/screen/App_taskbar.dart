@@ -37,41 +37,59 @@ class _TaskbarState extends State<AppTaskbar> {
     String? token = await storage.getAccessToken();
     if (token != null) {
       Map<String, dynamic> userInfo = Jwt.parseJwt(token);
+      print(userInfo);
       setState(() {
         print(userInfo);
         role = userInfo['role'] ?? '';
         userId = userInfo['userId'] ?? '';
+        username = userInfo['username'];
       });
       final response = await http.get(
         Uri.parse(
-            '${dotenv.env['LOCALHOST']}/${role == 'doctor' ? 'doctor' : 'user'}/id'),
+            '${dotenv.env['LOCALHOST']}/${role == 'doctor' ? 'doctor' : 'user'}'),
         headers: {
           'Authorization': 'Bearer $token',
         },
       );
 
       if (response.statusCode == 200) {
-        print(response.body);
         final data = json.decode(response.body);
-        setState(() {
-          userId = data['userId'];
-        });
+        print('Received ${data.length} users from API');
+
+        // Debug: Print all user IDs
+        print(
+            'User IDs in response: ${data.map((user) => user['username']).toList()}');
+        final user = data.firstWhere(
+          (user) => user['username'].toString() == username.toString(),
+          orElse: () => null,
+        );
+        if (user != null) {
+          setState(() {
+            username = user['name'] ?? '';
+            email = user['email'] ?? '';
+          });
+        } else {
+          print('User not found in the response data');
+        }
       } else {
-        print('Failed to fetch user id');
+        print('Fetched user ID does not match token ID');
+        return null;
       }
+    } else {
+      print('Failed to fetch user id');
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    Map<String, dynamic> userInfo = Jwt.parseJwt(widget.token);
+    //Map<String, dynamic> userInfo = Jwt.parseJwt(widget.token);
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text(userInfo['username'] ?? 'Unknown User'),
-            accountEmail: Text(userInfo['email'] ?? 'No Email'),
+            accountName: Text(username),
+            accountEmail: Text(email),
           ),
           ListTile(
             leading: Icon(Icons.account_circle),

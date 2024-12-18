@@ -101,7 +101,7 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
         'Content-Type': 'application/json',
       },
       body: json.encode({
-        'username': _usernameController.text,
+        'name': _usernameController.text,
         'email': _emailController.text,
         'gender': _genderController.text,
         'birthOfDate': formattedBirthDate,

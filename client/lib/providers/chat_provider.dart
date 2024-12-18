@@ -74,13 +74,19 @@ class ChatProvider with ChangeNotifier {
   }
 
   Future<void> _fetchPreviousMessages() async {
-    final apiUrl = 'http://${_baseUrl}:3000/api';
+    final apiUrl = 'http://${_baseUrl}:3000';
     final url = '$apiUrl/chat/messages/$_currentUserId/$_currentChatPartnerId';
+    final url2 =
+        '$apiUrl/chat/messages/$_currentChatPartnerId/$_currentUserId'; //đoạn chat của người nhận
     try {
       final response = await http.get(Uri.parse(url));
-      if (response.statusCode == 200) {
+      final response2 = await http.get(Uri.parse(url2));
+      if (response.statusCode == 200 && response2.statusCode == 200) {
         final List<dynamic> data = jsonDecode(response.body);
+        final List<dynamic> data2 = jsonDecode(response2.body);
         _messages = data.map((item) => ChatMessage.fromJson(item)).toList();
+        _messages = data2.map((item) => ChatMessage.fromJson(item)).toList();
+        _messages.sort((a, b) => a.timestamp.compareTo(b.timestamp));
         notifyListeners();
       } else {
         print('Failed to fetch messages: ${response.statusCode}');
@@ -94,16 +100,26 @@ class ChatProvider with ChangeNotifier {
   void sendMessage(String content) {
     if (_currentUserId == null || _currentChatPartnerId == null) return;
 
-    final message = {
+    final message = ChatMessage(
+      id: DateTime.now().millisecondsSinceEpoch.toString(),
+      content: content,
+      sender: _currentUserId!,
+      receiver: _currentChatPartnerId!,
+      timestamp: DateTime.now(),
+    );
+
+    _addMessage(message);
+
+    _socket?.emit('sendMessage', {
       'content': content,
       'sender': _currentUserId,
       'receiver': _currentChatPartnerId,
-    };
-    _socket?.emit('sendMessage', message);
+    });
   }
 
   void _addMessage(ChatMessage message) {
     _messages.add(message);
+    _messages.sort((a, b) => a.timestamp.compareTo(b.timestamp));
     notifyListeners();
   }
 

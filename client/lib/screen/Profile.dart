@@ -92,7 +92,7 @@ class _UserProfile extends State<UserInfo> {
                         // Username
                         _buildInputField(
                           label: 'Tên người dùng',
-                          value: userData?['username'] ?? 'Không có dữ liệu',
+                          value: userData?['name'] ?? 'Không có dữ liệu',
                         ),
 
                         // Email

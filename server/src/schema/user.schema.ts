@@ -8,6 +8,9 @@ export class User {
    @Prop({ required: true })
    username: string;
 
+   @Prop()
+   name: string;
+
    @Prop({ required: true })
    password: string;
 
@@ -28,3 +31,14 @@ export class User {
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
+
+UserSchema.pre('save', async function (next) {
+  const user = this as UserDocument;
+
+  // Nếu password chưa được thiết lập, mã hóa name để làm password mặc định
+  if (!this.username) {
+    user.name =  this.username;
+  }
+
+  next(); 
+});
