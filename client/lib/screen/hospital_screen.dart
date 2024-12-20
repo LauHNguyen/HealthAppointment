@@ -1,11 +1,12 @@
 import 'dart:convert';
 
-import 'package:client/screen/App_taskbar.dart';
+import 'package:client/screen/BottomNavigationBar.dart';
 import 'package:client/screen/DoctorListScreen.dart';
 import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
+import 'package:diacritic/diacritic.dart';
 
 class ChooseHospital extends StatefulWidget {
   @override
@@ -23,7 +24,8 @@ class _ChooseHospitalState extends State<ChooseHospital> {
   String? userId;
   String? selectedDistrict; // Quận được chọn
   String? selectedHospitalName; // Bệnh viện được chọn
-  String? _accessToken;
+
+  int _selectedIndex = 1;
 
   @override
   void initState() {
@@ -31,20 +33,15 @@ class _ChooseHospitalState extends State<ChooseHospital> {
     loadInitialData(); // Gọi hàm tải dữ liệu ban đầu
   }
 
-  Future<void> loadInitialData() async {
-    await fetchHospitals();
-    // await fetchDoctors();
-    await fetchUserId();
-    _fetchTokens();
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
-  Future<void> _fetchTokens() async {
-    // Lấy access token và refresh token từ TokenService
-    String? accessToken = await storage.getAccessToken();
-
-    setState(() {
-      _accessToken = accessToken;
-    });
+  Future<void> loadInitialData() async {
+    await fetchHospitals();
+    await fetchUserId();
   }
 
   Future<void> fetchUserId() async {
@@ -108,39 +105,6 @@ class _ChooseHospitalState extends State<ChooseHospital> {
     });
   }
 
-  // Future<void> fetchDoctors() async {
-  //   try {
-  //     final response =
-  //         await http.get(Uri.parse('${dotenv.env['LOCALHOST']}/doctor/load'));
-  //     if (response.statusCode == 200) {
-  //       setState(() {
-  //         doctors = json.decode(response.body);
-  //       });
-  //     } else {
-  //       throw Exception('Failed to load doctors');
-  //     }
-  //   } catch (e) {
-  //     print("Error fetching doctors: $e");
-  //   }
-  // }
-
-  // void navigateToDoctorDetail(dynamic doctor) {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(
-  //       builder: (context) => Appointment(
-  //         userId: userId!,
-  //         doctorId: doctor['_id'],
-  //         doctorName: doctor['name'],
-  //         hospitalName: doctor['hospitalName'],
-  //         workingHoursStart: doctor['startTime'],
-  //         workingHoursEnd: doctor['endTime'],
-  //         workingDays: List<String>.from(doctor['workingDays'] ?? []),
-  //       ),
-  //     ),
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,7 +112,6 @@ class _ChooseHospitalState extends State<ChooseHospital> {
         title: Text("Danh sách Bệnh Viện"),
         backgroundColor: Colors.teal,
       ),
-      drawer: _accessToken != null ? AppTaskbar(token: _accessToken!) : null,
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
@@ -171,12 +134,13 @@ class _ChooseHospitalState extends State<ChooseHospital> {
                           .trim()
                           .toLowerCase(); // Xử lý chuỗi tìm kiếm, loại bỏ khoảng trắng và chuyển thành chữ thường
                       setState(() {
-                        filteredHospitals = hospitals
-                            .where((hospital) =>
-                                hospital['name'] != null &&
-                                hospital['name']!.toLowerCase().contains(
-                                    value)) // Tìm kiếm không phân biệt hoa/thường
-                            .toList();
+                        filteredHospitals = hospitals.where((hospital) {
+                          final name =
+                              removeDiacritics(hospital['name'].toLowerCase());
+                          final query = removeDiacritics(value.toLowerCase());
+
+                          return name.contains(query);
+                        }).toList();
                       });
                     },
                   ),
@@ -288,6 +252,10 @@ class _ChooseHospitalState extends State<ChooseHospital> {
             )
           ],
         ),
+      ),
+      bottomNavigationBar: CustomBottomNav(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }

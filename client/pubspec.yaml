@@ -43,6 +43,7 @@ dependencies:
   jwt_decoder: ^2.0.1
   socket_io_client: ^3.0.2
   google_sign_in: ^5.4.2
+  diacritic: ^0.1.6
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +64,11 @@ dev_dependencies:
 flutter:
   assets:
     - .env
+    - images/new1.jpg
+    - images/new2.jpg
+    - images/new3.jpg
+    - images/new4.jpg
+    - images/new5.jpg
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

@@ -14,7 +14,8 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
-
+  bool _isPasswordVisible = true;
+  bool _isPasswordVisible2 = true;
   void _register() async {
     String username = _usernameController.text;
     String password = _passwordController.text;
@@ -154,11 +155,25 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ),
                                 child: TextField(
                                   controller: _passwordController,
-                                  obscureText: true,
-                                  decoration: const InputDecoration(
+                                  obscureText: _isPasswordVisible,
+                                  decoration: InputDecoration(
                                     hintText: "Mật Khẩu",
-                                    hintStyle: TextStyle(color: Colors.grey),
+                                    hintStyle:
+                                        const TextStyle(color: Colors.grey),
                                     border: InputBorder.none,
+                                    suffix: IconButton(
+                                      icon: Icon(
+                                        _isPasswordVisible
+                                            ? Icons.visibility_off
+                                            : Icons.visibility,
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          _isPasswordVisible =
+                                              !_isPasswordVisible;
+                                        });
+                                      },
+                                    ),
                                   ),
                                 ),
                               ),
@@ -166,11 +181,24 @@ class _RegisterPageState extends State<RegisterPage> {
                                 padding: const EdgeInsets.all(10),
                                 child: TextField(
                                   controller: _confirmPasswordController,
-                                  obscureText: true,
-                                  decoration: const InputDecoration(
+                                  obscureText: _isPasswordVisible2,
+                                  decoration: InputDecoration(
                                     hintText: "Xác Nhận Mật Khẩu",
                                     hintStyle: TextStyle(color: Colors.grey),
                                     border: InputBorder.none,
+                                    suffix: IconButton(
+                                      icon: Icon(
+                                        _isPasswordVisible2
+                                            ? Icons.visibility_off
+                                            : Icons.visibility,
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          _isPasswordVisible2 =
+                                              !_isPasswordVisible2;
+                                        });
+                                      },
+                                    ),
                                   ),
                                 ),
                               ),
