@@ -36,7 +36,6 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
     _fetchUserInfo();
   }
 
-  //get api user
   Future<void> _fetchUserInfo() async {
     String? token = await storage.getAccessToken();
     if (token != null) {
@@ -110,7 +109,6 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
             ),
           );
         }
-        // Kiểm tra nếu mục là 'Hồ sơ' (index == 3), điều hướng đến trang profile
         if (index == 3) {
           Navigator.push(
             context,
@@ -122,27 +120,37 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
             ),
           );
         } else {
-          widget.onTap(index); // Chỉ gọi onTap nếu không phải là Hồ sơ
+          widget.onTap(index);
         }
       },
-      selectedItemColor: Colors.blue, // Màu cho mục được chọn
-      unselectedItemColor: Colors.grey, // Màu cho mục chưa được chọn
-      iconSize: 30.0, // Kích thước biểu tượng lớn hơn
+      selectedItemColor: Colors.blueAccent,
+      unselectedItemColor: Colors.grey[600],
+      selectedLabelStyle: const TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 12,
+      ),
+      unselectedLabelStyle: const TextStyle(
+        fontSize: 11,
+      ),
+      backgroundColor: Colors.white,
+      type: BottomNavigationBarType.fixed,
+      elevation: 8.0,
+      iconSize: 28.0,
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Trang chủ',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.local_hospital), // Biểu tượng bệnh viện
+          icon: Icon(Icons.local_hospital),
           label: 'Bệnh viện',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.healing_rounded), // Biểu tượng liên hệ
+          icon: Icon(Icons.healing_rounded),
           label: 'Bác sĩ',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person), // Biểu tượng hồ sơ
+          icon: Icon(Icons.person),
           label: 'Hồ sơ',
         ),
       ],
