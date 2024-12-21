@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:client/screen/BottomNavigationBar.dart';
 import 'package:client/screen/appointment_list.dart';
 import 'package:client/service/api_service.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  int _selectedIndex = 3;
   final ApiService _apiService = ApiService();
   final SecureStorageService storage = SecureStorageService();
 
@@ -34,8 +36,15 @@ class _ProfilePageState extends State<ProfilePage> {
     _fetchUserInfo();
   }
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   //get api user
   Future<void> _fetchUserInfo() async {
+    print(widget.userId + widget.role);
     String? token = await storage.getAccessToken();
     if (token != null) {
       Map<String, dynamic> userInfo = Jwt.parseJwt(token);
@@ -52,11 +61,6 @@ class _ProfilePageState extends State<ProfilePage> {
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        print('Received ${data.length} users from API');
-
-        // Debug: Print all user IDs
-        print(
-            'User IDs in response: ${data.map((user) => user['username']).toList()}');
         final user = data.firstWhere(
           (user) => user['username'].toString() == username.toString(),
           orElse: () => null,
@@ -81,12 +85,22 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        automaticallyImplyLeading: false,
         title: const Text(
           'Trang Cá Nhân',
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.blueAccent,
         elevation: 0,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.teal, Colors.tealAccent], // Các màu gradient
+              begin: Alignment.topLeft, // Hướng gradient bắt đầu
+              end: Alignment.bottomRight, // Hướng gradient kết thúc
+            ),
+          ),
+        ),
       ),
       body: Container(
         color: Colors.grey[100],
@@ -159,8 +173,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => AppointmentList(
-                      userId: widget.userId,
-                      role: widget.role,
+                      userId: '${widget.userId}',
+                      role: '${widget.role}',
                     ),
                   ),
                 );
@@ -184,6 +198,10 @@ class _ProfilePageState extends State<ProfilePage> {
             const Divider(height: 1, thickness: 0.5),
           ],
         ),
+      ),
+      bottomNavigationBar: CustomBottomNav(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }

@@ -109,8 +109,19 @@ class _ChooseHospitalState extends State<ChooseHospital> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Danh sách Bệnh Viện"),
-        backgroundColor: Colors.teal,
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        title:
+            Text("Danh sách Bệnh Viện", style: TextStyle(color: Colors.white)),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.teal, Colors.tealAccent], // Các màu gradient
+              begin: Alignment.topLeft, // Hướng gradient bắt đầu
+              end: Alignment.bottomRight, // Hướng gradient kết thúc
+            ),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),

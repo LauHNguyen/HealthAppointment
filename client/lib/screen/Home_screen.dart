@@ -1,7 +1,5 @@
 import 'dart:convert';
-
 import 'package:client/screen/BottomNavigationBar.dart';
-import 'package:client/service/api_service.dart';
 import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -17,7 +15,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final SecureStorageService storage = SecureStorageService();
-  final ApiService _apiService = ApiService();
   String username = '';
   String email = '';
   double completionPercentage = 0;
@@ -80,9 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
     String? token = await storage.getAccessToken();
     if (token != null) {
       Map<String, dynamic> userInfo = Jwt.parseJwt(token);
-      print(userInfo);
       setState(() {
-        print(userInfo);
         role = userInfo['role'] ?? '';
         userId = userInfo['userId'] ?? '';
         username = userInfo['username'];
@@ -132,8 +127,16 @@ class _HomeScreenState extends State<HomeScreen> {
             Text('Xin chào, $username', style: TextStyle(color: Colors.white)),
           ],
         ),
-        backgroundColor: Colors.lightBlue,
         elevation: 0, // Bỏ bóng dưới appbar
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.teal, Colors.tealAccent], // Các màu gradient
+              begin: Alignment.topLeft, // Hướng gradient bắt đầu
+              end: Alignment.bottomRight, // Hướng gradient kết thúc
+            ),
+          ),
+        ),
       ),
       body: IndexedStack(
         index: _selectedIndex,
@@ -205,14 +208,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ],
-          ),
-          // Tab Tìm kiếm
-          Center(
-            child: Text('Tìm kiếm'),
-          ),
-          // Tab Hồ sơ
-          Center(
-            child: Text('Hồ sơ cá nhân'),
           ),
         ],
       ),

@@ -32,8 +32,8 @@ class _LoginPageState extends State<LoginPage> {
     // Lấy dữ liệu từ TextField
     final username = _usernameController.text;
     final password = _passwordController.text;
-    print('Username: $username');
-    print('Password: $password');
+    // print('Username: $username');
+    // print('Password: $password');
     Map<String, String>? tokens;
     if (_role == 'doctor') {
       tokens = await _apiService.loginUser(username, password, _role);
@@ -208,30 +208,36 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    border: Border(
-                                      bottom: BorderSide(
-                                          color: Colors.grey.shade200),
+                                  padding: EdgeInsets.symmetric(horizontal: 10),
+                                  height: 60,
+                                  child: DropdownButtonHideUnderline(
+                                    // Ẩn đường gạch dưới mặc định của DropdownButton
+                                    child: DropdownButton<String>(
+                                      value: _role,
+                                      icon: SizedBox.shrink(),
+                                      isExpanded:
+                                          true, // Đảm bảo dropdown sử dụng toàn bộ chiều rộng
+                                      onChanged: (String? newValue) {
+                                        setState(() {
+                                          _role = newValue!;
+                                        });
+                                      },
+                                      items: <String>['user', 'doctor']
+                                          .map<DropdownMenuItem<String>>(
+                                              (String value) {
+                                        return DropdownMenuItem<String>(
+                                          alignment: Alignment.center,
+                                          value: value,
+                                          child: Text(
+                                            value == 'user'
+                                                ? 'Bệnh Nhân'
+                                                : 'Bác Sĩ',
+                                            style: TextStyle(
+                                                color: Colors.grey.shade800),
+                                          ),
+                                        );
+                                      }).toList(),
                                     ),
-                                  ),
-                                  child: DropdownButton<String>(
-                                    value: _role,
-                                    onChanged: (String? newValue) {
-                                      setState(() {
-                                        _role = newValue!;
-                                      });
-                                    },
-                                    items: <String>['user', 'doctor']
-                                        .map<DropdownMenuItem<String>>(
-                                            (String value) {
-                                      return DropdownMenuItem<String>(
-                                        value: value,
-                                        child: Text(value == 'user'
-                                            ? 'User'
-                                            : 'Doctor'),
-                                      );
-                                    }).toList(),
                                   ),
                                 ),
                               ],

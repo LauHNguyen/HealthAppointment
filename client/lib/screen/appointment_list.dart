@@ -27,6 +27,7 @@ class _AppointmentListState extends State<AppointmentList> {
 
   Future<void> _fetchAppointments() async {
     try {
+      print(widget.userId + widget.role);
       final String endpoint = widget.role == 'doctor'
           ? '${dotenv.env['LOCALHOST']}/appointment/doctor/${widget.userId}'
           : '${dotenv.env['LOCALHOST']}/appointment/user/${widget.userId}';

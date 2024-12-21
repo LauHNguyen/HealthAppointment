@@ -162,8 +162,21 @@ class _DoctorListScreenState extends State<DoctorListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bác sĩ tại ${widget.hospitalName}'),
-        backgroundColor: Colors.teal,
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        title: widget.hospitalName != ''
+            ? Text('Bác sĩ tại ${widget.hospitalName}',
+                style: TextStyle(color: Colors.white))
+            : Text('Danh sách bác sĩ', style: TextStyle(color: Colors.white)),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.teal, Colors.tealAccent], // Các màu gradient
+              begin: Alignment.topLeft, // Hướng gradient bắt đầu
+              end: Alignment.bottomRight, // Hướng gradient kết thúc
+            ),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),

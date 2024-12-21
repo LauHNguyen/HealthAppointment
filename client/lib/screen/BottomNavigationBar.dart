@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:client/screen/DoctorListScreen.dart';
 import 'package:client/screen/Home_screen.dart';
 import 'package:client/screen/ListTile_profile.dart';
 import 'package:client/screen/hospital_screen.dart';
 import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:jwt_decode/jwt_decode.dart';
 
 import 'package:http/http.dart' as http;
@@ -23,6 +26,7 @@ class CustomBottomNav extends StatefulWidget {
 
 class _CustomBottomNavState extends State<CustomBottomNav> {
   final SecureStorageService storage = SecureStorageService();
+  String username = '';
   String userId = '';
   String role = '';
 
@@ -37,12 +41,35 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
     String? token = await storage.getAccessToken();
     if (token != null) {
       Map<String, dynamic> userInfo = Jwt.parseJwt(token);
-      print(userInfo);
       setState(() {
-        print(userInfo);
         role = userInfo['role'] ?? '';
-        userId = userInfo['userId'] ?? '';
+        username = userInfo['username'] ?? '';
       });
+      final response = await http.get(
+        Uri.parse(
+            '${dotenv.env['LOCALHOST']}/${role == 'doctor' ? 'doctor' : 'user'}'),
+        headers: {
+          'Authorization': 'Bearer $token',
+        },
+      );
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        final user = data.firstWhere(
+          (user) => user['username'].toString() == username.toString(),
+          orElse: () => null,
+        );
+        if (user != null) {
+          setState(() {
+            userId = user['_id'] ?? '';
+          });
+        } else {
+          print('User not found in the response data');
+        }
+      } else {
+        print('Fetched user ID does not match token ID');
+        return null;
+      }
     } else {
       print('Failed to fetch user id');
     }
