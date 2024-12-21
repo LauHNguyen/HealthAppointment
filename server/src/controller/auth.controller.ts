@@ -15,7 +15,7 @@ export class AuthController {
     @Body() body: { username: string; password: string; role: string },
   ) {
     const { username, password, role } = body;
-
+    console.log('Request Body:', body);
     // Kiểm tra role hợp lệ
     if (role !== 'user' && role !== 'doctor') {
       throw new BadRequestException('Invalid role');

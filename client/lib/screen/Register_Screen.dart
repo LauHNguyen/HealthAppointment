@@ -43,6 +43,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 // title: 'MyApp',
                 )),
       );
+      Navigator.pushNamed(context, '/');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Đăng ký thành công!')),
       );

@@ -317,7 +317,6 @@ class _AppointmentState extends State<Appointment> {
         },
       );
       if (response.statusCode == 200) {
-        // print('user---:${response.body}');
         final data = json.decode(response.body);
         setState(() {
           userName = data['username'];

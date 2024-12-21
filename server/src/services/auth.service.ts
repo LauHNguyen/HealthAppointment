@@ -32,10 +32,10 @@ export class AuthService {
       let user;
 
    // Kiểm tra vai trò (user hay doctor)
-   let name = username;
    if (role === 'user') {
       user = await this.userModel.findOne({ username });
    } else if (role === 'doctor') {
+      let name = username;
       user = await this.doctorModel.findOne({ name });
    } else {
       throw new Error('Invalid role');

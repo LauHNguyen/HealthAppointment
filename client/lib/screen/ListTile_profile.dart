@@ -152,7 +152,9 @@ class _ProfilePageState extends State<ProfilePage> {
               trailing: const Icon(Icons.arrow_forward_ios,
                   size: 18, color: Colors.grey),
               onTap: () {
-                Navigator.pushNamed(context, '/profile');
+                widget.role == 'user'
+                    ? Navigator.pushNamed(context, '/profile')
+                    : Navigator.pushNamed(context, '/docprofile');
               },
             ),
             const Divider(height: 1, thickness: 0.5),

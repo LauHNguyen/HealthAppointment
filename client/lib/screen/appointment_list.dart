@@ -76,7 +76,7 @@ class _AppointmentListState extends State<AppointmentList> {
                     final appointmentDate = appointment['appointmentDate'];
                     final appointmentTime = appointment['appointmentTime'];
                     final otherName = widget.role == 'doctor'
-                        ? appointment['user']['username']
+                        ? appointment['user']['name']
                         : appointment['doctor']['name'];
 
                     return Card(

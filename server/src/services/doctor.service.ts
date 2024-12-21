@@ -81,4 +81,13 @@ export class DoctorService {
     return doctor;
   }
 
+  async updateDoctor(doctorId: string, updateData: Partial<Doctor>): Promise<Doctor> {
+        return this.doctorModel.findByIdAndUpdate(doctorId, updateData, { new: true }).select('_id __v password ');
+     }
+  
+  
+    async getDoctorProfile(doctorId: string): Promise<Doctor> {
+      return await this.doctorModel.findById(doctorId).select('-password -_id -__v');
+    
+    }
 }

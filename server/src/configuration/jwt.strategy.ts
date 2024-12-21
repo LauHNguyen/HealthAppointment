@@ -26,7 +26,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     }
     return user; // Trả về User
   } else if (role === 'doctor') {
-    const doctor = await this.doctorService.findByDoctorname(username);
+    let name = username;
+    const doctor = await this.doctorService.findByDoctorname(name);
     if (!doctor) {
       throw new Error('Doctor not found');
     }

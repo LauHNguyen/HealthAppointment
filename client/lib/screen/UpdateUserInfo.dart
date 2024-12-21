@@ -18,7 +18,7 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
   // Controllers
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _genderController = TextEditingController();
+  String _selectedGender = '';
   final TextEditingController _birthOfDateController = TextEditingController();
 
   @override
@@ -56,10 +56,11 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
+      print('up user $data');
       setState(() {
-        _usernameController.text = data['username'] ?? '';
+        _usernameController.text = data['name'] ?? '';
         _emailController.text = data['email'] ?? '';
-        _genderController.text = data['gender'] ?? '';
+        _selectedGender = data['gender'] ?? '';
         _birthOfDateController.text = _formatDate(data?['birthOfDate'] ?? '');
       });
     } else {
@@ -103,7 +104,7 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
       body: json.encode({
         'name': _usernameController.text,
         'email': _emailController.text,
-        'gender': _genderController.text,
+        'gender': _selectedGender,
         'birthOfDate': formattedBirthDate,
       }),
     );
@@ -129,8 +130,19 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cập Nhật Thông Tin'),
-        backgroundColor: Colors.teal,
+        title: Text(
+          'Cập Nhật Thông Tin',
+          style: TextStyle(color: Colors.white),
+        ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.teal, Colors.tealAccent], // Các màu gradient
+              begin: Alignment.topLeft, // Hướng gradient bắt đầu
+              end: Alignment.bottomRight, // Hướng gradient kết thúc
+            ),
+          ),
+        ),
       ),
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
@@ -150,10 +162,7 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
                         controller: _emailController,
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      _buildInputField(
-                        label: 'Giới tính',
-                        controller: _genderController,
-                      ),
+                      _buildGenderSelection(),
                       _buildInputField(
                         label: 'Ngày sinh',
                         controller: _birthOfDateController,
@@ -219,6 +228,42 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
         ),
         style: TextStyle(fontSize: 16, color: Colors.black),
       ),
+    );
+  }
+
+  Widget _buildGenderSelection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Giới tính',
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        ListTile(
+          title: const Text('Nam'),
+          leading: Radio<String>(
+            value: 'Nam',
+            groupValue: _selectedGender,
+            onChanged: (value) {
+              setState(() {
+                _selectedGender = value!;
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: const Text('Nữ'),
+          leading: Radio<String>(
+            value: 'Nữ',
+            groupValue: _selectedGender,
+            onChanged: (value) {
+              setState(() {
+                _selectedGender = value!;
+              });
+            },
+          ),
+        ),
+      ],
     );
   }
 }

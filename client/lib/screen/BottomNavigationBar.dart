@@ -41,6 +41,7 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
     String? token = await storage.getAccessToken();
     if (token != null) {
       Map<String, dynamic> userInfo = Jwt.parseJwt(token);
+      print(userInfo);
       setState(() {
         role = userInfo['role'] ?? '';
         username = userInfo['username'] ?? '';
@@ -55,10 +56,15 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        final user = data.firstWhere(
-          (user) => user['username'].toString() == username.toString(),
-          orElse: () => null,
-        );
+        final user = role == 'user'
+            ? data.firstWhere(
+                (user) => user['username'].toString() == username.toString(),
+                orElse: () => null,
+              )
+            : data.firstWhere(
+                (doctor) => doctor['name'].toString() == username.toString(),
+                orElse: () => null,
+              );
         if (user != null) {
           setState(() {
             userId = user['_id'] ?? '';

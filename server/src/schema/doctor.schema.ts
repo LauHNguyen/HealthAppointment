@@ -24,7 +24,7 @@ export class Doctor {
   @Prop({ type: String, default:"18:00"})
   endTime: string; 
 
-  @Prop({ type: [String], default:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]})
+  @Prop({ type: [String], default:['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật',]})
   workingDays: string[]; 
 
   @Prop({required: true, default: 'doctor'})

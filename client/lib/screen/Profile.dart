@@ -51,7 +51,7 @@ class _UserProfile extends State<UserInfo> {
     if (response.statusCode == 200) {
       setState(() {
         userData = json.decode(response.body);
-
+        print('user ìno $userData');
         _isLoading = false;
       });
     } else {
@@ -66,10 +66,18 @@ class _UserProfile extends State<UserInfo> {
       appBar: AppBar(
         title: Text(
           'Thông Tin Cá Nhân',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Colors.teal,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.teal, Colors.tealAccent], // Các màu gradient
+              begin: Alignment.topLeft, // Hướng gradient bắt đầu
+              end: Alignment.bottomRight, // Hướng gradient kết thúc
+            ),
+          ),
+        ),
         elevation: 0,
       ),
       body: _isLoading
