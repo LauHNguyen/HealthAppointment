@@ -383,70 +383,153 @@ class _AppointmentState extends State<Appointment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Đặt lịch hẹn")),
+      appBar: AppBar(
+        title: Text(
+          "Đặt lịch hẹn",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.teal, Colors.tealAccent], // Các màu gradient
+              begin: Alignment.topLeft, // Hướng gradient bắt đầu
+              end: Alignment.bottomRight, // Hướng gradient kết thúc
+            ),
+          ),
+        ),
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Người dùng: $userName", textAlign: TextAlign.center),
-            Text("Bác sĩ: ${widget.doctorName}", textAlign: TextAlign.center),
-            Text("Bệnh viện: ${widget.hospitalName}",
-                textAlign: TextAlign.center),
-            Text("Ngày làm: ${widget.workingDays}",
-                textAlign: TextAlign.center),
-            const SizedBox(height: 20),
+            // Thông tin người dùng, bác sĩ và bệnh viện
+            Card(
+              elevation: 3,
+              margin: EdgeInsets.only(bottom: 16.0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Bệnh Nhân: $userName",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Bác sĩ: ${widget.doctorName}",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Bệnh viện: ${widget.hospitalName}",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Ngày làm: ${widget.workingDays}",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            // Chọn ngày hẹn
+            Text(
+              "Chọn ngày hẹn:",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+            SizedBox(height: 10),
             GestureDetector(
               onTap: () => pickDate(context),
               child: Container(
-                padding: EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(14.0),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade200,
+                      blurRadius: 5,
+                      spreadRadius: 1,
+                    ),
+                  ],
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Ngày hẹn: ${DateFormat('dd/MM/yyyy').format(selectedDate)}",
+                      selectedDate != null
+                          ? DateFormat('dd/MM/yyyy').format(selectedDate!)
+                          : "Chọn ngày",
                       style: TextStyle(fontSize: 16),
                     ),
-                    Icon(Icons.calendar_today, color: Colors.blue),
+                    Icon(Icons.calendar_today, color: Colors.blueAccent),
                   ],
                 ),
               ),
             ),
-            const SizedBox(height: 10),
-            Text("Hãy chọn giờ hẹn:", style: TextStyle(fontSize: 16)),
+            SizedBox(height: 20),
+            // Chọn giờ hẹn
+            Text(
+              "Chọn khoảng thời gian:",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+            SizedBox(height: 10),
             GestureDetector(
               onTap: () => _showCustomTimePicker(context),
               child: Container(
-                padding: EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(14.0),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade200,
+                      blurRadius: 5,
+                      spreadRadius: 1,
+                    ),
+                  ],
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       selectedTime != null && selectedEndTime != null
-                          ? "Khoảng thời gian: ${DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedTime!.hour, selectedTime!.minute))} - ${DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedEndTime!.hour, selectedEndTime!.minute))}"
-                          : "Chọn khoảng thời gian",
+                          ? "${DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedTime!.hour, selectedTime!.minute))} - ${DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedEndTime!.hour, selectedEndTime!.minute))}"
+                          : "Chọn thời gian",
                       style: TextStyle(fontSize: 16),
                     ),
-                    Icon(Icons.access_time, color: Colors.blue),
+                    Icon(Icons.access_time, color: Colors.blueAccent),
                   ],
                 ),
               ),
             ),
-            const SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: confirmAppointment,
-              child: Text(
-                "Xác nhận đặt lịch\n Từ ${selectedTime != null ? DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedTime!.hour, selectedTime!.minute)) : 'Null'}"
-                " đến ${selectedEndTime != null ? DateFormat('HH:mm').format(DateTime(0, 0, 0, selectedEndTime!.hour, selectedEndTime!.minute)) : 'Null'}"
-                "\n Ngày ${selectedDate != null ? DateFormat('dd/MM/yyyy').format(selectedDate!) : 'Chưa chọn'}",
+            SizedBox(height: 30),
+            // Nút xác nhận
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueAccent,
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                onPressed: confirmAppointment,
+                child: Text(
+                  "Xác nhận đặt lịch",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                ),
               ),
             ),
           ],
