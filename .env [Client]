@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+# # # IPv4 Address [ipconfig]
+# # Vào cmd gõ ipconfig phần Wireless LAN adapter Wi-Fi để lấy địa chỉ Ipv4 của máy rồi gắn vô đường dẫn
+# # Hoặc lấy hostman để vào cx ok
+#LOCALHOST = http://laptop:3000 #Tay
+LOCALHOST = http://LAPTOP-VJ8VDBE1:3000 #Nguyen
+DEV_HOSTNAME=LAPTOP-VJ8VDBE1
+#DEV_HOSTNAME=laptop #Tay
+SOCKET_URL=http://${DEV_HOSTNAME}:3000
+API_URL=http://${DEV_HOSTNAME}:3000/api
+
