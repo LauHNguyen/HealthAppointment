@@ -27,7 +27,6 @@ class _AppointmentListState extends State<AppointmentList> {
 
   Future<void> _fetchAppointments() async {
     try {
-      print(widget.userId + widget.role);
       final String endpoint = widget.role == 'doctor'
           ? '${dotenv.env['LOCALHOST']}/appointment/doctor/${widget.userId}'
           : '${dotenv.env['LOCALHOST']}/appointment/user/${widget.userId}';
@@ -61,9 +60,20 @@ class _AppointmentListState extends State<AppointmentList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.role == 'doctor'
-            ? 'Lịch hẹn của bác sĩ'
-            : 'Lịch hẹn của bạn'),
+        title: Text(
+            widget.role == 'doctor'
+                ? 'Lịch hẹn của bác sĩ'
+                : 'Lịch hẹn của bạn',
+            style: TextStyle(color: Colors.white)),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.teal, Colors.tealAccent], // Các màu gradient
+              begin: Alignment.topLeft, // Hướng gradient bắt đầu
+              end: Alignment.bottomRight, // Hướng gradient kết thúc
+            ),
+          ),
+        ),
       ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())

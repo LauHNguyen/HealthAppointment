@@ -57,7 +57,7 @@ class _UpdateUserInfoState extends State<UpdateUserInfo> {
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       setState(() {
-        _usernameController.text = data['username'] ?? '';
+        _usernameController.text = data['name'] ?? '';
         _emailController.text = data['email'] ?? '';
         _genderController.text = data['gender'] ?? '';
         _birthOfDateController.text = _formatDate(data?['birthOfDate'] ?? '');

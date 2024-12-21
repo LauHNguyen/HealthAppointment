@@ -26,7 +26,6 @@ export class UserController {
 
   @Get('id')
   async getCurrentUserId(@Req() req: Request) {
-
     // Lấy user từ request đã được giải mã thông qua JWT Guard
     const user: any = req.user; // user đã được xác thực
     return { userId: user.id }; // Trả về ID người dùng
@@ -34,10 +33,10 @@ export class UserController {
 
   @Get('name')
   async getCurrentUserName(@Req() req: Request) {
-  // Lấy user từ request đã được giải mã thông qua JWT Guard
-  const user: any = req.user; // user đã được xác thực
-  // return await this.userService.getUserName(user.id) ;
-  return { username: user.username}
+    // Lấy user từ request đã được giải mã thông qua JWT Guard
+    const user: any = req.user; // user đã được xác thực
+    // return await this.userService.getUserName(user.id) ;
+    return { username: user.name };
   }
 
   // Update
@@ -56,5 +55,4 @@ export class UserController {
     //const userId = user._id;
     return await this.userService.getUserProfile(user.id);
   }
-
 }
