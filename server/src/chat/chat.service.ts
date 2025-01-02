@@ -19,6 +19,10 @@ export class ChatService {
     return createdMessage.save();
   }
 
+  async getReceiverMessage(userId: string): Promise<Message[]>{
+    return this.messageModel.find({sender: userId}).select('receiver sender').sort({createdAt :1}).exec();
+  }
+
   async getMessages(userId: string, partnerId: string): Promise<Message[]> {
     return this.messageModel
       .find({

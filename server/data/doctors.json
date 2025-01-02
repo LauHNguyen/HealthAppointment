@@ -1,392 +1,6339 @@
 [
    {
-      "name": "Phạm Quang Nhật",
-      "specialty": "Sản khoa",
-      "hospitalName": "Bệnh viện Từ Dũ"
+     "name": "Phạm Quang Nhật",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Đỗ Thị Lệ Chi",
-      "specialty": "Sản khoa",
-      "hospitalName": "Bệnh viện Từ Dũ"
+     "name": "Đỗ Thị Lệ Chi",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Trương Huỳnh Hồng Loan",
-      "specialty": "Sản khoa",
-      "hospitalName": "Bệnh viện Từ Dũ"
+     "name": "Trương Huỳnh Hồng Loan",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Trần Thị Ngọc Thanh",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
+     "name": "Thái Thị Lê Thu",
+     "specialty": "Điều dưỡng",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Dương Tú Nguyên",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
+     "name": "Nguyễn Thị Tuyết Hằng",
+     "specialty": "Điều dưỡng",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Trần Đức Đạt",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
+     "name": "Lê Đức Minh Thi",
+     "specialty": "Hậu Sản",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Nguyễn Phú Nhiên",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
+     "name": "Hồ Kỳ Thu Nguyệt",
+     "specialty": "Hậu Sản",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Đoàn Mạnh Đạt",
-      "specialty": "Nha khoa",
-      "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
+     "name": "Bùi Thanh Vân",
+     "specialty": "Chăm sóc trước sinh",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Trần Thanh Thảo",
-      "specialty": "Nha khoa",
-      "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
+     "name": "Trần Thị Nhật Thiên Trang",
+     "specialty": "Chăm sóc trước sinh",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Bùi Hải Yến",
-      "specialty": "Mắt",
-      "hospitalName": "Bệnh viện Mắt Sài Gòn Lê Thị Riêng"
+     "name": "Hồ Thị Hoa",
+     "specialty": "Phụ khoa",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Nguyễn Thị Thạch Thảo",
-      "specialty": "Mắt",
-      "hospitalName": "Bệnh viện Mắt Sài Gòn Lê Thị Riêng"
+     "name": "Nguyễn Thị Kiều Oanh",
+     "specialty": "Phụ khoa",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Đặng Quốc Hưng",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Quận 1"
+     "name": "Lê Thị Minh Châu",
+     "specialty": "Hiếm muộn",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Lưu Trịnh Thanh Ngoan",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Quận 1"
+     "name": "Nguyễn Thị Diệu Mân",
+     "specialty": "Hiếm muộn",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Nguyễn Hồng Ri",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Quận 1"
+     "name": "Nguyễn Thị Minh Tâm",
+     "specialty": "Tạo hình - thẩm mỹ",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Nguyễn Hữu Phúc",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Quận 1"
+     "name": "Xin Thị Múi",
+     "specialty": "Tạo hình - thẩm mỹ",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Nguyễn Công Sơn",
-      "specialty": "Tai-Mũi-Họng",
-      "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+     "name": "Phan Thanh Bình",
+     "specialty": "Cấp cứu chống độc",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Tôn Nữ Minh Hương",
-      "specialty": "Tai-Mũi-Họng",
-      "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+     "name": "Phạm Ngọc Thanh Anh",
+     "specialty": "Cấp cứu chống độc",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Đặng Anh Thư",
-      "specialty": "Sản khoa",
-      "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+     "name": "Trần Chánh Thuận",
+     "specialty": "Ung bứu phụ khoa",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Trần Thị Hai",
-      "specialty": "Sản khoa",
-      "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+     "name": "Nguyễn Hoàng Lam",
+     "specialty": "Ung bứu phụ khoa",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Hồ Đăng Hiện",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Quận 1 - Cơ sở 2"
+     "name": "Ngô Thị Yên",
+     "specialty": "Kế hoạch gia đình",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Trần Mai Hảo",
-      "specialty": "Y học cổ truyền",
-      "hospitalName": "Bệnh viện Quận 1 - Cơ sở 2"
+     "name": "Nguyễn Thị Bích Ty",
+     "specialty": "Kế hoạch gia đình",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Lâm Đăng Khoa",
-      "specialty": "Thẩm mỹ",
-      "hospitalName": "Bệnh Viện Quốc Tế Thảo Điền"
+     "name": "Nguyễn Thị Từ Anh",
+     "specialty": "Sơ sinh",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Ngô Thị Vân Hương",
-      "specialty": "Thẩm mỹ",
-      "hospitalName": "Bệnh Viện Quốc Tế Thảo Điền"
+     "name": "Lê Thị Loan",
+     "specialty": "Sơ sinh",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Ngô Thanh Mai",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+     "name": "Võ Thị Đem",
+     "specialty": "Dinh dưỡng tiết chế",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Quách Triều Giang",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+     "name": "Mai Thị Minh Phượng",
+     "specialty": "Dinh dưỡng tiết chế",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Mai Thanh Cúc",
-      "specialty": "Ung Bướu",
-      "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+     "name": "Hà Tố Nguyên",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Phạm Văn Quỳnh",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Bưu Điện"
+     "name": "Phạm Mỹ Phượng",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Đặng Ngọc Tuyến",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Bưu Điện"
+     "name": "Nguyễn Thị Thanh Nhàn",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Trần Nguyên Ánh Tú",
-      "specialty": "Da liễu",
-      "hospitalName": "Bệnh viện Da Liễu"
+     "name": "Nguyễn La Phương Thanh",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Lư Huỳnh Thanh Thảo",
-      "specialty": "Da liễu",
-      "hospitalName": "Bệnh viện Da Liễu"
+     "name": "Trương Thị Thảo",
+     "specialty": "Nội soi",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Đậu Xuân Bình",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Bình Dân"
+     "name": "Tô Thị Thục Trang",
+     "specialty": "Nội soi",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Lê Vũ Tân",
-      "specialty": "Nam khoa",
-      "hospitalName": "Bệnh viện Bình Dân"
+     "name": "Nguyễn Thị Phương Tần",
+     "specialty": "Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Đặng Hồng Sơn",
-      "specialty": "Mắt",
-      "hospitalName": "Bệnh viện Mắt"
+     "name": "Thái Thiên Hương",
+     "specialty": "Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Dương Công Hinh",
-      "specialty": "Mắt",
-      "hospitalName": "Bệnh viện Mắt"
+     "name": "Vũ Duy Minh",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Khưu Minh Thái",
-      "specialty": "Tai-Mũi-Họng",
-      "hospitalName": "Bệnh viện Tai Mũi Họng"
+     "name": "Trần Việt Tân",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Trương Mỹ Thục Uyên",
-      "specialty": "Tai-Mũi-Họng",
-      "hospitalName": "Bệnh viện Tai Mũi Họng"
+     "name": "Nguyễn Thị Phương Tần",
+     "specialty": "Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Nguyễn Thị Ly Châu",
-      "specialty": "Vật lý trị liệu",
-      "hospitalName": "Bệnh viện Y học Cổ truyền"
+     "name": "Thái Thiên Hương",
+     "specialty": "Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Nguyễn Công Minh",
-      "specialty": "Tim mạch",
-      "hospitalName": "Bệnh viện Y học Cổ truyền"
+     "name": "Nguyễn Khắc Hân Hoan",
+     "specialty": "Xét nghiệm di truyền học",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Nguyễn Ban Mai",
-      "specialty": "Sản khoa",
-      "hospitalName": "Bệnh viện An Sinh"
+     "name": "Nguyễn Ngọc Song Trâm",
+     "specialty": "Xét nghiệm di truyền học",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Trần Huỳnh Kim Khánh",
-      "specialty": "Nhi khoa",
-      "hospitalName": "Bệnh viện An Sinh"
+     "name": "Phan Thị Ngọc Anh",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
    {
-      "name": "Đào Duy Tường",
-      "specialty": "Tai-Mũi-Họng",
-      "hospitalName": "Bệnh viện Quận 4"
+     "name": "Huỳnh Thị Hồng Gấm",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện Từ Dũ"
    },
+   
    {
-      "name": "Đỗ Phước Hùng",
-      "specialty": "Chấn thương chỉnh hình",
-      "hospitalName": "Bệnh viện Chợ Rẫy"
+     "name": "Trượng Thị Anh",
+     "specialty": "Điều dưỡng",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Thái Minh Sâm",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Chợ Rẫy"
+     "name": "Quách Nguyên Cát Nhi",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Phạm Nguyễn Bảo Quốc",
-      "specialty": "Thần Kinh",
-      "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+     "name": "Lê Trung Chính",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Võ Duy Thông",
-      "specialty": "Tiêu hóa",
-      "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+     "name": "Phan Quốc Linh",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Hoàng Nguyên Khanh",
-      "specialty": "Cấp cứu",
-      "hospitalName": "Bệnh viện Truyền máu Huyết học"
+     "name": "Chu Thị Hồng Phương",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Trịnh Thùy Dương",
-      "specialty": "Huyết học",
-      "hospitalName": "Bệnh viện Truyền máu Huyết học"
+     "name": "Nguyễn Ngọc Vinh",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Hồng Ngọc Thạch",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện An Bình"
+     "name": "Hoàng Ngọc Tường Vi",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Trương Hoàng Tố Anh",
-      "specialty": "Nhi khoa",
-      "hospitalName": "Bệnh viện An Bình"
+     "name": "Bùi Thị Thu Hoài",
+     "specialty": "Dinh Dưỡng",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Nguyễn Đức Bằng",
-      "specialty": "Hô Hấp",
-      "hospitalName": "Bệnh viện Phạm Ngọc Thạch"
+     "name": "Trần Hoa",
+     "specialty": "Chấn thương chỉnh hình - Bỏng",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Nguyễn Văn Tẩn",
-      "specialty": "Hô Hấp",
-      "hospitalName": "Bệnh viện Phạm Ngọc Thạch"
+     "name": "Trần Hoài Nhiên",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Nguyễn Thị Hồng Chuyên",
-      "specialty": "Da liễu",
-      "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+     "name": "Huỳnh Nguyễn Hải Đăng",
+     "specialty": "Cấp cứu hồi sức",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Trịnh Tiến Đạt",
-      "specialty": "Sản khoa",
-      "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+     "name": "Bùi Thị Ngọc Hoanh",
+     "specialty": "Cấp cứu hồi sức",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Phạm Chí Lăng",
-      "specialty": "Chấn thương chỉnh hình",
-      "hospitalName": "Bệnh viện Chấn thương Chỉnh hình TP.HCM"
+     "name": "Trần Thị Ngọc Thanh",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Lê Gia Ánh Thỳ",
-      "specialty": "Chấn thương chỉnh hình",
-      "hospitalName": "Bệnh viện Chấn thương Chỉnh hình TP.HCM"
+     "name": "Dương Tú Nguyên",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Trương Nhật Trang",
-      "specialty": "Nhi khoa",
-      "hospitalName": "Bệnh viện Thân Dân"
+     "name": "Trần Đức Đạt",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
    {
-      "name": "Ngô Thị Lệ Dung",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Thân Dân"
+     "name": "Nguyễn Phú Nhiên",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Đa khoa Sài Gòn"
    },
+   
    {
-      "name": "Lương Bạch Lan",
-      "specialty": "Phụ khoa",
-      "hospitalName": "Bệnh viện Hùng Vương"
+     "name": "Hoàng Ngọc Bích",
+     "specialty": "Điều trị tổng hợp kỹ thuật cao 2",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Huỳnh Thụy Thảo Quyên",
-      "specialty": "Sản khoa",
-      "hospitalName": "Bệnh viện Hùng Vương"
+     "name": "Hồ Ngọc Trung",
+     "specialty": "Điều trị tổng hợp kỹ thuật cao 2",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Hồ Thị Thanh Hồng",
-      "specialty": "Cấp cứu",
-      "hospitalName": "Bệnh viện quận 6"
+     "name": "Nguyễn Ngọc Cường",
+     "specialty": "Điều trị tổng hợp kỹ thuật cao 1",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Ngô Hoài Quốc",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện quận 6"
+     "name": "Nguyễn Quang Việt",
+     "specialty": "Điều trị tổng hợp kỹ thuật cao 1",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Nguyễn Thanh Bình",
-      "specialty": "Thận",
-      "hospitalName": "Bệnh viện Quận 7"
+     "name": "Nguyễn Minh Đăng",
+     "specialty": "Điều trị đặc biệt",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Nguyễn Đức Tâm",
-      "specialty": "Gây mê hồi sức",
-      "hospitalName": "Bệnh viện Quận 7"
+     "name": "Nguyễn Thị Thảo Vân",
+     "specialty": "Điều trị đặc biệt",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Nguyễn Phương Khanh",
-      "specialty": "Nhi khoa",
-      "hospitalName": "Bệnh viện Phương Nam"
+     "name": "Trần Xuân Thắng",
+     "specialty": "Cấy Ghép Răng (Implant)",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Vũ Đình Hiếu",
-      "specialty": "Sản khoa",
-      "hospitalName": "Bệnh viện Phương Nam"
+     "name": "Nguyễn Đức Minh",
+     "specialty": "Cấy Ghép Răng (Implant)",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Phan Văn Duyệt",
-      "specialty": "Tim mạch",
-      "hospitalName": "Bệnh viện Tim Tâm Đức"
+     "name": "Bảo Phước Đức",
+     "specialty": "Phẫu thuật răng hàm mặt",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Nguyễn Thị Minh Hằng",
-      "specialty": "Tim mạch",
-      "hospitalName": "Bệnh viện Tim Tâm Đức"
+     "name": "Đặng Nguyên Khanh",
+     "specialty": "Phẫu thuật răng hàm mặt",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Châu Thị Kim Liên",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Pháp Việt"
+     "name": "Lê Hạnh Nguyên",
+     "specialty": "Chữa Răng và Nội Nha",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Stéphane Guero",
-      "specialty": "Chấn thương chỉnh hình",
-      "hospitalName": "Bệnh viện Pháp Việt"
+     "name": "Trần Ngọc Mạnh Khoa",
+     "specialty": "Chữa Răng và Nội Nha",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Nguyễn Văn Minh",
-      "specialty": "Tai-Mũi-Họng",
-      "hospitalName": "Bệnh viện Tân Hưng"
+     "name": "Đặng Nguyên Khanh",
+     "specialty": "Phẫu thuật trong miệng",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Phan Văn Thảo",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Tân Hưng"
+     "name": "Bảo Phước Đức",
+     "specialty": "Phẫu thuật trong miệng",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Phan Thị Bích Phượng",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Quận 8"
+     "name": "Nguyễn Thị Mai Phương",
+     "specialty": "Răng trẻ em",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Võ Duy Tân",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Quận 8"
+     "name": "Nguyễn Thị Thu Thủy",
+     "specialty": "Răng trẻ em",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Bùi Phạm Minh Mẫn",
-      "specialty": "Y học cổ truyền",
-      "hospitalName": "Bệnh viện Phục hồi chức năng"
+     "name": "Trương Quang Toàn",
+     "specialty": "Chỉnh hình răng mặt",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Đinh Quang Thanh",
-      "specialty": "Vật lý trị liệu",
-      "hospitalName": "Bệnh viện Phục hồi chức năng"
+     "name": "Mai Ngọc Minh",
+     "specialty": "Chỉnh hình răng mặt",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Đinh Thị Thảnh",
-      "specialty": "Sản khoa",
-      "hospitalName": "Bệnh viện Quân Dân Y Miền Đông"
+     "name": "Phan Xuân Hinh",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Lê Tuyết Trâm",
-      "specialty": "Ngoại tổng hợp",
-      "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+     "name": "Trần Thị Thanh Trúc",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
    },
    {
-      "name": "Châu Hoàng Sinh",
-      "specialty": "Nội tổng hợp",
-      "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+     "name": "Vũ Tấn Minh",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
+   },
+   {
+     "name": "Trịnh Hoàng Anh Thư",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
+   },
+   {
+     "name": "Nguyễn Tú Hoa",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
+   },
+   {
+     "name": "Lưu An Khương",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
+   },
+   {
+     "name": "Võ Đức Tuấn",
+     "specialty": "Phẫu thuật tạo hình thẩm mỹ hàm mặt",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
+   },
+   {
+     "name": "Trần Võ Anh Thắng",
+     "specialty": "Phẫu thuật tạo hình thẩm mỹ hàm mặt",
+     "hospitalName": "Bệnh viện Răng Hàm Mặt TP.HCM"
+   },
+   
+   {
+     "name": "Nguyễn Thành Tâm",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Nguyễn Thị Minh Tuyết",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Đặng Quốc Hưng",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Lưu Trịnh Thanh Ngoan",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Nguyễn Hồng Ri",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Nguyễn Hữu Phúc",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Lê Chí Hiếu",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Trần Duy Quý",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Lê Đô",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Nguyễn Nhật Quang",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Võ Thị Kim Oanh",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Kim Trung Lý",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+   {
+     "name": "Nguyễn Thị Anh Thư",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận 1"
+   },
+    
+   {
+     "name": "Nguyễn Công Sơn",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Tôn Nữ Minh Hương",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Trà",
+     "specialty": "Sản Khoa",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Hoàng Minh Hạnh",
+     "specialty": "Sản Khoa",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Thúy",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Nguyễn Hoàng Gia",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Nguyễn Thị Thu Thủy",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Lê Thị Diệu Hồng",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Bùi Trung Nghiêm",
+     "specialty": "Tổng quát-Nội tiết",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Tăng Ngọc Diệp",
+     "specialty": "Tổng quát-Nội tiết",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Trần Ngọc Thủy Tiên",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Trần Thị Ngọc Sương",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Bùi Văn Đức",
+     "specialty": "Da liễu-Thẩm mỹ",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Trần Viết Quốc Liêm",
+     "specialty": "Da liễu-Thẩm mỹ",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Mai Thị Diệu Trinh",
+     "specialty": "Tiêu hóa",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Đào Phương Oanh",
+     "specialty": "Tiêu hóa",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Huỳnh Thị Loan",
+     "specialty": "Gan-Mật-Nhiễm",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Nguyễn Thúc Bội Huyền",
+     "specialty": "Gan-Mật-Nhiễm",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Hoàng Quang Minh",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Đỗ Ngọc Cách",
+     "specialty": "Phẫu thuật-Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Nguyễn Thanh Hải",
+     "specialty": "Phẫu thuật-Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Kim Bun Thươn",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Nguyễn Thị Bông",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Nguyễn Thị Phượng",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+   {
+     "name": "Vương Thị Yến",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Tai Mũi Họng Sài Gòn"
+   },
+    
+   {
+     "name": "Đặng Anh Thư",
+     "specialty": "Sản Khoa",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Nguyễn Thị Thu Hồng",
+     "specialty": "Sản Khoa",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Dương Phương Mai",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Trần Thị Tuyết Hạnh",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Phạm Mạnh Hùng",
+     "specialty": "Siêu âm",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Hà Thị Như Loan",
+     "specialty": "Siêu âm",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Đặng Thị Tuyết Nga",
+     "specialty": "Kế hoạch hóa gia đình",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Hắc Thị Kim Đồng",
+     "specialty": "Kế hoạch hóa gia đình",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Trần Đoàn Phương Trân",
+     "specialty": "Cấp cứu-Hồi sức-Tích cực-Chống độc",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Hồ Thị Ngọc Dung",
+     "specialty": "Cấp cứu-Hồi sức-Tích cực-Chống độc",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Trần Thị Hai",
+     "specialty": "Kế hoạch tổng hợp",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Lê Quang Tân",
+     "specialty": "Nhi-Sơ sinh",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Nguyễn Quốc Toản",
+     "specialty": "Nhi-Sơ sinh",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Võ Thị Thu Hằng",
+     "specialty": "Khoa X-quang",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Phạm Bích Sơn",
+     "specialty": "Hiếm muộn vô sinh",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Dương Công Bằng",
+     "specialty": "Hiếm muộn vô sinh",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Lê Nguyễn Tố Oanh",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Lê Nguyễn Quang Huy",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Bùi Ngọc Đệ",
+     "specialty": "Giải phẫu bệnh",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   {
+     "name": "Mai Thảo Ly",
+     "specialty": "Hậu phẩu-Hậu sản",
+     "hospitalName": "Bệnh viện phụ sản Quốc Tế Sài Gòn"
+   },
+   
+   {
+     "name": "Hồ Đăng Hiện",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Quận 1 - Cơ sở 2"
+   },
+   {
+     "name": "Huỳnh Tấn Phi",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Quận 1 - Cơ sở 2"
+   },
+   {
+     "name": "Trần Mai Hảo",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Quận 1 - Cơ sở 2"
+   },
+   {
+     "name": "Đào Thanh Vinh",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận 1 - Cơ sở 2"
+   },
+   {
+     "name": "Lê Minh",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận 1 - Cơ sở 2"
+   },
+   {
+     "name": "Phan Thị Quỳnh Như",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận 1 - Cơ sở 2"
+   },
+   {
+     "name": "Nguyễn Nữ Nga My",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 1 - Cơ sở 2"
+   },
+   {
+     "name": "Nguyễn Trọng Khoa",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 1 - Cơ sở 2"
+   },
+   
+   {
+     "name": "Võ Thị Minh Tuyền",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện Nhi đồng 2"
+   },
+   {
+     "name": "Nguyễn Xuân Thúy Quỳnh",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện Nhi đồng 2"
+   },
+   {
+     "name": "Nguyễn Thanh Tùng",
+     "specialty": "Nội nhi",
+     "hospitalName": "Bệnh viện Nhi đồng 2"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Dung",
+     "specialty": "Nội nhi",
+     "hospitalName": "Bệnh viện Nhi đồng 2"
+   },
+   {
+     "name": "Lê Ngọc Hồng Hạnh",
+     "specialty": "Thần kinh",
+     "hospitalName": "Bệnh viện Nhi đồng 2"
+   },
+   {
+     "name": "Lý Thị Tuyền",
+     "specialty": "Ung bứu-Huyết học",
+     "hospitalName": "Bệnh viện Nhi đồng 2"
+   },
+   {
+     "name": "Nguyễn Thanh Tùng",
+     "specialty": "Hồi sức tích cực",
+     "hospitalName": "Bệnh viện Nhi đồng 2"
+   },
+   {
+     "name": "Vũ Thiên Ân",
+     "specialty": "Tư vấn dinh dưỡng",
+     "hospitalName": "Bệnh viện Nhi đồng 2"
+   },
+   
+   {
+     "name": "Trương Công Minh",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Mắt Sài Gòn Lê Thị Riêng"
+   },
+   {
+     "name": "Nguyễn Thị Nguyệt Minh",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Mắt Sài Gòn Lê Thị Riêng"
+   },
+   {
+     "name": "Bùi Hải Yến",
+     "specialty": "Khoa Khúc xạ",
+     "hospitalName": "Bệnh viện Mắt Sài Gòn Lê Thị Riêng"
+   },
+   {
+     "name": "Nguyễn Minh Tân",
+     "specialty": "Khoa Khúc xạ",
+     "hospitalName": "Bệnh viện Mắt Sài Gòn Lê Thị Riêng"
+   },
+   {
+     "name": "Nguyễn Mạnh Thọ",
+     "specialty": "Nội Khoa",
+     "hospitalName": "Bệnh viện Mắt Sài Gòn Lê Thị Riêng"
+   },
+   {
+     "name": "Nguyễn Hồ Việt Liên",
+     "specialty": "Phẫu thuật Cườm khô",
+     "hospitalName": "Bệnh viện Mắt Sài Gòn Lê Thị Riêng"
+   },
+   {
+     "name": "Huỳnh Thị Ngọc Linh",
+     "specialty": "Phẫu thuật Cườm nước",
+     "hospitalName": "Bệnh viện Mắt Sài Gòn Lê Thị Riêng"
+   },
+   {
+     "name": "Huỳnh Thị Thanh Thảo",
+     "specialty": "Nhãn nhi-Lác",
+     "hospitalName": "Bệnh viện Mắt Sài Gòn Lê Thị Riêng"
+   },
+    
+   {
+     "name": "Lâm Đăng Khoa",
+     "specialty": "Thẩm mỹ",
+     "hospitalName": "Bệnh Viện Quốc Tế Thảo Điền"
+   },
+   {
+     "name": "Ngô Thị Vân Hương",
+     "specialty": "Thẩm mỹ",
+     "hospitalName": "Bệnh Viện Quốc Tế Thảo Điền"
+   },
+   {
+     "name": "Nguyễn Văn Thắng",
+     "specialty": "Thẩm mỹ",
+     "hospitalName": "Bệnh Viện Quốc Tế Thảo Điền"
+   },
+   {
+     "name": "Philip Thang Nguyen",
+     "specialty": "Thẩm mỹ",
+     "hospitalName": "Bệnh Viện Quốc Tế Thảo Điền"
+   },
+   {
+     "name": "Pascal Oxeda",
+     "specialty": "Thẩm mỹ",
+     "hospitalName": "Bệnh Viện Quốc Tế Thảo Điền"
+   },
+   {
+     "name": "Alain Michel",
+     "specialty": "Sản phụ khoa",
+     "hospitalName": "Bệnh Viện Quốc Tế Thảo Điền"
+   },
+   
+   {
+     "name": "Robert Francois Marie Riche",
+     "specialty": "Phụ sản",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Vũ Văn Phi",
+     "specialty": "Phụ sản",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Orly Dattia Dafni",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Yutaro Hara",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Ngô Thanh Mai",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Quách Triều Giang",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Nguyễn Ngọc Tiến",
+     "specialty": "Thận niệu-Nam Khoa",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Mai Thanh Cúc",
+     "specialty": "Ung Bướu",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Saijo Yasuo",
+     "specialty": "Ung Bướu",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Trường Dạ Uyên",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Nguyễn Thịnh Vượng",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Esser Rene Daniel",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Nguyễn Viết Thịnh",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Dương Thúy Liên",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Trần Thị Khuê Vy",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Nguyễn Thị Như Ái",
+     "specialty": "Vật lý trị liệu-Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Jiro Kitamura",
+     "specialty": "Nội tổng quát",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Nguyễn Thái Trân",
+     "specialty": "Nội tổng quát",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Trần Thị Thu Thảo",
+     "specialty": "Thẩm mỹ nội khoa-Chống lão hóa",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Nguyễn Đình Mỹ",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Trần Hải Đăng",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Trần Thu Phượng",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Ong Kian Soon",
+     "specialty": "Khám bệnh-Kiểm tra sức khỏe tổng quát",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Mihajlovic Jadranka",
+     "specialty": "Khám bệnh-Kiểm tra sức khỏe tổng quát",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Phan Hoàng Nguyên",
+     "specialty": "Hồi sức cấp cứu",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Strati Julian Alberto",
+     "specialty": "Hồi sức cấp cứu",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Nguyễn Thanh Oánh",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Nguyễn Tấn Phước",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+   {
+     "name": "Lê Phạm Anh Vy",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Quốc Tế Mỹ (AIH)"
+   },
+    
+   {
+     "name": "Phạm Văn Quỳnh",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Bưu Điện"
+   },
+   {
+     "name": "Đặng Ngọc Tuyến",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Bưu Điện"
+   },
+   {
+     "name": "Cao Ngọc Sơn",
+     "specialty": "Nội tổng quát-Hồi sức cấp cứu",
+     "hospitalName": "Bệnh viện Bưu Điện"
+   },
+   {
+     "name": "Nguyễn Sơn",
+     "specialty": "Nội tổng quát-Hồi sức cấp cứu",
+     "hospitalName": "Bệnh viện Bưu Điện"
+   },
+   {
+     "name": "Hồ Minh Lê",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Bưu Điện"
+   },
+   {
+     "name": "Hồ Thị Lam",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Bưu Điện"
+   },
+   {
+     "name": "Nguyễn Thị Xuân Thu",
+     "specialty": "Sản Phụ Khoa",
+     "hospitalName": "Bệnh viện Bưu Điện"
+   },
+   
+   {
+     "name": "Đặng Nguyễn Trung An",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Trần Đại Nghĩa",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lê Phước Thành Nhân",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Thượng Công Huy",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Hoàng Hải",
+     "specialty": "Nội soi",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Trần Thị Mến",
+     "specialty": "Nội soi",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Trần Qúi Phương Linh",
+     "specialty": "Hóa sinh",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Phạm Thanh Bình",
+     "specialty": "Hóa sinh",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lê Minh Huy",
+     "specialty": "Giải phẫu bệnh",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Trần Lê Hoài",
+     "specialty": "Giải phẫu bệnh",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Hoàng Thị Cát Tường",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Thị Bích Lan",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Trần Quý Phương Thuỳ",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nhâm Thanh Thuý",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Diêu Hà Lam",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Văn Hiên",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Phạm Minh Thành",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Từ Kim Thanh",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lê Hồng Tuấn",
+     "specialty": "Nội tim mạch lão học",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Vũ Thi",
+     "specialty": "Nội tim mạch lão học",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Thị Lệ",
+     "specialty": "Thận nhân tạo",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Từ Kim Thanh",
+     "specialty": "Thận nhân tạo",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Thị Ngọc Trâm",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lê Thị Hoa",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Thúy Hằng",
+     "specialty": "Truyền nhiễm",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Võ Thanh Hùng",
+     "specialty": "Truyền nhiễm",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Thị Thuận",
+     "specialty": "Da Liễu",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lâm Bình Diễm",
+     "specialty": "Da Liễu",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lê Thị Bích Hường",
+     "specialty": "Phụ Sản",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Hương Lan",
+     "specialty": "Phụ Sản",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lâm Đại Phong",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lê Bảo Anh",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Thanh Hùng",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Trương Trí Tường",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Huỳnh Chí Nguyễn",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lê Nhật Nam",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lý Chung Huy",
+     "specialty": "Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Thanh Sang",
+     "specialty": "Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Ngô Văn Quốc",
+     "specialty": "Ngoại chấn thương",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Trương Tấn Trung",
+     "specialty": "Ngoại chấn thương",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Hoàng Đình Tuy",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Hoài Nghị",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Trần Quang Vinh",
+     "specialty": "Gây mê-Hồi sức",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Kiều Ngọc Minh",
+     "specialty": "Gây mê-Hồi sức",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Trần Công Trưởng",
+     "specialty": "Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Dương Tuấn Khanh",
+     "specialty": "Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Hữu Sơn",
+     "specialty": "Tâm lý lâm sàn",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Ngọc Quế Châu",
+     "specialty": "Tâm lý lâm sàn",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Thị Tuyết Nga",
+     "specialty": "Y dược cổ truyền",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Phan Hồng Xuân Yến",
+     "specialty": "Y dược cổ truyền",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Thị Thơm",
+     "specialty": "Tiết chế dinh dưỡng",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lý Kha Niến",
+     "specialty": "Tiết chế dinh dưỡng",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Phan Minh Hoàng",
+     "specialty": "Tạo hình thẩm mỹ",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Lê Hành",
+     "specialty": "Tạo hình thẩm mỹ",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Đỗ Bá Tùng",
+     "specialty": "Vi sinh",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Phạm Hùng Vân",
+     "specialty": "Vi sinh",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Hồ Thanh Phong",
+     "specialty": "Phẫu thuật lồng ngực mạch máu",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+   {
+     "name": "Nguyễn Thái Dũng",
+     "specialty": "Phẫu thuật lồng ngực mạch máu",
+     "hospitalName": "Bệnh viện Lê Văn Thịnh"
+   },
+    
+   {
+     "name": "Trần Nguyên Ánh Tú",
+     "specialty": "Da liễu",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Lư Huỳnh Thanh Thảo",
+     "specialty": "Da liễu",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Đoàn Văn Lợi Em",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Võ Thanh Phương",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Vũ Thị Phương Thảo",
+     "specialty": "Lâm sàng 1",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Nguyễn Thị Thùy Dung",
+     "specialty": "Lâm sàng 2",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Võ Quang Đỉnh",
+     "specialty": "Lâm sàng 1",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Nguyễn Văn Lối",
+     "specialty": "Lâm sàng 2",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Võ Thị Đoan Phượng",
+     "specialty": "Lâm sàng 3",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Thơ",
+     "specialty": "Lâm sàng 3",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Phạm Hiếu Liêm",
+     "specialty": "Khoa Ngoại",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Phạm Văn Đảm",
+     "specialty": "Khoa Ngoại",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Lê Thị Thanh Trúc",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Nguyễn Đắc Tuấn",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Bùi Quốc Hiếu",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Nguyễn Thị Thu Hằng",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Vũ Thị Kim Khánh",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Nguyễn Tuyết Hạnh",
+     "specialty": "Khoa Dược",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Trần Kim Phượng",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+   {
+     "name": "Nguyễn Thị Kim Cúc",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Da Liễu"
+   },
+    
+   {
+     "name": "Lê Vũ Tân",
+     "specialty": "Nam khoa",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Trần Đoàn Thiên Quốc",
+     "specialty": "Nam khoa",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Bùi Đức Thịnh",
+     "specialty": "Ngoại tổng quát",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Võ Chí Nguyện",
+     "specialty": "Ngoại tổng quát",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Nguyễn Minh Duật",
+     "specialty": "Ngoại tiết niệu",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Dương Cao Trí",
+     "specialty": "Ngoại tiết niệu",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Dương Đăng Hiếu",
+     "specialty": "Niệu nữ",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Lê Hoàng Mỹ Hạnh",
+     "specialty": "Niệu nữ",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Nguyễn Hoàng Huy",
+     "specialty": "Phẫu thuật tim-mạch máu",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Phạm Ngọc Hoan",
+     "specialty": "Niệu nữ",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Hinh Mỹ Phụng",
+     "specialty": "Nội thận",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Bùi Thành Nhân",
+     "specialty": "Nội thận",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Nguyễn Thị Thạch Thảo",
+     "specialty": "Nội khoa",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Võ Hiếu Hạnh",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Nguyễn Thị Lệ Nga",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Danh Tuấn",
+     "specialty": "Ung bứu",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Võ Hữu Nhân",
+     "specialty": "Ung bứu",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Tống Thị Minh Thương",
+     "specialty": "Hồi sức tích cực chống độc",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Tôn Minh Trí",
+     "specialty": "Hồi sức tích cực chống độc",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Tạ Văn Ngọc Đức",
+     "specialty": "Nội soi tiêu hóa",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Trần Quang Trình",
+     "specialty": "Nội soi tiêu hóa",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Cao Phi Loan",
+     "specialty": "Ngoại gan mật tụy",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Châu Ngọc Yến Linh",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Huỳnh Thị Mai Phương",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Đinh Ngọc Diệp",
+     "specialty": "Dinh dưỡng tiết chế",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Tống Thị Minh Kha",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Đào Thị Mộng Cầm",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Nguyễn Hải Đông",
+     "specialty": "Hồi sức cấp cứu",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "La Chí Hải",
+     "specialty": "Giải phẩu bệnh",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Nguyễn Ngọc Minh Tâm",
+     "specialty": "Giải phẩu bệnh",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Quách Trương Nguyện",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Phó Trí Dũng",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Lê Thị Đan Thùy",
+     "specialty": "Lọc máu",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+   {
+     "name": "Lê Thùy Dương",
+     "specialty": "Lọc máu",
+     "hospitalName": "Bệnh viện Bình Dân"
+   },
+    
+   {
+     "name": "Đặng Hồng Sơn",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Dương Công Hinh",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Biện Thị Cẩm Vân",
+     "specialty": "Thần kinh Nhãn khoa-Tạo hình thẩm mỹ",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Đặng Xuân Mai",
+     "specialty": "Thần kinh Nhãn khoa-Tạo hình thẩm mỹ",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Chung Nữ Giang Thanh",
+     "specialty": "Giác mạc",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Đặng Hồng Sơn",
+     "specialty": "Giác mạc",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Đinh Hữu Vân Quỳnh",
+     "specialty": "Mắt Nhi",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Lâm Hoàng Yến",
+     "specialty": "Mắt Nhi",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Đoàn Lương Hiền",
+     "specialty": "Dịch kính Võng mạc",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Đoàn Thị Hồng Hạnh",
+     "specialty": "Dịch kính Võng mạc",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Dương Minh Nguyệt",
+     "specialty": "Cườm nước",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+   {
+     "name": "Hoàng Đặng Nhất Phương",
+     "specialty": "Cườm nước",
+     "hospitalName": "Bệnh viện Mắt"
+   },
+    
+   {
+     "name": "Khưu Minh Thái",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Tai Mũi Họng"
+   },
+   {
+     "name": "Trương Mỹ Thục Uyên",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Tai Mũi Họng"
+   },
+   {
+     "name": "Nguyễn Minh Hảo Hớn",
+     "specialty": "Mũi xoang",
+     "hospitalName": "Bệnh viện Tai Mũi Họng"
+   },
+   {
+     "name": "Phạm Kiên Hữu",
+     "specialty": "Mũi xoang",
+     "hospitalName": "Bệnh viện Tai Mũi Họng"
+   },
+   {
+     "name": "Trần Cao Khoát",
+     "specialty": "Tai",
+     "hospitalName": "Bệnh viện Tai Mũi Họng"
+   },
+   {
+     "name": "Đỗ Thị Mỹ Nữ",
+     "specialty": "Họng",
+     "hospitalName": "Bệnh viện Tai Mũi Họng"
+   },
+   {
+     "name": "Trương Kim Chi",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Tai Mũi Họng"
+   },
+   
+   {
+     "name": "Nguyễn Thị Ly Châu",
+     "specialty": "Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Hồ Thị Ngọc Huyến",
+     "specialty": "Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Nguyễn Công Minh",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Huỳnh Xuân Thảo",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Lý Và Sềnh",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Võ Nhật Linh",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Võ Thị Mỹ Phương",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Võ Đình Hưng",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Thái Bảo Cường",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Phan Thanh Hải",
+     "specialty": "Ngoại phụ",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Huỳnh Thị Thanh Thúy",
+     "specialty": "Ngoại phụ",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Nguyễn Kỳ Xuân Nhị",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Phạm Thị Minh Tâm",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Lê Thị Hồng Nhung",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Trần Hoàng",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Thảo",
+     "specialty": "Nội lão",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   {
+     "name": "Lý Đức Kiệt",
+     "specialty": "Nội lão",
+     "hospitalName": "Bệnh viện Y học Cổ truyền"
+   },
+   
+   {
+     "name": "Nguyễn Ban Mai",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Huỳnh Thị Trong",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Trần Huỳnh Kim Khánh",
+     "specialty": "Nhi khoa",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Trần Hùng Dũng",
+     "specialty": "Nhi khoa",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Nguyễn Thanh Phong",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Lê Thị Thanh Thái",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Nguyễn Hoàng Chương",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Lê Hoàng Linh",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Phùng Thị Liệp",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Dương Thị Vân Ngọc",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Lê Kim Hà",
+     "specialty": "Hồi sức",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Nguyễn Đức Thành",
+     "specialty": "Hồi sức",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Hoàng Tuấn Việt",
+     "specialty": "Ngọai tổng hợp",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Trần Anh Trứ",
+     "specialty": "Ngọai tổng hợp",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Nguyễn Tự Đức",
+     "specialty": "Gây mê phẫu thuật",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Trần Nguyên Thị Thùy Hương",
+     "specialty": "Gây mê phẫu thuật",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Cao Ngọc Bích",
+     "specialty": "Phẫu thuật thẩm mỹ",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Dương Thị Lệ Trang",
+     "specialty": "Phẫu thuật thẩm mỹ",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Nguyễn Kim Ca",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Huỳnh Phú Cường",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Nguyễn Thị Châu Bản",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Hoàng Tô Ngọc Hân",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Lưu Hồng Sơn",
+     "specialty": "Chẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Nguyễn Đình Hồ",
+     "specialty": "Chẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Đoàn Văn Thuyên",
+     "specialty": "Nội soi",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Lê Bá Quang",
+     "specialty": "Nội soi",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Nguyễn Thị Diệu Trang",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Nguyễn Thị Trà My",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Lê Thị Hồng Nga",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Nguyễn Vũ Lam Yên",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Thái Phi Khanh",
+     "specialty": "Y học cổ truyền-Phục hồi chức năng",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Lê Văn Thường",
+     "specialty": "Y học cổ truyền-Phục hồi chức năng",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Đặng Nguyễn Thanh Tùng",
+     "specialty": "Ngoại khoa-Thẩm mỹ",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Đặng Công Sơn",
+     "specialty": "Ngoại khoa-Thẩm mỹ",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Ngô Quốc Đạt",
+     "specialty": "Giải phẫu bệnh",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Phan Đặng Anh Thư",
+     "specialty": "Giải phẫu bệnh",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Lê Minh Đông",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Hoàng Anh Vũ",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Lê Quang Quỳnh Trâm",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   {
+     "name": "Phan Thị Xinh",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện An Sinh"
+   },
+   
+   {
+     "name": "Võ Đình Hoàng Trọng",
+     "specialty": "Cấp cứu-Hồi sức tích cực và chống độc",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Nguyễn Thị Hạnh",
+     "specialty": "Cấp cứu-Hồi sức tích cực và chống độc",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Nguyễn Việt Châu",
+     "specialty": "Phẫu thuật-Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Phạm Huỳnh Bích Trâm",
+     "specialty": "Phẫu thuật-Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Trần Kim Nhựt Thành",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Phạm Thị Chuyên",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Nguyễn Phúc Tô",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Nguyễn Thu Huyền",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Nguyễn Ngọc An",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Mã Văn Sơn",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Hà Thị Liên Chi",
+     "specialty": "Phụ sản",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Trà",
+     "specialty": "Phụ sản",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Trần Thanh Nhã",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Nguyễn Trần Nhật Thu",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Nguyễn Thanh Hằng",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Trần Anh Thy",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Lê Tư",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Nguyễn Hô Thúy Hằng",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Tiền Ngọc Tú",
+     "specialty": "Y học cổ truyền-Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Châu Ngạn Hưng",
+     "specialty": "Y học cổ truyền-Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Trương Đình Thành",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Phạm Minh Trực",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Huỳnh Thị Mỵ Dung",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Vũ Thế Khương",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Vũ Công Khôi Nguyên",
+     "specialty": "Dược Khoa",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   {
+     "name": "Bùi Khắc Huy",
+     "specialty": "Dược Khoa",
+     "hospitalName": "Bệnh viện Quận 3"
+   },
+   
+   {
+     "name": "Đào Duy Tường",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Đỗ Ngọc Tuyến",
+     "specialty": "Dược Khoa",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Nguyễn Văn Tấn",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Phạm Xuân Vinh",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Nguyễn Văn An",
+     "specialty": "Cấp cứu–Hồi sức tích cực–Chống độc",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Trần Thị Hồng Nhung",
+     "specialty": "Cấp cứu–Hồi sức tích cực–Chống độc",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Trần Thị Minh Nguyệt",
+     "specialty": "Nội Khoa",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Trần Thị Thu Hương",
+     "specialty": "Nội Khoa",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Nguyễn Văn Hùng",
+     "specialty": "Ngoại Khoa",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Lê Quang Huy",
+     "specialty": "Ngoại Khoa",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Nguyễn Thị Hồng Vân",
+     "specialty": "Sản Khoa",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Nguyễn Thị Ngọc Lan",
+     "specialty": "Sản Khoa",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Phạm Thị Thanh Hương",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Lê Thị Bích Ngọc",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Lê Thị Ngọc Diệp",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Nguyễn Thị Kim Oanh",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Hường",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Huỳnh Bảo",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Nguyễn Bảo Văn Phúc",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Nguyễn Lê Bảo An",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Nguyễn Ngọc Kim Liên",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   {
+     "name": "Trần Trâm Anh",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Quận 4"
+   },
+   
+   {
+     "name": "Lê Trung Nhân",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Nguyễn Hữu Bảo Hoài",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Vũ Hữu Vĩnh",
+     "specialty": "Ngoại lồng ngực",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Nguyễn Hoàng Bình",
+     "specialty": "Ngoại lồng ngực",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Đỗ Phước Hùng",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Đỗ Đức Tín",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Đỗ Quang Hùng",
+     "specialty": "Giải phẩu thẩm mỹ",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Lê Hành",
+     "specialty": "Giải phẩu thẩm mỹ",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Nguyễn Đình Khoa",
+     "specialty": "Nội cơ xương khớp",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Lê Thượng Vũ",
+     "specialty": "Nội cơ xương khớp",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Nguyễn Kim Chung",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Lê Văn Tuấn",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Võ Thành Nhân",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   {
+     "name": "Nguyễn Tri Thức",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Chợ Rẫy"
+   },
+   
+   {
+     "name": "Phạm Nguyễn Bảo Quốc",
+     "specialty": "Thần Kinh",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Lê Thụy Minh An",
+     "specialty": "Thần Kinh",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Võ Duy Thông",
+     "specialty": "Tiêu hóa",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Nguyễn Võ Vĩnh Lộc",
+     "specialty": "Tiêu hóa",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Phạm Ngọc Chất",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Âu Thị Cẩm Lệ",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Cao Bá Hưởng",
+     "specialty": "Xương khớp-Chỉnh hình",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Trương Trọng Tín",
+     "specialty": "Xương khớp-Chỉnh hình",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Lê Thị Thanh Hương",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Trần Đại Cường",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Dương Bá Lập",
+     "specialty": "Tiêu hóa-Hậu môn-Trực tràng",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Nguyễn Văn Hải",
+     "specialty": "Tiêu hóa-Hậu môn-Trực tràng",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Lê Bửu Châu",
+     "specialty": "Viêm gan",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Nguyễn Thị Lý",
+     "specialty": "Viêm gan",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Huỳnh Tấn Đạt",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Nguyễn Thị Túy Nga",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Trần Minh Bảo Luân",
+     "specialty": "Lồng ngực-Mạch máu-Bứu cổ",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Văn Minh Trí",
+     "specialty": "Lồng ngực-Mạch máu-Bứu cổ",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Nguyễn Thị Thu Ba",
+     "specialty": "Phổi-Hô hấp",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Bùi Đại Lịch",
+     "specialty": "Phổi-Hô hấp",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Tô Quốc Hãn",
+     "specialty": "Thận-Tiết niệu",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Đoàn Trúc Quỳnh",
+     "specialty": "Thận-Tiết niệu",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Huỳnh Trần Đức Lợi",
+     "specialty": "Tổng quát",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Huỳnh Trung Quốc Hiếu",
+     "specialty": "Tổng quát",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Hồ Xuân Dũng",
+     "specialty": "Điều trị vết thương",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Ngô Quang Trương",
+     "specialty": "Điều trị vết thương",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Võ Quang Đỉnh",
+     "specialty": "Da liễu-Chăm sóc da",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Lê Ngọc Diệp Bảo",
+     "specialty": "Da liễu-Chăm sóc da",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Trần Anh Tuấn",
+     "specialty": "Tạo hình thẩm mỹ",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Ngô Quang Chương",
+     "specialty": "Tạo hình thẩm mỹ",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Hồ Đoan Trang",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Ngọc Đặng Thanh Tâm",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Hà Khổng Thương Thương",
+     "specialty": "Sản Khoa",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Hứa Kim Tuyến",
+     "specialty": "Sản Khoa",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Nguyễn Khôi",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   {
+     "name": "Phan Thị Diệu Trâm",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Đại học Y Dược TP.HCM"
+   },
+   
+   {
+     "name": "Nguyễn Ngọc Huế Anh",
+     "specialty": "Lâm sàng người lớn",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Trần Quốc Tuấn",
+     "specialty": "Lâm sàng người lớn",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Phạm Chi Thảo Hạnh",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Nguyễn Thị Hồng Hoa",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Lâm Trần Hoa Trương",
+     "specialty": "Miễn dịch",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Bao Minh Hiền",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Lê Thanh Tú",
+     "specialty": "Giải phẩu",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Phan Thị Xinh",
+     "specialty": "Di truyền học",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Trần Thị Trang",
+     "specialty": "Sàn lọc máu",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Hoàng Nguyên Khanh",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Phù Chí Dũng",
+     "specialty": "Huyết học trẻ em",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Võ Thị Thanh Trúc",
+     "specialty": "Huyết học trẻ em",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Nguyễn Tấn Bình",
+     "specialty": "Ghép tế bào gốc",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Huỳnh Văn Mẫn",
+     "specialty": "Ghép tế bào gốc",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Nguyễn Thị Bích Huyền",
+     "specialty": "Huyết sinh học",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Võ Thị Bích Liên",
+     "specialty": "Dược học",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Trần Thị Thiên Kim",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   {
+     "name": "Nguyễn Ngọc Quế Anh",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Truyền máu Huyết học"
+   },
+   
+   {
+     "name": "Hồng Ngọc Thạch",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Nguyễn Văn An",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Phạm Thị Thu Hương",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Lê Văn Tài",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Trần Văn Minh",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Lê Thị Kim Ngọc",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Tâm",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Nguyễn Văn Hùng",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Nguyễn Văn Duy",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Trần Thị Mai Anh",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Lê Thị Thu Hà",
+     "specialty": "Phẫu thuật-Gây mê-Hồi sức",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Nguyễn Văn Thắng",
+     "specialty": "Phẫu thuật-Gây mê-Hồi sức",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Trương Hoàng Tố Anh",
+     "specialty": "Nhi khoa",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Nguyễn Văn Quân",
+     "specialty": "Nhi khoa",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Nguyễn Thị Thu Hà",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+   {
+     "name": "Trần Minh Châu",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện An Bình"
+   },
+    
+   {
+     "name": "Nguyễn Đức Bằng",
+     "specialty": "Hô Hấp",
+     "hospitalName": "Bệnh viện Phạm Ngọc Thạch"
+   },
+   {
+     "name": "Nguyễn Văn Tẩn",
+     "specialty": "Hô Hấp",
+     "hospitalName": "Bệnh viện Phạm Ngọc Thạch"
+   },
+   {
+     "name": "Lê Hồng Anh",
+     "specialty": "Hô Hấp",
+     "hospitalName": "Bệnh viện Phạm Ngọc Thạch"
+   },
+   {
+     "name": "Nguyễn Văn Thọ",
+     "specialty": "Hô Hấp",
+     "hospitalName": "Bệnh viện Phạm Ngọc Thạch"
+   },
+   {
+     "name": "Đỗ Thị Tường Oanh",
+     "specialty": "Hô Hấp",
+     "hospitalName": "Bệnh viện Phạm Ngọc Thạch"
+   },
+   {
+     "name": "vBùi Thị Kim Phượng",
+     "specialty": "Hô Hấp",
+     "hospitalName": "Bệnh viện Phạm Ngọc Thạch"
+   },
+   
+   {
+     "name": "Đỗ Hải Thanh Anh",
+     "specialty": "Chẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Trương Nghi",
+     "specialty": "Chẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Minh Hà",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Ngô Thị Tuyết Hạnh",
+     "specialty": "Giải phẫu bệnh",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Diệp Đình Được",
+     "specialty": "Giải phẫu bệnh",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Lâm Vạn Phong",
+     "specialty": "Dinh dưỡng - Tiết chế",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Vương Thị Thanh Nhàn",
+     "specialty": "Dinh dưỡng - Tiết chế",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Tạ Đình Việt Phương",
+     "specialty": "Nội tim mạch",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Ka Nhọi",
+     "specialty": "Nội tim mạch",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Trần Văn Thi",
+     "specialty": "Nội hô hấp",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Phạm Nguyễn Ngọc Phú",
+     "specialty": "Nội hô hấp",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Đô",
+     "specialty": "Nội tiêu hóa",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Phan Hồng Lĩnh",
+     "specialty": "Nội tiêu hóa",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Trần Ngọc Lưu Phương",
+     "specialty": "Nội soi tiêu hóa",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Châu Quỳnh Phi Nhã",
+     "specialty": "Nội soi tiêu hóa",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Đình Thông",
+     "specialty": "Nội cơ xương khớp",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Minh Chiến",
+     "specialty": "Nội cơ xương khớp",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Văn Thanh Tuấn",
+     "specialty": "Lão khoa",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Hoàng Bảo Yến Thanh",
+     "specialty": "Lão khoa",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Hnuk Buôn Yă",
+     "specialty": "Thận - Lọc máu",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Hoàng",
+     "specialty": "Thận - Lọc máu",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Thái Mỹ Phương",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Kiều Lê Vũ Thụy",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Phùng Mạnh Dũng",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Thị Nhật Xuân",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Chu Lý Hải Vân",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Vũ",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Lê Công Thái",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Trịnh Tiến Đạt",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Trần Hạnh",
+     "specialty": "Khoa Nhi",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Tô Nhật Linh",
+     "specialty": "Khoa Nhi",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Bùi Xuân Ngọc Hân",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Trần Nguyên Hùng Hoàng",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Xà Trường Thành",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Hà Dương Tuấn Đăng",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Đỗ Thái Phương Ngọc",
+     "specialty": "Y học cổ truyền-Vật lý trị liệu-Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Lữ Thúy Vi",
+     "specialty": "Y học cổ truyền-Vật lý trị liệu-Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Lê Hữu Nhân Duyên",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Quách Bảo Đằng",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Đào Gia Thịnh",
+     "specialty": "Hồi sức tích cực và chống độc",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Hứa Xuân Lộc",
+     "specialty": "Hồi sức tích cực và chống độc",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Đường Chí Nhân",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Trương Nguyễn Thúy Trinh",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Hồ Văn Phước",
+     "specialty": "Ngoại tiêu hóa",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Đào Văn Cam",
+     "specialty": "Ngoại tiêu hóa",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Giảng Anh Duy",
+     "specialty": "Ngoại thận - Tiết niệu",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Võ Phước Khương",
+     "specialty": "Ngoại thận - Tiết niệu",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Huỳnh Thanh Long",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Huỳnh Nhất Cao Nhân",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Huệ Đức",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Hồ Minh Quang",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Trương Thị Nông",
+     "specialty": "Phẫu thuật - Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Văn Anh Kiệt",
+     "specialty": "Phẫu thuật - Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Trương Văn To",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Huỳnh Đắc Vũ",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Tăng Hồ Phát",
+     "specialty": "Phẫu thuật tạo hình thẩm mỹ",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Nguyễn Quang Thiện",
+     "specialty": "Phẫu thuật tạo hình thẩm mỹ",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Lâm Bá Lê Duy",
+     "specialty": "Tim mạch can thiệp",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+   {
+     "name": "Drong Nai RêNal",
+     "specialty": "Tim mạch can thiệp",
+     "hospitalName": "Bệnh viện Nguyễn Tri Phương"
+   },
+    
+   {
+     "name": "Phạm Chí Lăng",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Chấn thương Chỉnh hình TP.HCM"
+   },
+   {
+     "name": "Lê Gia Ánh Thỳ",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Chấn thương Chỉnh hình TP.HCM"
+   },
+   {
+     "name": "Phan Vương Huy Đổng",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Chấn thương Chỉnh hình TP.HCM"
+   },
+   {
+     "name": "Võ Quang Đình Nam",
+     "specialty": "Chỉnh hình Nhi",
+     "hospitalName": "Bệnh viện Chấn thương Chỉnh hình TP.HCM"
+   },
+   {
+     "name": "Phan Đức Minh Mẫn",
+     "specialty": "Chỉnh hình Nhi",
+     "hospitalName": "Bệnh viện Chấn thương Chỉnh hình TP.HCM"
+   },
+    
+   {
+     "name": "Trương Nhật Trang",
+     "specialty": "Nhi khoa",
+     "hospitalName": "Bệnh viện Thân Dân"
+   },
+   {
+     "name": "Ngô Thị Lệ Dung",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Thân Dân"
+   },
+   {
+     "name": "Huỳnh Thị Trang",
+     "specialty": "Nội cơ xương khớp",
+     "hospitalName": "Bệnh viện Thân Dân"
+   },
+   {
+     "name": "Huỳnh Quốc Thắng",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Thân Dân"
+   },
+   {
+     "name": "Phạm Mai Đông Thảo",
+     "specialty": "Nội tổng quát",
+     "hospitalName": "Bệnh viện Thân Dân"
+   },
+   {
+     "name": "Nguyễn Văn Long",
+     "specialty": "Nội tổng quát",
+     "hospitalName": "Bệnh viện Thân Dân"
+   },
+   
+   {
+     "name": "Lê Kim Bá Liêm",
+     "specialty": "Cấp cứu-Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Trần Thị Mỹ Phượng",
+     "specialty": "Cấp cứu-Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Huỳnh Ngọc Phương Thủy",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Huỳnh Ngọc Hiền",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Trần Thị Thanh Thủy",
+     "specialty": "Hậu Phẫu",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Vương Trọng Hiếu",
+     "specialty": "Hậu Phẫu",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Trương Thị Ánh Tuyết",
+     "specialty": "Hậu Sản",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Võ Nguyễn Kim Tuyên",
+     "specialty": "Hậu Sản",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Lý Thái Lộc",
+     "specialty": "Hiếm muộn",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Vũ Đình Tuân",
+     "specialty": "Hiếm muộn",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Nguyễn Thị Sa Giang",
+     "specialty": "Kế hoạch hóa gia đình",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Phạm Quách Yến Xuân",
+     "specialty": "Kế hoạch hóa gia đình",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Đặng Ngọc Yến Dung",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Nguyễn Thị Tuyết",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Nguyễn Vũ Mỹ Linh",
+     "specialty": "Nhũ",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Nguyễn Trần Bảo Chi",
+     "specialty": "Nhũ",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Nguyễn Đăng Quang",
+     "specialty": "Phụ ngoại ung bứu",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Hoàng Thị Thu Huyền",
+     "specialty": "Phụ ngoại ung bứu",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Nguyễn Thị Minh Tâm",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Nguyễn Xuân Vũ",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Đặng Thị Hiện",
+     "specialty": "Sản bệnh",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Đặng Minh Khôi Nguyên",
+     "specialty": "Sản bệnh",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Huỳnh Nguyễn Khánh Trang",
+     "specialty": "Sanh",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Lý Thanh Xuân",
+     "specialty": "Sanh",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Bùi Thị Thủy Tiên",
+     "specialty": "Sơ sinh",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Mai Công Danh",
+     "specialty": "Sơ sinh",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Nguyễn Ngọc Vũ",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Nguyễn Tường Minh",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Nguyễn Vạn Thông",
+     "specialty": "Di truyền",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Đặng Lê Dung Nghi",
+     "specialty": "Di truyền",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Châu Minh Mẫn",
+     "specialty": "Giải phẫu bệnh-Tế bào",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Bùi Thế Long",
+     "specialty": "Giải phẫu bệnh-Tế bào",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Trần Thị Thúy Hằng",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   {
+     "name": "Đinh Thị Kim Thư",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Hùng Vương"
+   },
+   
+   {
+     "name": "Hồ Thị Thanh Hồng",
+     "specialty": "Cấp cứu-Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Võ Thị Loan",
+     "specialty": "Cấp cứu-Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Lê Thanh Diệu Xuân",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Nguyễn Bùi Lương Hà",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Ngô Hoài Quốc",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Phạm Thị Kim Tài",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Hà Ngọc Tường Vy",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Trần Minh Phụng",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Đặng Ngọc Điệp",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Nguyễn Thị Huệ",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Nguyễn Văn Chính",
+     "specialty": "Y học cổ truyền-Vật lý trị liệu",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   {
+     "name": "Đặng Đình Tiến Hoàng",
+     "specialty": "Y học cổ truyền-Vật lý trị liệu",
+     "hospitalName": "Bệnh viện quận 6"
+   },
+   
+   {
+     "name": "Nguyễn Thị Thu Nga",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Trần Thị Lệ Hồng",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Phùng Hoàng Long",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Nguyễn Thị Hồng Vân",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Nguyễn Hữu Tiến",
+     "specialty": "Chuẩn đoán hình ảnh-Xét nghiệm",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Thái Thị Thanh Thảo",
+     "specialty": "Chuẩn đoán hình ảnh-Xét nghiệm",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Phạm Minh Vũ",
+     "specialty": "Y học cổ truyền-Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Nguyễn Thanh Trúc Linh",
+     "specialty": "Y học cổ truyền-Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Trần Thị Bảo Trâm",
+     "specialty": "Cấp cứu-Hồi sức-Tích cực chống độc",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Nguyễn Thị Ý Nhi",
+     "specialty": "Cấp cứu-Hồi sức-Tích cực chống độc",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Nguyễn Thị Tường Diễm",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Hồ Thị Thủy",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Nguyễn Minh Tiền",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Lê Thanh Nhã",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Nguyễn Thanh Bình",
+     "specialty": "Thận",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Nguyễn Đức Tâm",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   {
+     "name": "Nguyễn Thị Bé Trinh",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Quận 7"
+   },
+   
+   {
+     "name": "Nguyễn Phương Khanh",
+     "specialty": "Nhi khoa",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Lê Nguyễn Nhật Trung",
+     "specialty": "Nhi khoa",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Vũ Đình Hiếu",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Văn Phụng Thống",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Hoàng Thị Ánh Tuyết",
+     "specialty": "Phụ khoa",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Nguyễn Văn Bảo Trân",
+     "specialty": "Phụ khoa",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Bùi Mạnh Côn",
+     "specialty": "Đa khoa",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Huỳnh Thắng Toàn",
+     "specialty": "Đa khoa",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Trà Anh Duy",
+     "specialty": "Tiết niệu-Nam khoa",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Nguyễn Khoa Bình",
+     "specialty": "Tiết niệu-Nam khoa",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Phan Thị Hiền Thu",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   {
+     "name": "Nguyễn Thanh Huyền Vân",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Phương Nam"
+   },
+   
+   {
+     "name": "Huỳnh Thị Ngọc Huyền",
+     "specialty": "Hồi sức cấp cứu nội tim mạch",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Nguyễn Huỳnh Quang Tín",
+     "specialty": "Hồi sức cấp cứu nội tim mạch",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Ngô Thị Kim Ánh",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Trịnh Xuân An",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Tôn Thất Minh",
+     "specialty": "Điện sinh lí và loạn nhịp tim",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Ong Thị Tố Linh",
+     "specialty": "Điện sinh lí và loạn nhịp tim",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Đinh Đức Huy",
+     "specialty": "Thông tim can thiệp",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Nguyễn Huỳnh Khương",
+     "specialty": "Thông tim can thiệp",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Nguyễn Lý Ngọc Thanh",
+     "specialty": "Bệnh lý mạch máu",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Trần Minh Gia",
+     "specialty": "Bệnh lý mạch máu",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Tôn Thất Minh",
+     "specialty": "Nội tim mạch tổng quát",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Trần Hữu Hà",
+     "specialty": "Nội tim mạch tổng quát",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Nguyễn Thị Bích Đào",
+     "specialty": "Tim mạch chuyển hóa",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Trần Thị Kim Thanh",
+     "specialty": "Tim mạch chuyển hóa",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Phạm Trần Xuân Hồng",
+     "specialty": "Phục hồi chức năng tim mạch",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Phan Kim Phương",
+     "specialty": "Bệnh tim bẩm sinh",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Trần Tử Nam",
+     "specialty": "Bệnh tim bẩm sinh",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Tạ ngọc Long Phi",
+     "specialty": "Hồi sức cấp cứu ngoại tim mạch",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Đặng Thị Thanh Trúc",
+     "specialty": "Hồi sức cấp cứu ngoại tim mạch",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Chu Trọng Hiệp",
+     "specialty": "Phẫu thuật tim",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Kim Vũ Phương",
+     "specialty": "Phẫu thuật tim",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Từ Ngọc Thủy Hiền",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Uông Thị Huỳnh Như",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Hứa Kim Tiên",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Kim Vũ Phương",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Vân",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Trương Phúc Bá Anh",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Nguyễn Thị Bích Đào",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   {
+     "name": "Lâm Mỹ Dung",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Tim Tâm Đức"
+   },
+   
+   {
+     "name": "Trình Văn Hải",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Phạm Lưu Nhất Hoàng",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Lý Quốc Thịnh",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Nguyễn Thị Lam Giang",
+     "specialty": "Gây mê hồi sức",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Hồ Minh Tuấn",
+     "specialty": "Tim mạch-Tim mạch can thiệp",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Trần Nhâm Tuấn",
+     "specialty": "Tim mạch-Tim mạch can thiệp",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Võ Thị Minh Hiền",
+     "specialty": "Tâm lý lâm sàng",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Bùi Thị Quỳnh Anh",
+     "specialty": "Tâm lý lâm sàng",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Guillaume Orieux",
+     "specialty": "Da liễu",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Nguyễn Kim Phượng",
+     "specialty": "Da liễu",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Nguyễn Viết Quỳnh Thư",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Bùi Nhuận Quý",
+     "specialty": "Tiêu hóa-Gan mật",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Vũ Duy Hiển",
+     "specialty": "Tiêu hóa-Gan mật",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Lê Đình Phương",
+     "specialty": "Nội đa khoa",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Tô Nhứt Phú",
+     "specialty": "Nội đa khoa",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Dương Bích Thủy",
+     "specialty": "Truyền nhiễm",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Bùi Thị Bích Hạnh",
+     "specialty": "Truyền nhiễm",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Nguyễn Đào Uyên Trang",
+     "specialty": "Nội khoa",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Trần Như Tường Vân",
+     "specialty": "Nội khoa",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Nguyễn Thị Diệu Hiền",
+     "specialty": "Nhi-Sơ sinh",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Phan Thị Thanh Huyền",
+     "specialty": "Nhi-Sơ sinh",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Diệc Khả Hân",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Phan Tố Như",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Pierre Jailliot",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Huỳnh Hữu Doanh",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Kahouadji Mohammed Nassim",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Nguyễn Thị Hằng",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Nguyễn Văn Tế",
+     "specialty": "Y học hạt nhân",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Catherine Cousin",
+     "specialty": "Vật lý trị liệu và phục hồi chức năng",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Stephane Laporte",
+     "specialty": "Vật lý trị liệu và phục hồi chức năng",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Lê Trọng Phát",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Phạm Thế Kiên",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Phan Văn Thái",
+     "specialty": "Ngoại tổng quát",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Ngô Việt Thắng",
+     "specialty": "Ngoại tổng quát",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Nguyễn Mạnh Hùng",
+     "specialty": "Ngoại thần kinh và can thiệp nội mạch thần kinh",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Nguyễn Công",
+     "specialty": "Ngoại thần kinh và can thiệp nội mạch thần kinh",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Võ Triệu Đạt",
+     "specialty": "Sản phụ khoa trung tâm điều trị bệnh lý tuyến vú",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Hồ Ngọc Thanh",
+     "specialty": "Sản phụ khoa trung tâm điều trị bệnh lý tuyến vú",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Bùi Thị Thanh Hương",
+     "specialty": "Mắt và Phẫu thuật khúc xạ",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Võ Lê Khánh Hùng",
+     "specialty": "Mắt và Phẫu thuật khúc xạ",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Nguyễn Thị Minh Khuê",
+     "specialty": "Nha-Phẫu thuật hàm mặt",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Lâm Hoài Phương",
+     "specialty": "Nha-Phẫu thuật hàm mặt",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Võ Minh Công",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Phạm Long Đạo",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Lương Ngọc Trung",
+     "specialty": "Phẩu thuật mạch máu và lồng ngực",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Su Jang Wen",
+     "specialty": "Phẩu thuật mạch máu và lồng ngực",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Trần Lê Linh Phương",
+     "specialty": "Tiết niệu-Nam khoa",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   {
+     "name": "Lê Nguyễn Yên",
+     "specialty": "Tiết niệu-Nam khoa",
+     "hospitalName": "Bệnh viện Pháp Việt"
+   },
+   
+   {
+     "name": "Nguyễn Văn Minh",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Tân Hưng"
+   },
+   {
+     "name": "Phan Văn Thảo",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Tân Hưng"
+   },
+   {
+     "name": "Nguyễn Tuấn Kiệt",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Tân Hưng"
+   },
+   {
+     "name": "Phan Văn Thảo",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Tân Hưng"
+   },
+   {
+     "name": "Huỳnh Thanh Hải",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Tân Hưng"
+   },
+   {
+     "name": "Ngô Bửu Thiệu",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Tân Hưng"
+   },
+   
+   {
+     "name": "Phan Thị Bích Phượng",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Võ Duy Tân",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Mai Khánh Phong",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Trần Quốc Hùng",
+     "specialty": "Cấp cứu-Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Huỳnh Thị Thu Thảo",
+     "specialty": "Phụ sản",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Phan Thị Thanh Hà",
+     "specialty": "Nhi-Nhiễm",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Mai Thị Đủ",
+     "specialty": "Y học cổ truyền-Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Nguyễn Chí Hưng",
+     "specialty": "Liên chuyên khoa",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Huỳnh Thị Đượm",
+     "specialty": "Cận lâm sàng",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Trầm Thị Lệ Hồng",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Nguyễn Văn Thình",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   {
+     "name": "Nguyễn Thị Cẩm Vân",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Quận 8"
+   },
+   
+   {
+     "name": "Bùi Phạm Minh Mẫn",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Trần Thị Thảo Nhi",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Đinh Quang Thanh",
+     "specialty": "Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Đào Mạnh Thường",
+     "specialty": "Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Lê Thị Ba",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Nguyễn Văn Trọng",
+     "specialty": "Thần kinh sọ não",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Hồ Thị Thu Hương",
+     "specialty": "Thần kinh sọ não",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Trần Minh Đông",
+     "specialty": "Phục hồi chức năng tổn thương tủy sống",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Hoàng Thị Khánh Minh",
+     "specialty": "Phục hồi chức năng tổn thương tủy sống",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Hoàng Thị Diễm Linh",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Đỗ Văn Tùng",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Đỗ Mạnh Phương Nhi",
+     "specialty": "Hồi sức tích cực-Chống độc đơn vị thận nhân",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Lê Quốc Tuấn",
+     "specialty": "Hồi sức tích cực-Chống độc đơn vị thận nhân",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Hồ Hoàng Tuấn",
+     "specialty": "Ngoại-Chỉnh hình",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   {
+     "name": "Huỳnh Lê Dương",
+     "specialty": "Ngoại-Chỉnh hình",
+     "hospitalName": "Bệnh viện Phục hồi chức năng"
+   },
+   
+   {
+     "name": "Đinh Thị Thảnh",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Quân Dân Y Miền Đông"
+   },
+   
+   {
+     "name": "Phạm Thị Phượng Hoa",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Nguyễn Thị Như",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Phan Tuấn Anh",
+     "specialty": "Cấp cứu hồi sức tích cực chống độc",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Nguyễn Hồng Phú",
+     "specialty": "Cấp cứu hồi sức tích cực chống độc",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Lê Tuyết Trâm",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Đinh Thị Ngân",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Đặng Thị Thu Hà",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Nguyễn Đăng Đại",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Nguyễn Văn Tấn Cảnh",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Trần Thị Thúy Hằng",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Đào Phú Phúc",
+     "specialty": "Y học cổ truyền-Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Phạm Thị Tùy Ninh",
+     "specialty": "Y học cổ truyền-Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Nguyễn Khánh Toàn",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Lê Văn Trọng",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Nguyễn Thị Thu Hà",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Nguyễn Hữu Tiến",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Nguyễn Thế Tân",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Vũ Thị Ánh",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Vũ Thị Bích Hà",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Phạm Sơn Lâm",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Nguyễn Thị Ngọc Quý",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Châu Hoàng Sinh",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   {
+     "name": "Nguyễn Thanh Tuyền",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Lê Văn Việt - Bệnh viện Quận 9"
+   },
+   
+   {
+     "name": "Bùi Xuân Cường",
+     "specialty": "Ngoại tiêu hóa",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Đỗ Minh Đại",
+     "specialty": "Ngoại tiêu hóa",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Nguyễn Quốc Trị",
+     "specialty": "Ngoại chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Lương Trung Hiếu",
+     "specialty": "Ngoại chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Đỗ Trí Nhẫn",
+     "specialty": "Ngoại tiết niệu-Nam khoa",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Lê Nho Minh Nhật",
+     "specialty": "Ngoại tiết niệu-Nam khoa",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Thái Xuân Đào",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Trương Khánh Mỹ Hằng",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Lê Thị Bích Phượng",
+     "specialty": "Tế bào gốc",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Mai Xuân Hinh",
+     "specialty": "Tế bào gốc",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Cát Huy Quang",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Huỳnh Minh Thế",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Hồ Quang Minh Đạo",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Thái Xuân Đào",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Hà Đức Thắng",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Võ Hoàng",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Hoàng Khắc Tuấn",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Vương Hữu Định",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Ngô Thị Kim Liên",
+     "specialty": "Nội soi-Tiêu hóa",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Đỗ Thị Anh Điệp",
+     "specialty": "Nội soi-Tiêu hóa",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Thái Thị Mai Yến",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   {
+     "name": "Nguyễn Văn Hưởng",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Đa khoa Vạn Hạnh"
+   },
+   
+   {
+     "name": "Nguyễn Xuân Thiện",
+     "specialty": "Bỏng-Thẩm mỹ",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Nguyễn Bảo Quốc",
+     "specialty": "Chấn thương chỉnh hỉnh",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Đinh Đắc Phú",
+     "specialty": "Chấn thương chỉnh hỉnh",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Lê Hồng Hà",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Cao Ngọc Diện",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Lê Khánh Hoàng",
+     "specialty": "Ngoại Lồng ngực-Mạch máu-Thần kinh",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Kim Thanh Tài",
+     "specialty": "Ngoại Lồng ngực-Mạch máu-Thần kinh",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Hoàng Như Lộc",
+     "specialty": "Thận-Tiết niệu",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Đinh Sỹ Nghĩa",
+     "specialty": "Thận-Tiết niệu",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Châu Tập Việt",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Huỳnh Đỗ Uy Nhân",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Thái Hoàng Hạnh Nhung",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Dương Minh Hoàng",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Huỳnh Thị Nhụy Hoa",
+     "specialty": "Nội tiêu hóa",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Nguyễn Văn Trung",
+     "specialty": "Nội tiêu hóa",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Nguyễn Bảo Phú",
+     "specialty": "Thần kinh",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Vương Quang Minh",
+     "specialty": "Thần kinh",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Nguyễn Thị Hồng Trang",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Nguyễn Thị Ngọc Hương",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Võ Thị Vân",
+     "specialty": "Nội tổng quát",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Phạm Thị Lan Thanh",
+     "specialty": "Nội tổng quát",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Nguyễn Châu Giang",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Huỳnh Văn Bảo",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Lư Kim Yến",
+     "specialty": "Sản Khoa",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   {
+     "name": "Nông Văn Ngọc",
+     "specialty": "Sản Khoa",
+     "hospitalName": "Bệnh viện Trưng Vương"
+   },
+   
+   {
+     "name": "Đàm Thị Cẩm Linh",
+     "specialty": "Bệnh lý mạch máu não",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Lường Văn Đồng",
+     "specialty": "Bệnh lý mạch máu não",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Huỳnh Thị Chiêu Oanh",
+     "specialty": "Hô hấp-Hồi sức tim mạch",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Cao Hoài Tuấn Anh",
+     "specialty": "Hô hấp-Hồi sức tim mạch",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Trương Hoàng Minh",
+     "specialty": "Ngoại niệu-Ghép thận",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Trần Thanh Phong",
+     "specialty": "Ngoại niệu-Ghép thận",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Tạ Phương Dung",
+     "specialty": "Nội thận-Miễn dịch ghép",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nguyễn Thúy Quỳnh Mai",
+     "specialty": "Nội thận-Miễn dịch ghép",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Khâu Minh Tuấn",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Vũ Đình Thắng",
+     "specialty": "Hồi sức tích cực và chống độc",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nguyễn Quang Huy",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nguyễn Văn Nghĩa",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nguyễn Hữu Tâm",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Thân Trọng Hà",
+     "specialty": "Truyền nhiễm",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Tăng Khánh Hưng",
+     "specialty": "Truyền nhiễm",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Mai Phước Vĩnh",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Huỳnh Thị Tố Khanh",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Lê Thị Tuyết Phượng",
+     "specialty": "Nội tiêu hóa",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Thái Đức Trí",
+     "specialty": "Nội tiêu hóa",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Huỳnh Quốc Hội",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Trương Thị Vành Khuyên",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nhâm Tấn Đạt",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Dương Đỗ Hoài Nam",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Trần Xuân Thông",
+     "specialty": "Răng-Hàm-Mặt-Mắt",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Lê Trọng Duệ",
+     "specialty": "Răng-Hàm-Mặt-Mắt",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Đinh Thị Thanh Nhàn",
+     "specialty": "Y học cổ truyền-Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nguyễn Khoa Lợi",
+     "specialty": "Y học cổ truyền-Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Đặng Liệu",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Hoàng Việt Hà",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nguyễn Đức Khang",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nguyễn Vũ Thiện",
+     "specialty": "Giải phẩu bệnh",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Đinh Thu Oanh",
+     "specialty": "Nội soi",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Võ Thanh Dinh",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Đặng Thị Thanh Lan",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Lê Diên Thịnh",
+     "specialty": "Ung bướu",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Lê Đức Anh",
+     "specialty": "Ung bướu",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Ngô Nguyên Quang",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nguyễn Văn Tuấn",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Đinh Vinh Quang",
+     "specialty": "Nội thần kinh tổng quát",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Lê Hữu Dụng",
+     "specialty": "Phẫu thuật tim-Lồng ngực-Mạch máu",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Dương Văn Mười Một",
+     "specialty": "Phẫu thuật tim-Lồng ngực-Mạch máu",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Tôn Thất Tuấn Khiêm",
+     "specialty": "Tim mạch can thiệp",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nguyễn Thị Hoàng Mỹ",
+     "specialty": "Tim mạch can thiệp",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Nguyễn Doãn Bắc",
+     "specialty": "Nhịp tim học",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Lâm Ngọc Lắm",
+     "specialty": "Nhịp tim học",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Thượng Thanh Phương",
+     "specialty": "Tim mạch tổng quát",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   {
+     "name": "Thái Thị Mai Yến",
+     "specialty": "Tim mạch tổng quát",
+     "hospitalName": "Bệnh viện Nhân Dân 115 Đa Khoa"
+   },
+   
+   {
+     "name": "Đinh Tấn Phương",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Phạm Văn Quang",
+     "specialty": "Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Đặng Thanh Tuấn",
+     "specialty": "Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Phạm Văn Hoàng",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Nguyễn Thanh Liêm",
+     "specialty": "Nội tổng quát",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Phan Hữu Nguyệt Diễm",
+     "specialty": "Nội tổng quát",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Trần Anh Tuấn",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Trương Hữu Khanh",
+     "specialty": "Nhiễm–Thần kinh",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Huỳnh Thoại Loan",
+     "specialty": "Thận–Nội tiết",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Nguyễn Minh Tuấn",
+     "specialty": "Sốt xuất huyết–Huyết học",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Vũ Minh Phúc",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Hoàng Thị Tín",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Nguyễn Thị Ngọc Hường",
+     "specialty": "Tâm lý",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Lê Tường Giao",
+     "specialty": "Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Ngô Kim Thơi",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Nguyễn Đức Tuấn",
+     "specialty": "Phỏng – Tạo hình",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Lê Hữu Phúc",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Nguyễn Văn Đẩu",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Nguyễn Tuấn Như",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Nguyễn Hữu Chí",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Nguyễn Anh Tuấn",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Ngô Thị Hồng Đào",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Quan Minh Phú",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Lê Quốc Thịnh",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Trần Thanh Tùng",
+     "specialty": "Giải phẩu",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Lê Thị Thanh Thủy",
+     "specialty": "Giải phẩu",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Dương Thị Yến",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Phạm Thị Thanh Tâm",
+     "specialty": "Sơ sinh",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   {
+     "name": "Nguyễn Kiến Mậu",
+     "specialty": "Sơ sinh",
+     "hospitalName": "Bệnh viện Nhi đồng 1"
+   },
+   
+   {
+     "name": "Bùi Nguyễn Hữu Văn",
+     "specialty": "Hồi sức cấp cứu nội",
+     "hospitalName": "Viện Tim TP.HCM"
+   },
+   {
+     "name": "Văn Hùng Dũng Khoa",
+     "specialty": "Phẫu thuật",
+     "hospitalName": "Viện Tim TP.HCM"
+   },
+   {
+     "name": "Đặng Duy Phương",
+     "specialty": "Tim mạch",
+     "hospitalName": "Viện Tim TP.HCM"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Thúy",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Viện Tim TP.HCM"
+   },
+   {
+     "name": "Lê Thị Đẹp",
+     "specialty": "Nội tim mạch",
+     "hospitalName": "Viện Tim TP.HCM"
+   },
+   {
+     "name": "Lê Thị Hồng Bảo",
+     "specialty": "Dược",
+     "hospitalName": "Viện Tim TP.HCM"
+   },
+   
+   {
+     "name": "Merzlov Denis Evgenievich",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Bazhanov Vitalii Nikolaevich",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Naiduk Dmitry Olegovich",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Tukhbatullina Liliya Foatovna",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Gabnasov Amir Rinatovich",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Sergushev Sergey Gennadevich",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Boris Fattakhov Temanovich",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Merzlov Denis Evgenievich",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Ermilova Irina Aleksandrovna",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Bùi Thị Thu Hương",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Huỳnh Tuấn Kiệt",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Daria Kolesnicova",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   {
+     "name": "Stirmanova Elena",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Mắt Quốc tế Việt-Nga"
+   },
+   
+   {
+     "name": "Nguyễn Du Cường",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Nguyễn Thành Nhân",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Lê Công Tiến",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Dương Thị Huỳnh Như",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Phạm Thị Huỳnh Hoa",
+     "specialty": "Phụ Sản",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Phan Lê Trọng Nguyên",
+     "specialty": "Phụ Sản",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Võ Trọng Nghĩa",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Lê Thị Thanh Tiên",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Nguyễn Thanh Tâm",
+     "specialty": "Ngoại tổng quát",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Trần Nguyễn Thu Hiền",
+     "specialty": "Ngoại tổng quát",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Nguyễn Vĩnh Thống",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Nguyễn Tất Bảo Thịnh",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Võ Ngọc Minh",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Hoàng Thị Yến",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Đoàn Thị Phương Thảo",
+     "specialty": "Da liễu",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Võ Thị Thanh Trà",
+     "specialty": "Da liễu",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Nguyễn Hồng Trường",
+     "specialty": "Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Huỳnh Hoàng Oanh",
+     "specialty": "Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Đặng Trường Tiến",
+     "specialty": "Tim mạch chuyển hóa",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "La Thị Phương Thảo",
+     "specialty": "Tim mạch chuyển hóa",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Võ Hiếu Bình",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Lý Hoàng Hải",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Nguyễn Thị Ngọc Ly",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Mai Huỳnh Thu Vân",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Bùi Thị Thuý Hiền",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Bùi Thị Bích Trâm",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Phạm Hoài Dũng",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Nguyễn Vạn Hồng Quân",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Cù Thị Kim Lam",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Tạ Ngọc Mai Ly",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Nguyễn Tấn Quốc",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Nguyễn Hiền Chánh",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Trương Minh Quang",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Bùi Thị Bích Phượng",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Huỳnh Quốc Phòng",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Nguyễn Thị Gái",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Trương Thị Chuyên",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Võ Thị Hoa",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Huỳnh Kim Lụa",
+     "specialty": "Truyền nhiễm",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Phan Diễm Hoài",
+     "specialty": "Truyền nhiễm",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Bảo Đạt",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   {
+     "name": "Trần Thị Thanh Thảo",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Quận 11"
+   },
+   
+   {
+     "name": "Bùi Lộc",
+     "specialty": "Nội khoa",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   {
+     "name": "Nguyễn Xuân Khang",
+     "specialty": "Nội khoa",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   {
+     "name": "Trần Thị Tú Uyên",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   {
+     "name": "Trịnh Hoài Bảo Tâm",
+     "specialty": "Sản khoa",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   {
+     "name": "Lê Mỹ Vân",
+     "specialty": "Nhi khoa",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   {
+     "name": "Huỳnh Thị Kim Chi",
+     "specialty": "Nhi khoa",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   {
+     "name": "Lưu Trọng Nghĩa",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   {
+     "name": "Nguyễn Kim Long",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   {
+     "name": "Lê Văn Thuận",
+     "specialty": "Cận lâm sàng",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   {
+     "name": "Trần Phi Hùng",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   {
+     "name": "Bùi Văn Tuấn",
+     "specialty": "Cấp cứu",
+     "hospitalName": "Bệnh viện Quận 12"
+   },
+   
+   {
+     "name": "Trương Thành Công",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Nguyễn Trần Hải",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Mai Thùy Anh",
+     "specialty": "Phụ sản",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Phạm Văn Ánh",
+     "specialty": "Nhi-Sơ sinh",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Vũ Bảo Châu",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Phạm Xuân Hậu",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Ngô Bảo Khoa",
+     "specialty": "Phẫu thuật tim mạch lồng ngực",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Nguyễn Hữu Quốc",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Nguyễn Thị Chính",
+     "specialty": "Nội tim mạch",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Trần Quốc Hoàn",
+     "specialty": "Nội tim mạch",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Nguyễn Thị Lam",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Nguyễn Văn Minh",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Nguyễn Văn Quang",
+     "specialty": "Nội tổng hợp-Cấp cứu",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   {
+     "name": "Hồ Thị Mỹ Linh",
+     "specialty": "Nội tổng hợp-Cấp cứu",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức II"
+   },
+   
+   {
+     "name": "Trần Đăng Khoa",
+     "specialty": "Y học Thể thao",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Đỗ Hữu Lương",
+     "specialty": "Y học Thể thao",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Bùi Đức Thắng",
+     "specialty": "Nhi Khoa",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Hoàng Thị Mai",
+     "specialty": "Huyết học truyền máu",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Vũ Hoài Nam",
+     "specialty": "Huyết học truyền máu",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Tương Minh Thương",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Đỗ Mạnh Hiếu",
+     "specialty": "Bỏng-Vi phẫu tạo hình",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Trần Thao Lược",
+     "specialty": "Tim mạch khớp nội tiết",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Thân Hồng Anh",
+     "specialty": "Tim mạch khớp nội tiết",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Hoàng Tiến Trọng Nghĩa",
+     "specialty": "Thần kinh",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Tạ Vương Khoa",
+     "specialty": "Thần kinh",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Ngô Trọng Vinh",
+     "specialty": "Lọc máu-Nội thận",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Tuấn Anh Huy",
+     "specialty": "Lọc máu-Nội thận",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Nguyễn Thanh Tùng",
+     "specialty": "Sinh hóa",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Hồ Văn Sơn",
+     "specialty": "Sinh hóa",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Nguyễn Thị Huyền Trang",
+     "specialty": "Phụ sản",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Trịnh Hồng Hạnh",
+     "specialty": "Phụ sản",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Lê Bích Vân",
+     "specialty": "Răng",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Hoàng Văn Kỳ",
+     "specialty": "Giải phẫu bệnh lý",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Lê Thị Thu Hà",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Nguyễn Thị Thu Dung",
+     "specialty": "Chăm sóc, bảo vệ sức khỏe cán bộ trung ương",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Lâm Mỹ Hằng",
+     "specialty": "Chăm sóc, bảo vệ sức khỏe cán bộ trung ương",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Trần Hồng Quang",
+     "specialty": "Phẫu thuật lồng ngực",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Cù Xuân Thanh",
+     "specialty": "Phẫu thuật lồng ngực",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Nguyễn Thị Bích Huê",
+     "specialty": "Da liễu",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Đoàn Thanh Hải",
+     "specialty": "Điều trị cán bộ quân đội",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   {
+     "name": "Nguyễn Đình Tuấn",
+     "specialty": "Điều trị cán bộ quân đội",
+     "hospitalName": "Bệnh viện Quân Y 175"
+   },
+   
+   {
+     "name": "Phạm Văn Bùng",
+     "specialty": "Ung bứu",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức III"
+   },
+   {
+     "name": "Lại Minh Đức",
+     "specialty": "Ung bứu",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức III"
+   },
+   {
+     "name": "Lê Anh Phương",
+     "specialty": "Sản phụ khoa",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức III"
+   },
+   {
+     "name": "Nguyễn Thụy Vy",
+     "specialty": "Sản phụ khoa",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức III"
+   },
+   {
+     "name": "Kim Thái Quang",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức III"
+   },
+   {
+     "name": "Nguyễn Trung Tú",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức III"
+   },
+   {
+     "name": "Lê Văn Hoài",
+     "specialty": "Ngoại tổng quát",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức III"
+   },
+   {
+     "name": "Võ Thị Trúc Phương",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức III"
+   },
+   {
+     "name": "Nguyễn Văn Nghĩa",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức III"
+   },
+   {
+     "name": "Bùi Trung Kiên",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Đa khoa Hồng Đức III"
+   },
+   
+   {
+     "name": "Phạm Lê An",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Trần Thảo Tuyết Tâm",
+     "specialty": "Y học gia đình",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Lâm Hoàn Mỹ",
+     "specialty": "Nội khoa",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Cao Minh Trang",
+     "specialty": "Nội khoa",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Lâm Hoàn Mỹ",
+     "specialty": "Nội khoa",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Trần Vân Anh",
+     "specialty": "Nội thận",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Lê Ngọc Tĩnh",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Tô Minh Dũng",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Lê Nguyễn Hồng Hạnh",
+     "specialty": "Sản phụ khoa",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Đặng Lê Uy",
+     "specialty": "Sản phụ khoa",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Trương Ngọc Hằng",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Vũ Thị Anh",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Trương Ngọc Hằng",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Lê Viết Thùy",
+     "specialty": "Răng-Hàm-Mặt",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Trần Hải Phượng",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   {
+     "name": "Nguyễn Như Vinh",
+     "specialty": "Lao-Bệnh phổi",
+     "hospitalName": "Bệnh viện Quận Gò Vấp"
+   },
+   
+   {
+     "name": "Nguyễn Anh Tứ Cường",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Trần Thị Thúy An",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Nguyễn Thị Thanh Tuyền",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Võ Thị Hà My",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Lê Anh Tuấn",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Nguyễn Thị Nguyệt Anh",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Lương Thị Duyên",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Tô Khánh Vân",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Nguyễn Vũ Kỳ",
+     "specialty": "X-quang",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Dương Hải Nam",
+     "specialty": "X-quang",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Mai Hoàng Hân",
+     "specialty": "Siêu âm",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Huỳnh Hồng Thắm",
+     "specialty": "Siêu âm",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Đỗ Thị Giang",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Nguyễn Quốc Hào",
+     "specialty": "Xét nghiệm",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Đỗ Đức Tiệp",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Nguyễn Xuân Định",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Lê Thị Nhật Loan",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Mã Văn Thành",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Phan Hồng Ngọc",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Trần Thị Minh Minh",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Phạm Thanh Tùng",
+     "specialty": "Cấp cứu-Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+   {
+     "name": "Đinh Nô Ê",
+     "specialty": "Cấp cứu-Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Quận Tân Bình"
+   },
+
+   {
+     "name": "Đỗ Thị Thắm",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Đức Sự",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": " Bùi Diệu Minh",
+     "specialty": "Thăm dò chức năng-Nội soi",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Hoàng Dĩnh",
+     "specialty": "Thăm dò chức năng-Nội soi",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Đỗ Tùng Lâm",
+     "specialty": "Huyết học",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Thị Mai Hương",
+     "specialty": "Giải phẫu bệnh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Trần Huỳnh Hạnh Thảo",
+     "specialty": "Giải phẫu bệnh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Lê Thị Thảo",
+     "specialty": "Vi sinhh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Đào Hồng Quân",
+     "specialty": "Ngoại tim mạch-Lồng ngực",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Trọng Lãm",
+     "specialty": "Ngoại tim mạch-Lồng ngực",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Bùi Xuân Khải",
+     "specialty": "Nội tim mạch",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Lê Quốc Hưng",
+     "specialty": "Nội tim mạch",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Lý Xuân Tài",
+     "specialty": "Loạn nhịp tim",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Thị Thúy Vinh",
+     "specialty": "Loạn nhịp tim",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Phạm Thị Diệu Hiền",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Thiên Nguyễn Minh Hằng",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Lê Vĩnh Thuận",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Vũ Ngọc Tuấn",
+     "specialty": "Tai-Mũi-Họng",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Tô Đông Kha",
+     "specialty": "Ngoại chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nông Học Hải",
+     "specialty": "Ngoại chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Thanh Nhật Tâm",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Lưu Vĩnh TIến",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Bá Quốc",
+     "specialty": "Ngoại thận-Tiết niệu",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Hạ Kỳ Văn",
+     "specialty": "Ngoại thận-Tiết niệu",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Xuân Hòa",
+     "specialty": "Ngoại gan mật",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Phạm Công Khanh",
+     "specialty": "Ngoại gan mật",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Vũ Lộc",
+     "specialty": "Ngoại tiêu hoá",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Đỗ Duy Đạt",
+     "specialty": "Ngoại tiêu hoá",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Trần Thị Tài",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Võ Văn Tâm",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Ngọc Cẩm Tú",
+     "specialty": "Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Thị Hoàng Yến",
+     "specialty": "Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Vũ Thị Ly Na",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Ngô Thị Thanh Hường",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Tô Nam Kiên",
+     "specialty": "Nội cơ xương khớp",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Lê Thị Huệ",
+     "specialty": "Nội cơ xương khớp",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Lê Thị Thúy Uyên",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Thái Hoàng",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Lê Hoàng Linh Đan",
+     "specialty": "Nội thận-Lọc máu",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Lê Bá Anh Đức",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Phạm Hòa Bình",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Đặng Thị Thục",
+     "specialty": "Nội nhiễm",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Viên Vinh Phú",
+     "specialty": "Nội nhiễm",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Hà Thúc Nhượng",
+     "specialty": "Nội tiêu hoá",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Đặng Phước Thùy Miên",
+     "specialty": "Nội tiêu hoá",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Đắc Nhân Tâm",
+     "specialty": "Ung bướu",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Tạ Tương Đề",
+     "specialty": "Ung bướu",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Đỗ Trịnh Kim Phụng",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Hoàng Nhật Vy",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Phan Châu Quyền",
+     "specialty": "Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Lương Nữ Uyên Vy",
+     "specialty": "Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Đặng Văn Thông",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Huỳnh Nguyên Thuận",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Trang Mộng Hải Yến",
+     "specialty": "Tim mạch cấp cứu và can thiệp",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Thế Quyền",
+     "specialty": "Tim mạch cấp cứu và can thiệp",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Đặng Thị Thục Nghi",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Huỳnh Tấn Thịnh",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Lê Văn Lâm",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Phùng Ngọc Cẩm Tiên",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Đoàn Xuân Quảng",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Võ Trung Đình",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Thống Nhất"
+   },
+   {
+     "name": "Nguyễn Đăng Ngọc",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Nguyễn Xuân Đoàn",
+     "specialty": "Chấn thương chỉnh hình",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Đoàn Văn Thanh",
+     "specialty": "Cận lâm sàng",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Trương Quang Phục",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Trần Thái Học",
+     "specialty": "Phục hồi chức năng",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Nguyễn Viết Thương",
+     "specialty": "Phục hồi chức năng",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Trần Đình Mạnh",
+     "specialty": "Chỉnh hình",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Đinh Văn Thủy",
+     "specialty": "Chỉnh hình",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Trần Văn Sỹ",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Mai Thị Hà",
+     "specialty": "Nội tổng quát",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Võ Trọng Tuân",
+     "specialty": "Y học cổ truyền",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Ngô Thị Kim Trinh",
+     "specialty": "Lão khoa-Đột quỵ",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Trương Minh Mẫn",
+     "specialty": "Lão khoa-Đột quỵ",
+     "hospitalName": "Bệnh viện 1A"
+   },
+   {
+     "name": "Vũ Trường Khanh",
+     "specialty": "Tiêu hóa-Gan mật-Tụy",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Đào Trần Tiến",
+     "specialty": "Tiêu hóa-Gan mật-Tụy",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Chu Tấn Sĩ",
+     "specialty": "Phẫu thuật thần kinh",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Đặng Bảo Ngọc",
+     "specialty": "Phẫu thuật thần kinh",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Đặng Thị Ngọc Bích",
+     "specialty": "Da liễu",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Thị Kim Dung",
+     "specialty": "Da liễu",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Võ Dương Hương Quỳnh",
+     "specialty": "Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Trần Văn Dần",
+     "specialty": "Phục hồi chức năng",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Võ Văn Hùng",
+     "specialty": "Răng Hàm Mặt",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Thị Châu Bản",
+     "specialty": "Răng Hàm Mặt",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Văn Liệu",
+     "specialty": "Thần kinh - Đột quỵ",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Văn Tuận",
+     "specialty": "Thần kinh - Đột quỵ",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Hà Tố Nguyên",
+     "specialty": "Y học bào thai",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Thị Mộng Nghi",
+     "specialty": "Y học bào thai",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Hoàng Thị Lâm",
+     "specialty": "Miễn dịch lâm sàng",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Giang Huỳnh Như",
+     "specialty": "Hỗ trợ sinh sản",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Bá Mỹ Nhi",
+     "specialty": "Sản phụ khoa",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Thị Quý Khoa",
+     "specialty": "Sản phụ khoa",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Lê Văn Tuấn",
+     "specialty": "Chấn thương Chỉnh hình",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Hồ Hữu Dũng",
+     "specialty": "Chấn thương Chỉnh hình",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Phạm Nguyễn Vinh",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Minh Trí Viên",
+     "specialty": "Tim mạch",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Vũ Lê Chuyên",
+     "specialty": "Tiết niệu - Thận học - Nam khoa",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Tạ Phương Dung",
+     "specialty": "Tiết niệu - Thận học - Nam khoa",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Đỗ Minh Hùng",
+     "specialty": "Phẫu thuật Nội soi Tiêu hóa",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Phạm Hữu Tùng",
+     "specialty": "Phẫu thuật Nội soi Tiêu hóa",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Đặng Thị Mai Khuê",
+     "specialty": "Hô hấp",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Tấn Vũ",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Trần Thị Thanh Tú",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Trần Vương Thảo Nghi",
+     "specialty": "Ung bứu",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Vũ Hữu Khiêm",
+     "specialty": "Ung bứu",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Trần Phan Chung Thủy",
+     "specialty": "Tai Mũi Họng",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Trần Thị Thúy Hằng",
+     "specialty": "Tai Mũi Họng",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Vũ Huy Trụ",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Thị Hạnh Lê",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Lâm Văn Hoàng",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Phạm Thị Thu Hà",
+     "specialty": "Nội tiết",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Thị Minh Đức",
+     "specialty": "Thần kinh",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Thân Thị Minh Trung",
+     "specialty": "Thần kinh",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Cam Ngọc Phượng",
+     "specialty": "Sơ sinh",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Văn Toản",
+     "specialty": "Thần kinh",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Đào Thị Yến Thủy",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Võ Quỳnh Như",
+     "specialty": "Dinh dưỡng",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Trần Thị Thanh Trúc",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Phạm Thị Thanh Tâm",
+     "specialty": "Nội tổng hợp",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Tống Văn Khải",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Huỳnh Thị Thanh Trang",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Huỳnh Hiền Trung",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Hoàng Trọng Tín",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Nguyễn Anh Dũng",
+     "specialty": "Ngoại lồng ngực-Mạch máu",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   {
+     "name": "Trần Công Quyền",
+     "specialty": "Ngoại lồng ngực-Mạch máu",
+     "hospitalName": "Bệnh viện Đa khoa Tâm Anh"
+   },
+   
+   {
+     "name": "Trần Quang Tuyến",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Chuyên Khoa Ngoại Thần Kinh Quốc Tế"
+   },
+   {
+     "name": "Cù Mỹ Hiếu Hạnh",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Chuyên Khoa Ngoại Thần Kinh Quốc Tế"
+   },
+   {
+     "name": "Nguyễn Thị Hảo",
+     "specialty": "Nội thần kinh",
+     "hospitalName": "Bệnh viện Chuyên Khoa Ngoại Thần Kinh Quốc Tế"
+   },
+   {
+     "name": "Lê Văn Cư",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Chuyên Khoa Ngoại Thần Kinh Quốc Tế"
+   },
+   {
+     "name": "Trương Quan Tuấn",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Chuyên Khoa Ngoại Thần Kinh Quốc Tế"
+   },
+   {
+     "name": "Nguyễn Minh Đức",
+     "specialty": "Cơ xương khớp",
+     "hospitalName": "Bệnh viện Chuyên Khoa Ngoại Thần Kinh Quốc Tế"
+   },
+   {
+     "name": "Võ Văn Nho",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Chuyên Khoa Ngoại Thần Kinh Quốc Tế"
+   },
+   {
+     "name": "Phan Quảng Hà",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Chuyên Khoa Ngoại Thần Kinh Quốc Tế"
+   },
+   {
+     "name": "Bùi Phú Ấn",
+     "specialty": "Ngoại thần kinh",
+     "hospitalName": "Bệnh viện Chuyên Khoa Ngoại Thần Kinh Quốc Tế"
+   },
+   
+   {
+     "name": "Nguyễn Hữu Thiện",
+     "specialty": "Nội-Nhiễm",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Đặng Thị Dương Thiện",
+     "specialty": "Nội-Nhiễm",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Nguyễn Thị Nga",
+     "specialty": "Tai Mũi Họng",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Đặng Thị Hiền",
+     "specialty": "Tai Mũi Họng",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Kiên Sa Rây Mon Tha",
+     "specialty": "Răng Hàm Mặt",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Đỗ Thị Ngọc Huyền",
+     "specialty": "Răng Hàm Mặt",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Cao Y Phụng",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Nguyễn Ngọc Bảo Trân",
+     "specialty": "Kiểm soát nhiễm khuẩn",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Võ Thị Thu Hà",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Nguyễn Thanh Tân",
+     "specialty": "Khám bệnh",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Nguyễn An Nhàn",
+     "specialty": "Cấp cứu-Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Hồ Thùy Dương",
+     "specialty": "Cấp cứu-Hồi sức tích cực-Chống độc",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Đặng Thanh Phú",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Nguyễn Thiện Thuật",
+     "specialty": "Ngoại tổng hợp",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Hồ Trí Dũng",
+     "specialty": "Phụ sản",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Lê Hoàng Ngô Hưng",
+     "specialty": "Phụ sản",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Trương Ánh Tuyết",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Nguyễn Ngọc Thảo",
+     "specialty": "Dược",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Huỳnh Thị Oanh",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Nguyễn Thị Hoài An",
+     "specialty": "Chuẩn đoán hình ảnh",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Trần Thị Bích Loan",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Ngô Thị Thiện",
+     "specialty": "Nhi",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Nguyễn Bình Phương Thảo",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Trần Thị Hoa",
+     "specialty": "Mắt",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Lê Thị Thủy",
+     "specialty": "Y học cổ truyền - Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
+   },
+   {
+     "name": "Nguyễn Thế Hải",
+     "specialty": "Y học cổ truyền - Vật lý trị liệu",
+     "hospitalName": "Bệnh viện Quận Tân Phú"
    }
-]
+   
+ ]
+ 

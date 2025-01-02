@@ -5,6 +5,13 @@ import { ChatService } from './chat.service';
 export class ChatController {
   constructor(private readonly chatService: ChatService) {}
 
+  @Get('messages/:userId')
+  async getReceiverMessage(
+    @Param('userId') userId: string,
+  ){
+    return this.chatService.getReceiverMessage(userId);
+  }
+
   @Get('messages/:userId/:partnerId')
   async getMessages(
     @Param('userId') userId: string,

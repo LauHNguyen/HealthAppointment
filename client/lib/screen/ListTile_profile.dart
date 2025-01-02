@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:client/screen/BottomNavigationBar.dart';
+import 'package:client/screen/List_message.dart';
 import 'package:client/screen/appointment_list.dart';
 import 'package:client/service/api_service.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +45,6 @@ class _ProfilePageState extends State<ProfilePage> {
 
   //get api user
   Future<void> _fetchUserInfo() async {
-    print(widget.userId + widget.role);
     String? token = await storage.getAccessToken();
     if (token != null) {
       Map<String, dynamic> userInfo = Jwt.parseJwt(token);
@@ -175,6 +175,28 @@ class _ProfilePageState extends State<ProfilePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => AppointmentList(
+                      userId: '${widget.userId}',
+                      role: '${widget.role}',
+                    ),
+                  ),
+                );
+              },
+            ),
+            const Divider(height: 1, thickness: 0.5),
+            ListTile(
+              leading:
+                  const Icon(Icons.message_outlined, color: Colors.blueAccent),
+              title: const Text(
+                'Tin nhắn',
+                style: TextStyle(fontSize: 18),
+              ),
+              trailing: const Icon(Icons.arrow_forward_ios,
+                  size: 18, color: Colors.grey),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Listmessage(
                       userId: '${widget.userId}',
                       role: '${widget.role}',
                     ),

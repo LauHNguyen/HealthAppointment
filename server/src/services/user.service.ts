@@ -14,16 +14,16 @@ export class UserService {
   async findByUsername(username: string): Promise<User | null> {
     return this.userModel.findOne({ username }).exec();
   }
+
+  //cho đăng nhập google
+  async findByEmail(email: string): Promise<User | null> {
+    return this.userModel.findOne({ email }).exec();
+  }
   async getUserName(userId: string): Promise<User> {
     // const name = await this.userModel.findById(userId).select('name');
     // console.log(name);
     // return name;
     return await this.userModel.findById(userId).select('name');
-  }
-
-  //cho đăng nhập google
-  async findByEmail(email: string): Promise<User | null> {
-    return this.userModel.findOne({ email }).exec();
   }
 
   async create(userData: Partial<User>): Promise<User> {
@@ -38,6 +38,7 @@ export class UserService {
   }
 
   async getUserProfile(userId: string): Promise<User> {
-    return await this.userModel.findById(userId).select('-password -_id -__v');
+    console.log(`----------------------------${userId}`);
+    return await this.userModel.findById(userId).select('-password -__v');
   }
 }

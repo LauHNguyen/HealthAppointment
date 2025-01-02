@@ -118,7 +118,10 @@ class ChatProvider with ChangeNotifier {
   }
 
   void _addMessage(ChatMessage message) {
-    _messages.add(message);
+    _messages.clear();
+    _fetchPreviousMessages();
+    // _messages.add(message);
+
     _messages.sort((a, b) => a.timestamp.compareTo(b.timestamp));
     notifyListeners();
   }

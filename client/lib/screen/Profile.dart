@@ -51,7 +51,7 @@ class _UserProfile extends State<UserInfo> {
     if (response.statusCode == 200) {
       setState(() {
         userData = json.decode(response.body);
-        print('user ìno $userData');
+
         _isLoading = false;
       });
     } else {
@@ -66,9 +66,8 @@ class _UserProfile extends State<UserInfo> {
       appBar: AppBar(
         title: Text(
           'Thông Tin Cá Nhân',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        centerTitle: true,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -78,6 +77,7 @@ class _UserProfile extends State<UserInfo> {
             ),
           ),
         ),
+        centerTitle: true,
         elevation: 0,
       ),
       body: _isLoading

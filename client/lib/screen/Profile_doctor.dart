@@ -66,8 +66,16 @@ class _DoctorProfile extends State<DoctorInfo> {
           'Thông Tin Bác Sĩ',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.teal, Colors.tealAccent], // Các màu gradient
+              begin: Alignment.topLeft, // Hướng gradient bắt đầu
+              end: Alignment.bottomRight, // Hướng gradient kết thúc
+            ),
+          ),
+        ),
         centerTitle: true,
-        backgroundColor: Colors.teal,
         elevation: 0,
       ),
       body: _isLoading

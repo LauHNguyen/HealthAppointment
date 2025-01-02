@@ -50,9 +50,17 @@ class _ChatScreenState extends State<ChatScreen> {
           widget.userRole == 'doctor'
               ? 'Nhắn với bệnh nhân'
               : 'Nhắn với bác sĩ',
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.blue.shade700,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.teal, Colors.tealAccent], // Các màu gradient
+              begin: Alignment.topLeft, // Hướng gradient bắt đầu
+              end: Alignment.bottomRight, // Hướng gradient kết thúc
+            ),
+          ),
+        ),
         elevation: 0,
       ),
       body: Column(

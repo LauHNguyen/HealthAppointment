@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  NotFoundException,
   Param,
   Put,
   Req,
@@ -30,6 +31,22 @@ export class UserController {
     const user: any = req.user; // user đã được xác thực
     return { userId: user.id }; // Trả về ID người dùng
   }
+  @Get('profile')
+  async getProfile(@Req() req: Request) {
+    // Lấy user từ request đã được giải mã thông qua JWT Guard
+    const user: any = req.user['id'];
+    console.log(req.user)
+    //const userId = user._id;
+    return await this.userService.getUserProfile(user);
+  }
+  @Get('id/:id')
+    async getUserById(@Param('id') id: string) {
+      const user = await this.userService.getUserProfile(id);
+      if (!user) {
+        throw new NotFoundException(`Doctor with ID ${id} not found`);
+      }
+      return user;
+    }
 
   @Get('name')
   async getCurrentUserName(@Req() req: Request) {
@@ -48,11 +65,5 @@ export class UserController {
     return this.userService.updateUser(userId, updateData);
   }
 
-  @Get('profile')
-  async getProfile(@Req() req: Request) {
-    // Lấy user từ request đã được giải mã thông qua JWT Guard
-    const user: any = req.user;
-    //const userId = user._id;
-    return await this.userService.getUserProfile(user.id);
-  }
+  
 }
