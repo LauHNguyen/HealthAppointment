@@ -85,6 +85,7 @@ class _AppointmentListState extends State<AppointmentList> {
                     final appointment = appointments[index];
                     final appointmentDate = appointment['appointmentDate'];
                     final appointmentTime = appointment['appointmentTime'];
+                    final status = appointment['status'];
                     final otherName = widget.role == 'doctor'
                         ? appointment['user']['name']
                         : appointment['doctor']['name'];
@@ -98,7 +99,9 @@ class _AppointmentListState extends State<AppointmentList> {
                         title: Text(
                             'Ngày: ${formatDate(appointmentDate)}\nGiờ: $appointmentTime'),
                         subtitle: Text(widget.role == 'doctor'
-                            ? 'Bệnh nhân: $otherName'
+                            ? status == true
+                                ? 'Bệnh nhân: $otherName Đã Khám'
+                                : 'Bệnh nhân: $otherName Chưa Khám'
                             : 'Bác sĩ: $otherName'),
                         trailing: const Icon(Icons.arrow_forward_ios),
                         onTap: () {

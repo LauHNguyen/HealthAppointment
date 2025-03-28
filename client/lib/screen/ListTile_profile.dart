@@ -53,7 +53,7 @@ class _ProfilePageState extends State<ProfilePage> {
       });
       final response = await http.get(
         Uri.parse(
-            '${dotenv.env['LOCALHOST']}/${widget.role == 'doctor' ? 'doctor' : 'user'}'),
+            '${dotenv.env['LOCALHOST']}/${widget.role == 'doctor' ? 'doctor' : 'user'}/${widget.userId}'),
         headers: {
           'Authorization': 'Bearer $token',
         },
@@ -61,13 +61,13 @@ class _ProfilePageState extends State<ProfilePage> {
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        final user = data.firstWhere(
-          (user) => user['username'].toString() == username.toString(),
-          orElse: () => null,
-        );
-        if (user != null) {
+        // final user = data.firstWhere(
+        //   (user) => user['username'].toString() == username.toString(),
+        //   orElse: () => null,
+        // );
+        if (data != null) {
           setState(() {
-            username = user['name'] ?? '';
+            username = data['name'] ?? '';
           });
         } else {
           print('User not found in the response data');

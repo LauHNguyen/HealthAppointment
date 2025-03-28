@@ -27,72 +27,59 @@ class _ListmessageState extends State<Listmessage> {
   @override
   void initState() {
     super.initState();
-    fetchMessage();
+    fetchData();
   }
 
-  Future<void> fetchMessage() async {
-    String? token = await storage.getAccessToken();
-    if (token != null) {
-      final messdata = await http.get(
-        Uri.parse('${dotenv.env['LOCALHOST']}/chat/messages/${widget.userId}'),
-      );
+  Future<void> fetchData() async {
+    try {
+      String? token = await storage.getAccessToken();
+      if (token == null) {
+        throw Exception('Không tìm thấy token truy cập');
+      }
 
-      if (messdata.statusCode == 200) {
-        final data = jsonDecode(messdata.body);
-        setState(() {
-          receiver.addAll(
-            // Lấy giá trị của 'receiver' từ mỗi object trong danh sách
-            (data as List).map((item) => item['receiver'].toString()).toSet(),
+      await fetchMessagesAndUserDetails(token);
+    } catch (e) {
+      print('Lỗi khi tải dữ liệu: $e');
+    }
+  }
+
+  Future<void> fetchMessagesAndUserDetails(String token) async {
+    final response = await http.get(
+      Uri.parse('${dotenv.env['LOCALHOST']}/chat/messages/${widget.userId}'),
+      headers: {'Authorization': 'Bearer $token'},
+    );
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body) as List;
+      Set<String> uniqueReceiverIds =
+          Set<String>.from(data.map((item) => item['receiver'].toString()));
+
+      List<Map<String, dynamic>> fetchedUsers = [];
+
+      for (String id in uniqueReceiverIds) {
+        if (id != widget.userId) {
+          // Không lấy thông tin của chính người dùng hiện tại
+          final userResponse = await http.get(
+            Uri.parse(
+                '${dotenv.env['LOCALHOST']}/${widget.role == 'doctor' ? 'user' : 'doctor'}/$id'),
+            headers: {'Authorization': 'Bearer $token'},
           );
-        });
-        fetchUserDetails(token);
-        final response = await http.get(
-          Uri.parse(
-              '${dotenv.env['LOCALHOST']}/${widget.role == 'doctor' ? 'user' : 'doctor'}'),
-          headers: {
-            'Authorization': 'Bearer $token',
-          },
-        );
-        if (response.statusCode == 200) {
-          final data = jsonDecode(response.body);
-          setState(() {
-            receiver.addAll(
-              // Lấy giá trị của 'receiver' từ mỗi object trong danh sách
-              (data as List).map((item) => item['receiver'].toString()).toSet(),
-            );
-          });
+
+          if (userResponse.statusCode == 200) {
+            final userData = jsonDecode(userResponse.body);
+            fetchedUsers.add(userData);
+          } else {
+            print('Không thể lấy thông tin người dùng cho ID: $id');
+          }
         }
-      } else {
-        print('Message not found in the response data');
       }
+
+      setState(() {
+        userDetails = fetchedUsers;
+      });
     } else {
-      print('Failed to fetch message');
+      throw Exception('Không thể tải tin nhắn');
     }
-  }
-
-  Future<void> fetchUserDetails(String token) async {
-    List<Map<String, dynamic>> fetchedUsers = [];
-
-    for (String id in receiver) {
-      final response = await http.get(
-        Uri.parse(
-            '${dotenv.env['LOCALHOST']}/${widget.role == 'doctor' ? 'user' : 'doctor'}/$id'),
-        headers: {
-          'Authorization': 'Bearer $token',
-        },
-      );
-
-      if (response.statusCode == 200) {
-        final userData = jsonDecode(response.body);
-        fetchedUsers.add(userData); // Thêm thông tin người dùng vào danh sách
-      } else {
-        print('Failed to fetch user data for ID: $id');
-      }
-    }
-
-    setState(() {
-      userDetails = fetchedUsers; // Cập nhật danh sách thông tin người dùng
-    });
   }
 
   @override

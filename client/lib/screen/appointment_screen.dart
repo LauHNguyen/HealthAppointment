@@ -36,7 +36,7 @@ class _AppointmentState extends State<Appointment> {
     getBookedList();
   }
 
-  String? userName;
+  String? username;
   final SecureStorageService storage = SecureStorageService();
   DateTime selectedDate =
       DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
@@ -311,18 +311,27 @@ class _AppointmentState extends State<Appointment> {
         throw Exception('No token found');
       }
       final response = await http.get(
-        Uri.parse('${dotenv.env['LOCALHOST']}/user/name'),
+        Uri.parse('${dotenv.env['LOCALHOST']}/user/${widget.userId}'),
         headers: {
           'Authorization': 'Bearer $token',
         },
       );
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        setState(() {
-          userName = data['username'];
-        });
+        // final user = data.firstWhere(
+        //   (user) => user['username'].toString() == username.toString(),
+        //   orElse: () => null,
+        // );
+        if (data != null) {
+          setState(() {
+            username = data['name'] ?? '';
+          });
+        } else {
+          print('User not found in the response data');
+        }
       } else {
-        throw Exception('Failed to get user name');
+        print('Fetched user ID does not match token ID');
+        return null;
       }
     } catch (e) {
       print('Error when get user name: $e');
@@ -416,7 +425,7 @@ class _AppointmentState extends State<Appointment> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Bệnh Nhân: $userName",
+                      "Bệnh Nhân: $username",
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),

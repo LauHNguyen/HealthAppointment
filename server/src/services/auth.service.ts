@@ -20,12 +20,18 @@ export class AuthService {
    // }
 
    async register(username: string, password: string) {
-      const hashedPassword = await bcrypt.hash(password, 10);
-      const newUser = new this.userModel({
-         username,
-         password: hashedPassword,
-      });
-      return newUser.save();
+      const user = await this.userModel.findOne({username});
+      console.log(user);
+      if(user == null){
+         const hashedPassword = await bcrypt.hash(password, 10);
+         const newUser = new this.userModel({
+            username,
+            password: hashedPassword,
+         });
+         return newUser.save();
+      } 
+      else
+         throw new Error('User existed'); 
    }
 
    async login(username: string, password: string, role: string) {
@@ -34,21 +40,29 @@ export class AuthService {
    // Kiểm tra vai trò (user hay doctor)
    if (role === 'user') {
       user = await this.userModel.findOne({ username });
+      if(!user) {
+         throw new Error('User not found');
+      }
    } else if (role === 'doctor') {
       let name = username;
       user = await this.doctorModel.findOne({ name });
+      if(!user) {
+         throw new Error('Doctor not found');
+      }
    } else {
       throw new Error('Invalid role');
    }
       console.log('Found user:', user); // Test thông tin user có được lấy đúng không
       if (user && (await bcrypt.compare(password, user.password))) {
          const accessToken = this.generateAccessToken(user);
-         console.log('Access token: ', accessToken); // Để lấy token khi test trên Postman
+         
          return {
             access_token: accessToken,
          };
+         console.log('Access token: ', accessToken); // Để lấy token khi test trên Postman
       }
-      throw new Error('Invalid credentials');
+      else
+         throw new Error('Invalid credentials');
    }
 
    async loginWithGoogle(username: string, email: string) {
@@ -72,7 +86,7 @@ export class AuthService {
       const accessToken = this.generateAccessToken(user);
       return {
          access_token: accessToken,
-         user,
+         //user,
       };
    }
 

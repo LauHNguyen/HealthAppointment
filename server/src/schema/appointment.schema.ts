@@ -24,6 +24,9 @@ export class Appointment {
 
   @Prop({ default: Date.now })
   createdAt: Date; // Thời gian tạo đơn
+
+  @Prop({ default: false})
+  status: boolean;
 }
 
 export const AppointmentSchema = SchemaFactory.createForClass(Appointment);

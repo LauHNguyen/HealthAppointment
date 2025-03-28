@@ -69,5 +69,18 @@ async updateAppointment(appointmentId: string, updateData: Partial<CreateAppoint
   return appointment;
 }
 
+async updateAppointmentStatus(appointmentId: string, status: boolean): Promise<Appointment> {
+  const appointment = await this.appointmentModel.findByIdAndUpdate(
+    appointmentId,
+    { status },
+    { new: true }, // Trả về tài liệu đã cập nhật
+  );
+
+  if (!appointment) {
+    throw new Error('Cuộc hẹn không tồn tại');
+  }
+
+  return appointment;
+}
 
 }

@@ -46,4 +46,12 @@ export class AppointmentController {
   ) {
     return this.appointmentService.updateAppointment(appointmentId, updateAppointmentDto);
   }
+
+  @Patch(':appointmentId/status')
+  async updateAppointmentStatus(
+    @Param('appointmentId') appointmentId: string,
+    @Body() updateAppointmentDto: {status: boolean},
+  ) {
+    return this.appointmentService.updateAppointmentStatus(appointmentId, updateAppointmentDto.status);
+  }
 }

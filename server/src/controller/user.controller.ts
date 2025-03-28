@@ -39,7 +39,7 @@ export class UserController {
     //const userId = user._id;
     return await this.userService.getUserProfile(user);
   }
-  @Get('id/:id')
+  @Get(':id')
     async getUserById(@Param('id') id: string) {
       const user = await this.userService.getUserProfile(id);
       if (!user) {
