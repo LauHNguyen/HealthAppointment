@@ -6,6 +6,8 @@ import { JwtService } from '@nestjs/jwt';
 import { OAuth2Client } from 'google-auth-library';
 import { User, UserDocument } from 'src/schema/user.schema';
 import { Doctor, DoctorDocument } from 'src/schema/doctor.schema';
+import { access } from 'fs';
+import { AUTH } from '../enums/auth.enum';
 
 @Injectable()
 export class AuthService {
@@ -15,44 +17,67 @@ export class AuthService {
       @InjectModel(User.name) private userModel: Model<UserDocument>,
       @InjectModel(Doctor.name) private doctorModel: Model<DoctorDocument>,
       private jwtService: JwtService,
-    ){}// {
+   ) { } // {
    //    this.googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID); // Sử dụng Google Client ID từ biến môi trường
    // }
 
+   // sửa lại thêm access token vào đăng ký
    async register(username: string, password: string) {
       const hashedPassword = await bcrypt.hash(password, 10);
       const newUser = new this.userModel({
          username,
          password: hashedPassword,
       });
-      return newUser.save();
+      await newUser.save();
+
+      var access_token = this.generateAccessToken(newUser);
+
+      return {
+         access_token,
+         user: newUser,
+      };
    }
 
+   //sửa lại return access token
    async login(username: string, password: string, role: string) {
       let user;
 
-   // Kiểm tra vai trò (user hay doctor)
-   if (role === 'user') {
-      user = await this.userModel.findOne({ username });
-   } else if (role === 'doctor') {
-      let name = username;
-      user = await this.doctorModel.findOne({ name });
-   } else {
-      throw new Error('Invalid role');
-   }
-      console.log('Found user:', user); // Test thông tin user có được lấy đúng không
+      if(!username ) {
+         throw new Error('Username is blank');
+      }
+
+      if(!password) {
+         throw new Error('Password is blank');
+      }
+      
+      // Kiểm tra vai trò (user hay doctor)
+      if (role === AUTH.USER) {
+         user = await this.userModel.findOne({ username });
+         if (!user) {
+            throw new Error('Username is incorrect');
+         }
+      } else if (role === AUTH.DOCTOR) {
+         let name = username;
+         user = await this.doctorModel.findOne({ name });
+         if (!user) {
+            throw new Error('Username is incorrect');
+         }
+      } else {
+         throw new Error('Invalid role');
+      }
+      // console.log('Found user:', user); // Test thông tin user có được lấy đúng không
       if (user && (await bcrypt.compare(password, user.password))) {
          const accessToken = this.generateAccessToken(user);
          console.log('Access token: ', accessToken); // Để lấy token khi test trên Postman
-         return {
-            access_token: accessToken,
+         const response = {
+            access_token: accessToken
          };
+         return response;
       }
-      throw new Error('Invalid credentials');
+      throw new Error('Password is incorrect');
    }
 
    async loginWithGoogle(username: string, email: string) {
-
       // Kiểm tra user trong database
       let user = await this.userModel.findOne({ email });
 
@@ -77,7 +102,13 @@ export class AuthService {
    }
 
    generateAccessToken(user: UserDocument | DoctorDocument) {
-      const payload = { username: 'username' in user ? user.username : user.name, role: user.role  };
-      return this.jwtService.sign(payload, { secret: process.env.SECRETKEY, expiresIn: '30m' });
+      const payload = {
+         username: 'username' in user ? user.username : user.name,
+         role: user.role,
+      };
+      return this.jwtService.sign(payload, {
+         secret: process.env.SECRETKEY,
+         expiresIn: '30m',
+      });
    }
 }
