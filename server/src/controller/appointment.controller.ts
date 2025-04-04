@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param, Delete, Patch } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Delete, Patch, BadRequestException } from '@nestjs/common';
 import { AppointmentService } from '../services/appointment.service';
 import { CreateAppointmentDto } from 'src/dto/create-appoitment.dto';
 import { ApiResponse } from 'src/dto/responses/api-response.dto';
@@ -37,9 +37,9 @@ export class AppointmentController {
     try {
       let response = await this.appointmentService.create(createAppointmentDto);
       if (!response) {
-        throw new error('Create failed');
+        throw new Error('Create failed');
       }
-      return ApiResponse(200, 'Create successfully', response);
+      return new ApiResponse(200, 'Create successfully', response);
     }
     catch (error) {
       throw new BadRequestException({

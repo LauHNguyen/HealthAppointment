@@ -1,8 +1,8 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Get,
-  NotFoundException,
   Param,
   Put,
   Query,
@@ -13,6 +13,7 @@ import { DoctorService } from '../services/doctor.service';
 import { JwtAuthGuard } from 'src/configuration/jwt-auth.guard';
 import { Request } from 'express';
 import { Doctor } from 'src/schema/doctor.schema';
+import { ApiResponse } from '../dto/responses/api-response.dto';
 
 @Controller('doctor')
 @UseGuards(JwtAuthGuard)
@@ -36,7 +37,7 @@ export class DoctorController {
       if (!response) {
         throw new error('list of doctors is empty');
       }
-      return ApiResponse(200, 'this is list of doctors', response);
+      return new ApiResponse(200, 'this is list of doctors', response);
     } catch (error) {
       throw new BadRequestException({
         statusCode: 400,
@@ -67,7 +68,7 @@ export class DoctorController {
       if (!doctor) {
         throw new Error(`Doctor with ID ${id} not found`);
       }
-      return ApiResponse(200, 'this is list of doctors', doctor);
+      return new ApiResponse(200, 'this is list of doctors', doctor);
     } catch (error) {
       throw new BadRequestException({
         statusCode: 400,
