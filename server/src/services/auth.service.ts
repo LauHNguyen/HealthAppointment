@@ -4,10 +4,11 @@ import { Model } from 'mongoose';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { OAuth2Client } from 'google-auth-library';
-import { User, UserDocument } from 'src/schema/user.schema';
-import { Doctor, DoctorDocument } from 'src/schema/doctor.schema';
+import { User, UserDocument } from '../schema/user.schema';
+import { Doctor, DoctorDocument } from '../schema/doctor.schema';
 import { access } from 'fs';
 import { AUTH } from '../enums/auth.enum';
+
 
 @Injectable()
 export class AuthService {
@@ -108,7 +109,7 @@ export class AuthService {
       };
       return this.jwtService.sign(payload, {
          secret: process.env.SECRETKEY,
-         expiresIn: '30m',
+         expiresIn: '30d',
       });
    }
 }

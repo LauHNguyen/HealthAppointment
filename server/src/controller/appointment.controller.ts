@@ -1,6 +1,9 @@
 import { Controller, Post, Body, Get, Param, Delete, Patch } from '@nestjs/common';
 import { AppointmentService } from '../services/appointment.service';
 import { CreateAppointmentDto } from 'src/dto/create-appoitment.dto';
+import { ApiResponse } from 'src/dto/responses/api-response.dto';
+import { BadRequestError } from 'openai';
+import { error } from 'console';
 
 @Controller('appointment')
 export class AppointmentController {
@@ -31,7 +34,19 @@ export class AppointmentController {
 
   @Post('create')
   async create(@Body() createAppointmentDto: CreateAppointmentDto) {
-    return this.appointmentService.create(createAppointmentDto);
+    try {
+      let response = await this.appointmentService.create(createAppointmentDto);
+      if (!response) {
+        throw new error('Create failed');
+      }
+      return ApiResponse(200, 'Create successfully', response);
+    }
+    catch (error) {
+      throw new BadRequestException({
+              statusCode: 400,
+              message: error.message,
+            });
+    }
   }
 
   @Delete(':appointmentId')
