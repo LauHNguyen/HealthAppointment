@@ -17,7 +17,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test:test": "jest --config ./test/jest.test.spec.json"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
@@ -75,20 +76,35 @@
     "typescript": "^5.7.2"
   },
   "jest": {
+    "verbose": false,
+    "silent": true,
     "moduleFileExtensions": [
       "js",
       "json",
       "ts"
     ],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
+    "rootDir": ".",
+    "testRegex": "test/.*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
+    "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.(t|j)s"
+      "src/services/auth.service.ts",
+      "!**/node_modules/**",
+      "!**/test/**",
+      "!**/coverage/**",
+      "!**/src/main.ts",
+      "!**/*.module.ts"
     ],
-    "coverageDirectory": "../coverage",
+    "coverageDirectory": "./coverage",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text", 
+      "clover",
+      "text-summary"
+    ],
     "testEnvironment": "node"
   }
 }

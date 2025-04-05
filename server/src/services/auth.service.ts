@@ -24,6 +24,14 @@ export class AuthService {
 
    // sửa lại thêm access token vào đăng ký
    async register(username: string, password: string) {
+      if(!username ) {
+         throw new Error('Username is blank');
+      }
+
+      if(!password) {
+         throw new Error('Password is blank');
+      }
+
       const hashedPassword = await bcrypt.hash(password, 10);
       const newUser = new this.userModel({
          username,

@@ -35,7 +35,7 @@ export class DoctorController {
     try {
       let response = await this.doctorService.filterDoctors(hospitalName);
       if (!response) {
-        throw new error('list of doctors is empty');
+        throw new Error('list of doctors is empty');
       }
       return new ApiResponse(200, 'this is list of doctors', response);
     } catch (error) {
