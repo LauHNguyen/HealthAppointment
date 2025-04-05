@@ -16,7 +16,7 @@ import { Doctor } from 'src/schema/doctor.schema';
 import { ApiResponse } from '../dto/responses/api-response.dto';
 
 @Controller('doctor')
-@UseGuards(JwtAuthGuard)
+// @UseGuards(JwtAuthGuard)
 export class DoctorController {
   constructor(private readonly doctorService: DoctorService) {}
 
@@ -35,7 +35,7 @@ export class DoctorController {
     try {
       let response = await this.doctorService.filterDoctors(hospitalName);
       if (!response) {
-        throw new error('list of doctors is empty');
+        throw new Error('list of doctors is empty');
       }
       return new ApiResponse(200, 'this is list of doctors', response);
     } catch (error) {
