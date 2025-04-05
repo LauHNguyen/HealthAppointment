@@ -22,7 +22,7 @@ class ApiService {
 
       if (response.statusCode == 201) {
         final data = jsonDecode(response.body);
-        String accessToken = data['access_token'];
+        String accessToken = data['data']['access_token'];
         //String refreshToken = data['refresh_token'];
 
         return {

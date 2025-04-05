@@ -33,10 +33,10 @@ export class AuthService {
       }
 
       const hashedPassword = await bcrypt.hash(password, 10);
-      const newUser = new this.userModel({
+      const newUser = await this.userModel.create({
          username,
          password: hashedPassword,
-      });
+       });
       await newUser.save();
 
       var access_token = this.generateAccessToken(newUser);
