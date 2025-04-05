@@ -67,7 +67,8 @@ export class DoctorService {
   async filterDoctors(hospitalName?: string) {
     const hospital = await this.hospitalModel.findByName(hospitalName);
     if (!hospital) {
-      return []; // Hoặc throw new NotFoundException('Hospital not found');
+      // return []; // Hoặc throw new NotFoundException('Hospital not found');
+      throw new NotFoundException(`Hospital with name ${hospitalName} not found`);
     }
 
     // Lọc bác sĩ theo tên bệnh viện (không cần kiểm tra specialty)
