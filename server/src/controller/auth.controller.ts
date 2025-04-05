@@ -5,14 +5,20 @@ import { ApiResponse } from '../dto/responses/api-response.dto';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(private readonly authService: AuthService) { }
 
   // sửa lại ApiResponse
   @Post('register')
   async register(@Body() body: { username: string; password: string }) {
-    var result = await this.authService.register(body.username, body.password);
-
-    return new ApiResponse(201, 'Register successfully', result);
+    try {
+      var result = await this.authService.register(body.username, body.password);
+      return new ApiResponse(201, 'Register successfully', result);
+    } catch (error) {
+      throw new BadRequestException({
+        statusCode: 400,
+        message: error.message,
+      });
+    }
   }
 
   // sửa lại ApiResponse
