@@ -50,7 +50,7 @@ describe('AuthService', () => {
   describe('register', () => {
     it('register a new user successfully', async () => {
       const username = 'testuser';
-      const password = 'password123';
+      const password = 'P@ssword123';
 
       const hashedPassword = 'hashed_password123';
 
@@ -84,5 +84,96 @@ describe('AuthService', () => {
         },
       });
     });
+
+    it('should throw an error if username is blank', async () => {
+      try {
+        const username = '';
+        const password = 'P@ssword123';
+
+        await authService.register(username, password);
+
+        expect(false).toBe(true);
+      } catch (error) {
+        expect(error.message).toContain('Username is blank');
+      }
+    });
+
+    it('should throw an error if password is blank', async () => {
+      try {
+        const username = 'testuser';
+        const password = '';
+
+        await authService.register(username, password);
+
+        expect(false).toBe(true);
+      } catch (error) {
+        expect(error.message).toContain('Password is blank');
+      }
+    })
+
+    it('should throw an error if password is less than 8 characters', async () => {
+      try {
+        const username = 'testuser';
+        const password = 'pass';
+
+        await authService.register(username, password);
+
+        expect(false).toBe(true);
+      } catch (error) {
+        expect(error.message).toContain('Password must be at least 8 characters long');
+      }
+    })
+
+    it('should throw an error if password does not contain at least one uppercase letter', async () => {
+      try {
+        const username = 'testuser';
+        const password = 'password';
+
+        await authService.register(username, password);
+
+        expect(false).toBe(true);
+      } catch (error) {
+        expect(error.message).toContain('Password must contain at least one uppercase letter');
+      }
+    })
+
+    it('should throw an error if password does not contain at least one lowercase letter', async () => {
+      try {
+        const username = 'testuser';
+        const password = 'PASSWORD';
+
+        await authService.register(username, password);
+
+        expect(false).toBe(true);
+      } catch (error) {
+        expect(error.message).toContain('Password must contain at least one lowercase letter');
+      }
+    })
+
+    it('should throw an error if password does not contain at least one number', async () => {
+      try {
+        const username = 'testuser';
+        const password = 'Password';
+
+        await authService.register(username, password);
+
+        expect(false).toBe(true);
+      } catch (error) {
+        expect(error.message).toContain('Password must contain at least one number');
+      }
+    })
+
+    it('should throw an error if password does not contain at least one special character', async () => {
+      try {
+        const username = 'testuser';
+        const password = 'Password123';
+
+        await authService.register(username, password);
+
+        expect(false).toBe(true);    
+      } catch (error) {
+        expect(error.message).toContain('Password must contain at least one special character');
+      }
+    })
   });
 });
