@@ -29,6 +29,30 @@ export class AuthService {
          username,
          password: hashedPassword,
       });
+      if(!username ) {
+         throw new Error('Username is blank');
+      }
+      if(!password) {
+         throw new Error('Password is blank');
+      }
+      if (username.length < 3 || username.length > 20) {
+         throw new Error('Username must be between 3 and 20 characters long');
+      }
+      if (password.length < 8) {
+         throw new Error('Password must be at least 8 characters long');
+      }
+      if (!/[A-Z]/.test(password)) {
+         throw new Error('Password must contain at least one uppercase letter');
+      }
+      if (!/[a-z]/.test(password)) {
+         throw new Error('Password must contain at least one lowercase letter');
+      }
+      if (!/[0-9]/.test(password)) {
+         throw new Error('Password must contain at least one number');
+      }
+      if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+         throw new Error('Password must contain at least one special character');
+      }
       await newUser.save();
 
       var access_token = this.generateAccessToken(newUser);
@@ -43,14 +67,14 @@ export class AuthService {
    async login(username: string, password: string, role: string) {
       let user;
 
-      if(!username ) {
+      if (!username) {
          throw new Error('Username is blank');
       }
 
-      if(!password) {
+      if (!password) {
          throw new Error('Password is blank');
       }
-      
+
       // Kiểm tra vai trò (user hay doctor)
       if (role === AUTH.USER) {
          user = await this.userModel.findOne({ username });
