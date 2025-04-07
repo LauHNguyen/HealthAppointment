@@ -91,6 +91,7 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/services/auth.service.ts",
+      "src/services/appointment.service.ts",
       "!**/node_modules/**",
       "!**/test/**",
       "!**/coverage/**",
