@@ -11,14 +11,14 @@ import {
 } from '@nestjs/common';
 import { DoctorService } from '../services/doctor.service';
 import { JwtAuthGuard } from 'src/configuration/jwt-auth.guard';
-import { Request } from 'express';
+import e, { Request } from 'express';
 import { Doctor } from 'src/schema/doctor.schema';
 import { ApiResponse } from '../dto/responses/api-response.dto';
 
 @Controller('doctor')
 // @UseGuards(JwtAuthGuard)
 export class DoctorController {
-  constructor(private readonly doctorService: DoctorService) {}
+  constructor(private readonly doctorService: DoctorService) { }
 
   @Get('/load')
   async loadDoctors() {
@@ -34,10 +34,13 @@ export class DoctorController {
   async filterDoctors(@Query('hospitalName') hospitalName?: string) {
     try {
       let response = await this.doctorService.filterDoctors(hospitalName);
-      if (!response) {
-        throw new Error('list of doctors is empty');
+      if (response) {
+        return new ApiResponse(200, 'this is list of doctors', response);
+        //throw new Error('list of doctors is empty');
       }
-      return new ApiResponse(200, 'this is list of doctors', response);
+      else {
+        return new ApiResponse(400, 'list of doctors is empty', response);
+      }
     } catch (error) {
       throw new BadRequestException({
         statusCode: 400,

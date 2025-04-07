@@ -70,9 +70,11 @@ export class DoctorService {
       // return []; // Hoặc throw new NotFoundException('Hospital not found');
       throw new NotFoundException(`Hospital with name ${hospitalName} not found`);
     }
-
+    else{
+      return this.doctorModel.find({ hospitalName }).exec();
+    }
     // Lọc bác sĩ theo tên bệnh viện (không cần kiểm tra specialty)
-    return this.doctorModel.find({ hospitalName }).exec();
+    // return this.doctorModel.find({ hospitalName }).exec();
   }
   async getDoctorById(id: string): Promise<Doctor> {
     const doctor = await this.doctorModel.findById(id).exec();
