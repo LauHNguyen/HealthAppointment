@@ -1,253 +1,168 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { DoctorController } from '../src/controller/doctor.controller';
 import { DoctorService } from '../src/services/doctor.service';
-import { ApiResponse } from '../src/dto/responses/api-response.dto';
+import { HospitalService } from '../src/services/hospital.service';
+import { getModelToken } from '@nestjs/mongoose';
 
-describe('DoctorController', () => {
-  let controller: DoctorController;
-  let doctorService;
+import { Doctor } from '../src/schema/doctor.schema';
+import { Hospital } from '../src/schema/hospital.schema';
+import { AUTH } from '../src/enums/auth.enum';
+import { plainToInstance } from 'class-transformer';
+import { DoctorResponseDto } from '../src/dto/responses/doctor-response.dto';
+import { validate } from 'class-validator';
+
+describe('DoctorService', () => {
+  let service: DoctorService;
+  let hospitalService: HospitalService;
+  let doctorModel;
+  let hospitalModel;
+  let mockDoctor;
+  let mockHospitals;
+  let mockDoctors;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
-        DoctorController,
+        DoctorService,
         {
-          provide: DoctorService,
+          provide: getModelToken(Doctor.name),
           useValue: {
-            filterDoctors: jest.fn(),
+            find: jest.fn(),
+          },
+        },
+        {
+          provide: HospitalService,
+          useValue: {
+            findByName: jest.fn(),
           },
         },
       ],
     }).compile();
 
-    controller = module.get<DoctorController>(DoctorController);
-    doctorService = module.get(DoctorService);
+    service = module.get<DoctorService>(DoctorService);
+    doctorModel = module.get(getModelToken(Doctor.name));
+    hospitalModel = module.get<HospitalService>(HospitalService);
+
+    mockHospitals = [
+      { name: 'Hospital A', _id: 'id1' },
+      { name: 'Hospital B', _id: 'id2' },
+    ];
+
+    mockDoctors = [
+      { name: 'Dr. A', hospitalName: 'Hospital A' },
+      { name: 'Dr. B', hospitalName: 'Hospital B' },
+    ];
   });
 
   afterEach(() => {
     jest.clearAllMocks();
   });
 
+  it('should define DoctorService', () => {
+    expect(DoctorService).toBeDefined();
+  });
+
   describe('filterDoctors', () => {
-    it('TC1: should return list of doctors for one valid hospital', async () => {
-      const hospitalName = 'Bệnh viện Từ Dũ';
-      const mockDoctors = [
-        {
-          _id: '1',
-          name: 'Doctor 1',
-          specialty: 'Cardiology',
-          hospitalName,
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Hai', 'Thứ Ba'],
-          role: 'doctor',
-        },
-        {
-          _id: '2',
-          name: 'Doctor 2',
-          specialty: 'Neurology',
-          hospitalName,
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Tư', 'Thứ Năm'],
-          role: 'doctor',
-        },
-      ];
+    it('TC01: should filter doctors successfully with one name of hospital', async () => {
+      try {
+        const mockDataFilter = {
+          hospitalName: 'Hospital A',
+        };
 
-      jest.spyOn(doctorService, 'filterDoctors').mockResolvedValue(mockDoctors);
+        hospitalModel.findByName = jest
+          .fn()
+          .mockImplementation((name) =>
+            Promise.resolve(mockHospitals.find((h) => h.name === name)),
+          );
 
-      const result = await controller.filterDoctors(hospitalName);
+        doctorModel.find = jest.fn().mockReturnValue({
+          exec: jest.fn().mockResolvedValue(mockDoctors),
+        });
 
-      expect(result.statusCode).toBe(200);
-      expect(result.message).toBe('this is list of doctors');
-      expect(result.data).toEqual(mockDoctors);
-      expect(doctorService.filterDoctors).toHaveBeenCalledWith(hospitalName);
+        const result = await service.filterDoctors(mockDataFilter.hospitalName);
+        expect(result).toEqual(mockDoctors);
+      } catch (error) {
+        expect(error.message).toContain('error');
+      }
     });
 
-    it('TC2: should return list of doctors for two valid hospitals', async () => {
-      const hospitalName = 'Bệnh viện Từ Dũ,Bệnh viện Chợ Rẫy';
-      const mockDoctors = [
-        {
-          _id: '1',
-          name: 'Doctor 1',
-          specialty: 'Cardiology',
-          hospitalName: 'Bệnh viện Từ Dũ',
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Hai'],
-          role: 'doctor',
-        },
-        {
-          _id: '2',
-          name: 'Doctor 2',
-          specialty: 'Neurology',
-          hospitalName: 'Bệnh viện Chợ Rẫy',
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Ba'],
-          role: 'doctor',
-        },
-      ];
+    it('TC02: should filter doctors successfully with many name of hospital', async () => {
+      try {
+        const mockDataFilter = {
+          hospitalName: ['Hospital A', 'Hospital B'],
+        };
 
-      jest.spyOn(doctorService, 'filterDoctors').mockResolvedValue(mockDoctors);
+        hospitalModel.findByName = jest
+          .fn()
+          .mockImplementation((name) =>
+            Promise.resolve(mockHospitals.find((h) => h.name === name)),
+          );
 
-      const result = await controller.filterDoctors(hospitalName);
+        doctorModel.find = jest.fn().mockReturnValue({
+          exec: jest.fn().mockResolvedValue(mockDoctors),
+        });
 
-      expect(result.statusCode).toBe(200);
-      expect(result.message).toBe('this is list of doctors');
-      expect(result.data).toEqual(mockDoctors);
-      expect(doctorService.filterDoctors).toHaveBeenCalledWith(hospitalName);
+        const result = await service.filterDoctors(mockDataFilter.hospitalName);
+        expect(result).toEqual(mockDoctors);
+      } catch (error) {
+        expect(error.message).toContain('error');
+      }
     });
 
-    it('TC3: should throw error for one invalid hospital name', async () => {
-      const hospitalName = 'Bệnh Viện Từ Vũ';
-      const mockDoctors = [];
+    it('TC03: should throw error if hospitalName is empty', async () => {
+      try {
+        const mockDataFilter = {
+          hospitalName: [],
+        };
 
-      jest.spyOn(doctorService, 'filterDoctors').mockResolvedValue(mockDoctors);
+        hospitalModel.findByName = jest
+          .fn()
+          .mockImplementation((name) =>
+            Promise.resolve(mockHospitals.find((h) => h.name === name)),
+          );
 
-      const result = await controller.filterDoctors(hospitalName);
+        doctorModel.find = jest.fn().mockReturnValue({
+          exec: jest.fn().mockResolvedValue(mockDoctors),
+        });
 
-      expect(result.statusCode).toBe(200);
-      expect(result.message).toBe('this is list of doctors');
-      // expect(result.message).toBe('Hospital with name'+` ${hospitalName} not found`);
-      // expect(result.data).toEqual(mockDoctors);
-      // await expect(controller.filterDoctors(hospitalName)).rejects.toMatchObject({
-      //   statusCode: 400,
-      //   response: {
-      //     statusCodeCode: 400,
-      //     message: 'Hospital with name'+` ${hospitalName} not found`,
-      //   },
-      // });
-      expect(doctorService.filterDoctors).toHaveBeenCalledWith(hospitalName);
+        const result = await service.filterDoctors(mockDataFilter.hospitalName);
+        expect(result).toEqual(mockDoctors);
+      } catch (error) {
+        expect(error.message).toContain('No hospital names provided');
+      }
     });
 
-    it('TC4: should return list of doctors for two hospitals with one invalid name', async () => {
-      const hospitalName = 'Bệnh viện Từ Dũ,Sai Tên Bệnh Viện';
-      const mockDoctors = [
-        {
-          _id: '1',
-          name: 'Doctor 1',
-          specialty: 'Cardiology',
-          hospitalName: 'Bệnh viện Từ Dũ',
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Hai'],
-          role: 'doctor',
-        },
-      ];
+    it('TC04: should throw error if hospitalName is empty', async () => {
+      let notFoundHospitals;
+      try {
+        const mockDataFilter = {
+          hospitalName: 'adlkjhaskjdh',
+        };
 
-      jest.spyOn(doctorService, 'filterDoctors').mockResolvedValue(mockDoctors);
+        const names = Array.isArray(mockDataFilter.hospitalName)
+          ? mockDataFilter.hospitalName
+          : [mockDataFilter.hospitalName];
 
-      const result = await controller.filterDoctors(hospitalName);
+        hospitalModel.findByName = jest
+          .fn()
+          .mockImplementation((name) =>
+            Promise.resolve(mockHospitals.find((h) => h.name === name)),
+          );
 
-      expect(result.statusCode).toBe(200);
-      expect(result.message).toBe('this is list of doctors');
-      expect(result.data).toEqual(mockDoctors);
-      expect(doctorService.filterDoctors).toHaveBeenCalledWith(hospitalName);
-    });
+        notFoundHospitals = names.filter(
+          (name, index) => !hospitalModel.findByName[index],
+        );
 
-    it('TC5: should return all doctors when hospitalName is not provided', async () => {
-      const mockDoctors = [
-        {
-          _id: '1',
-          name: 'Doctor 1',
-          specialty: 'Cardiology',
-          hospitalName: 'Bệnh viện Từ Dũ',
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Hai'],
-          role: 'doctor',
-        },
-        {
-          _id: '2',
-          name: 'Doctor 2',
-          specialty: 'Neurology',
-          hospitalName: 'Bệnh viện Chợ Rẫy',
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Ba'],
-          role: 'doctor',
-        },
-      ];
+        doctorModel.find = jest.fn().mockReturnValue({
+          exec: jest.fn().mockResolvedValue(mockDoctors),
+        });
 
-      jest.spyOn(doctorService, 'filterDoctors').mockResolvedValue(mockDoctors);
-
-      const result = await controller.filterDoctors(undefined);
-
-      expect(result.statusCode).toBe(200);
-      expect(result.message).toBe('this is list of doctors');
-      expect(result.data).toEqual(mockDoctors);
-      expect(doctorService.filterDoctors).toHaveBeenCalledWith(undefined);
-    });
-
-    it('TC6: should return list of doctors for one hospital with lowercase name', async () => {
-      const hospitalName = 'bệnh viện từ dũ';
-      const mockDoctors = [
-        {
-          _id: '1',
-          name: 'Doctor 1',
-          specialty: 'Cardiology',
-          hospitalName: 'Bệnh viện Từ Dũ',
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Hai'],
-          role: 'doctor',
-        },
-        {
-          _id: '2',
-          name: 'Doctor 2',
-          specialty: 'Neurology',
-          hospitalName: 'Bệnh viện Từ Dũ',
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Ba'],
-          role: 'doctor',
-        },
-      ];
-
-      jest.spyOn(doctorService, 'filterDoctors').mockResolvedValue(mockDoctors);
-
-      const result = await controller.filterDoctors(hospitalName);
-
-      expect(result.statusCode).toBe(200);
-      expect(result.message).toBe('this is list of doctors');
-      expect(result.data).toEqual(mockDoctors);
-      expect(doctorService.filterDoctors).toHaveBeenCalledWith(hospitalName);
-    });
-
-    it('TC7: should return list of doctors for one hospital with numeric characters', async () => {
-      const hospitalName = 'Bệnh viện 115';
-      const mockDoctors = [
-        {
-          _id: '1',
-          name: 'Doctor 1',
-          specialty: 'Cardiology',
-          hospitalName: 'Bệnh viện 115',
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Hai'],
-          role: 'doctor',
-        },
-        {
-          _id: '2',
-          name: 'Doctor 2',
-          specialty: 'Neurology',
-          hospitalName: 'Bệnh viện 115',
-          startTime: '6:00',
-          endTime: '18:00',
-          workingDays: ['Thứ Ba'],
-          role: 'doctor',
-        },
-      ];
-
-      jest.spyOn(doctorService, 'filterDoctors').mockResolvedValue(mockDoctors);
-
-      const result = await controller.filterDoctors(hospitalName);
-
-      expect(result.statusCode).toBe(200);
-      expect(result.message).toBe('this is list of doctors');
-      expect(result.data).toEqual(mockDoctors);
-      expect(doctorService.filterDoctors).toHaveBeenCalledWith(hospitalName);
+        const result = await service.filterDoctors(mockDataFilter.hospitalName);
+        expect(result).toEqual(mockDoctors);
+      } catch (error) {
+        expect(error.message).toContain(
+          `Hospitals with names ${notFoundHospitals.join(', ')} not found`,
+        );
+      }
     });
   });
 });

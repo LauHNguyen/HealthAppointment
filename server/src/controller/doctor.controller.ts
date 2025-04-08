@@ -10,9 +10,9 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { DoctorService } from '../services/doctor.service';
-import { JwtAuthGuard } from 'src/configuration/jwt-auth.guard';
-import e, { Request } from 'express';
-import { Doctor } from 'src/schema/doctor.schema';
+import { JwtAuthGuard } from '../configuration/jwt-auth.guard';
+import { Request } from 'express';
+import { Doctor } from '../schema/doctor.schema';
 import { ApiResponse } from '../dto/responses/api-response.dto';
 
 @Controller('doctor')
