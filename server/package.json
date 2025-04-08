@@ -92,6 +92,7 @@
     "collectCoverageFrom": [
       "src/services/auth.service.ts",
       "src/services/appointment.service.ts",
+      "src/services/doctor.service.ts",
       "!**/node_modules/**",
       "!**/test/**",
       "!**/coverage/**",
@@ -102,7 +103,7 @@
     "coverageReporters": [
       "json",
       "lcov",
-      "text", 
+      "text",
       "clover",
       "text-summary"
     ],

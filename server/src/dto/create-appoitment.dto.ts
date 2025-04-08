@@ -14,7 +14,7 @@ export class CreateAppointmentDto {
   hospitalName: string;
 
   @IsNotEmpty()
-  @IsDateString()
+  @IsString()
   appointmentDate: string;
 
   @IsNotEmpty()

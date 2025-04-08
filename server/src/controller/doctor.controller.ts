@@ -16,7 +16,7 @@ import { Doctor } from 'src/schema/doctor.schema';
 import { ApiResponse } from '../dto/responses/api-response.dto';
 
 @Controller('doctor')
-// @UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard)
 export class DoctorController {
   constructor(private readonly doctorService: DoctorService) {}
 

@@ -26,27 +26,21 @@ export class AuthService {
     if (!username) {
       throw new Error('Username is blank');
     }
-
     if (!password) {
       throw new Error('Password is blank');
     }
-
     if (password.length < 8) {
       throw new Error('Password must be at least 8 characters long');
     }
-
     if (!/[A-Z]/.test(password)) {
       throw new Error('Password must contain at least one uppercase letter');
     }
-
     if (!/[a-z]/.test(password)) {
       throw new Error('Password must contain at least one lowercase letter');
     }
-
     if (!/[0-9]/.test(password)) {
       throw new Error('Password must contain at least one number');
     }
-
     if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
       throw new Error('Password must contain at least one special character');
     }
@@ -56,11 +50,8 @@ export class AuthService {
       username,
       password: hashedPassword,
     });
-
     await newUser.save();
-
     const access_token = this.generateAccessToken(newUser);
-
     return {
       access_token,
       user: newUser,
@@ -95,9 +86,9 @@ export class AuthService {
       throw new Error('Invalid role');
     }
     // console.log('Found user:', user); // Test thông tin user có được lấy đúng không
-    if (user && (await bcrypt.compare(password, user.password))) {
+    if (await bcrypt.compare(password, user.password)) {
       const accessToken = this.generateAccessToken(user);
-      console.log('Access token: ', accessToken); // Để lấy token khi test trên Postman
+      // console.log('Access token: ', accessToken); // Để lấy token khi test trên Postman
       const response = {
         access_token: accessToken,
       };

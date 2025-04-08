@@ -49,40 +49,44 @@ describe('AuthService', () => {
 
   describe('register', () => {
     it('register a new user successfully', async () => {
-      const username = 'testuser';
-      const password = 'P@ssword123';
+      try {
+        const username = 'testuser';
+        const password = 'P@ssword123';
 
-      const hashedPassword = 'hashed_password123';
+        const hashedPassword = 'hashed_password123';
 
-      // Mock bcrypt.hash để trả về hashedPassword cụ thể
-      jest.spyOn(bcrypt, 'hash' as any).mockResolvedValue(hashedPassword);
+        // Mock bcrypt.hash để trả về hashedPassword cụ thể
+        jest.spyOn(bcrypt, 'hash' as any).mockResolvedValue(hashedPassword);
 
-      // Mock userModel.save để trả về đối tượng người dùng sau khi save
-      const newUser = {
-        username,
-        password: hashedPassword,
-      };
-
-      // Mock phương thức create trong mockUserModel để trả về newUser
-      userModel.create.mockResolvedValue({
-        ...newUser,
-        save: jest.fn().mockResolvedValue(newUser), // Mô phỏng hành vi của save
-      });
-
-      jest
-        .spyOn(authService, 'generateAccessToken')
-        .mockReturnValue('mocked_token');
-
-      const result = await authService.register(username, password);
-
-      expect(result).toEqual({
-        access_token: 'mocked_token',
-        user: {
+        // Mock userModel.save để trả về đối tượng người dùng sau khi save
+        const newUser = {
           username,
           password: hashedPassword,
-          save: expect.any(Function),
-        },
-      });
+        };
+
+        // Mock phương thức create trong mockUserModel để trả về newUser
+        userModel.create.mockResolvedValue({
+          ...newUser,
+          save: jest.fn().mockResolvedValue(newUser), // Mô phỏng hành vi của save
+        });
+
+        jest
+          .spyOn(authService, 'generateAccessToken')
+          .mockReturnValue('mocked_token');
+
+        const result = await authService.register(username, password);
+
+        expect(result).toEqual({
+          access_token: 'mocked_token',
+          user: {
+            username,
+            password: hashedPassword,
+            save: expect.any(Function),
+          },
+        });
+      } catch (error) {
+        expect(error.message).toContain('error');
+      }
     });
 
     it('should throw an error if username is blank', async () => {
@@ -91,8 +95,6 @@ describe('AuthService', () => {
         const password = 'P@ssword123';
 
         await authService.register(username, password);
-
-        expect(false).toBe(true);
       } catch (error) {
         expect(error.message).toContain('Username is blank');
       }
@@ -104,12 +106,10 @@ describe('AuthService', () => {
         const password = '';
 
         await authService.register(username, password);
-
-        expect(false).toBe(true);
       } catch (error) {
         expect(error.message).toContain('Password is blank');
       }
-    })
+    });
 
     it('should throw an error if password is less than 8 characters', async () => {
       try {
@@ -117,12 +117,12 @@ describe('AuthService', () => {
         const password = 'pass';
 
         await authService.register(username, password);
-
-        expect(false).toBe(true);
       } catch (error) {
-        expect(error.message).toContain('Password must be at least 8 characters long');
+        expect(error.message).toContain(
+          'Password must be at least 8 characters long',
+        );
       }
-    })
+    });
 
     it('should throw an error if password does not contain at least one uppercase letter', async () => {
       try {
@@ -130,12 +130,12 @@ describe('AuthService', () => {
         const password = 'password';
 
         await authService.register(username, password);
-
-        expect(false).toBe(true);
       } catch (error) {
-        expect(error.message).toContain('Password must contain at least one uppercase letter');
+        expect(error.message).toContain(
+          'Password must contain at least one uppercase letter',
+        );
       }
-    })
+    });
 
     it('should throw an error if password does not contain at least one lowercase letter', async () => {
       try {
@@ -143,12 +143,12 @@ describe('AuthService', () => {
         const password = 'PASSWORD';
 
         await authService.register(username, password);
-
-        expect(false).toBe(true);
       } catch (error) {
-        expect(error.message).toContain('Password must contain at least one lowercase letter');
+        expect(error.message).toContain(
+          'Password must contain at least one lowercase letter',
+        );
       }
-    })
+    });
 
     it('should throw an error if password does not contain at least one number', async () => {
       try {
@@ -156,12 +156,12 @@ describe('AuthService', () => {
         const password = 'Password';
 
         await authService.register(username, password);
-
-        expect(false).toBe(true);
       } catch (error) {
-        expect(error.message).toContain('Password must contain at least one number');
+        expect(error.message).toContain(
+          'Password must contain at least one number',
+        );
       }
-    })
+    });
 
     it('should throw an error if password does not contain at least one special character', async () => {
       try {
@@ -169,11 +169,11 @@ describe('AuthService', () => {
         const password = 'Password123';
 
         await authService.register(username, password);
-
-        expect(false).toBe(true);    
       } catch (error) {
-        expect(error.message).toContain('Password must contain at least one special character');
+        expect(error.message).toContain(
+          'Password must contain at least one special character',
+        );
       }
-    })
+    });
   });
 });

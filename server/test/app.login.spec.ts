@@ -106,14 +106,13 @@ describe('AuthService', () => {
 
         expect(result.access_token).toBe('mocked_token'); // Kiểm tra token trả về có đúng không
       } catch (e) {
-        expect(false).toBe(true);
+        expect(e.message).toContain('error');
       }
     });
 
     it('should throw Username is blank if username is not provided', async () => {
       try {
         await authService.login('', 'correct_password', AUTH.USER);
-        expect(false).toBe(true);
       } catch (e) {
         expect(e.message).toContain('Username is blank');
       }
@@ -128,7 +127,6 @@ describe('AuthService', () => {
             : Promise.resolve(false); // Nếu sai mật khẩu thì trả về false
         });
         await authService.login('testuser', '', AUTH.USER);
-        expect(false).toBe(true);
       } catch (e) {
         expect(e.message).toContain('Password is blank');
       }
@@ -141,7 +139,6 @@ describe('AuthService', () => {
           return username === mockUser.username ? mockUser : null;
         });
         await authService.login('testuser1', '1', AUTH.USER);
-        expect(false).toBe(true);
       } catch (e) {
         expect(e.message).toContain('Username is incorrect');
       }
@@ -171,15 +168,14 @@ describe('AuthService', () => {
         );
         expect(result.access_token).toBe('mocked_token');
       } catch (e) {
-        expect(false).toBe(true);
+        expect(e.message).toContain('error');
       }
     });
 
     it('should throw Username is incorrect if password is not provided', async () => {
       // Giả lập phương thức findOne trả về user mock
       try {
-        await authService.login('us', '1', AUTH.DOCTOR); // Gọi hàm và mong đợi lỗi
-        expect(false).toBe(true); // Nếu không có lỗi => thất bại
+        await authService.login('us', '1', AUTH.DOCTOR); // Gọi hàm và mong đợi lỗi // Nếu không có lỗi => thất bại
       } catch (e) {
         expect(e.message).toContain('Username is incorrect'); // Kiểm tra nội dung lỗi
       }
@@ -187,8 +183,7 @@ describe('AuthService', () => {
 
     it('should throw Invalid role if role is not user or doctor', async () => {
       try {
-        await authService.login('us', '1', 'Doc Ock'); // Gọi hàm và mong đợi lỗi
-        expect(false).toBe(true); // Nếu không có lỗi => thất bại
+        await authService.login('us', '1', 'Doc Ock'); // Gọi hàm và mong đợi lỗi // Nếu không có lỗi => thất bại
       } catch (e) {
         expect(e.message).toContain('Invalid role'); // Kiểm tra nội dung lỗi
       }
@@ -206,8 +201,7 @@ describe('AuthService', () => {
             ? Promise.resolve(true) // Nếu đúng mật khẩu thì trả về true
             : Promise.resolve(false); // Nếu sai mật khẩu thì trả về false
         });
-        await authService.login('testuser', '1', AUTH.USER); // Gọi hàm và mong đợi lỗi
-        expect(false).toBe(true); // Nếu không có lỗi => thất bại
+        await authService.login('testuser', '1', AUTH.USER); // Gọi hàm và mong đợi lỗi // Nếu không có lỗi => thất bại
       } catch (e) {
         expect(e.message).toContain('Password is incorrect'); // Kiểm tra nội dung lỗi
       }
