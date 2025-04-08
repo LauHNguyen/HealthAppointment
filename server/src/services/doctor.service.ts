@@ -14,7 +14,7 @@ export class DoctorService {
   constructor(
     @InjectModel(Doctor.name) private doctorModel: Model<DoctorDocument>,
     private hospitalModel: HospitalService,
-  ) {}
+  ) { }
 
   async loadDoctors() {
     // Đọc dữ liệu từ file JSON
@@ -64,15 +64,23 @@ export class DoctorService {
     return this.doctorModel.findOne({ name }).exec();
   }
 
-  async filterDoctors(hospitalName?: string) {
-    const hospital = await this.hospitalModel.findByName(hospitalName);
-    if (!hospital) {
-      // return []; // Hoặc throw new NotFoundException('Hospital not found');
-      throw new NotFoundException(`Hospital with name ${hospitalName} not found`);
+  async filterDoctors(hospitalName?: string | string[]) {
+    const names = Array.isArray(hospitalName) ? hospitalName : [hospitalName];
+    if (!names || names.length === 0) {
+      throw new NotFoundException('No hospital names provided');
     }
-    else{
-      return this.doctorModel.find({ hospitalName }).exec();
+
+    const hospitals = await Promise.all(
+      names.map(name => this.hospitalModel.findByName(name))
+    );
+
+    const notFoundHospitals = names.filter((name, index) => !hospitals[index]);
+    if (notFoundHospitals.length > 0) {
+      throw new NotFoundException(`Hospitals with names ${notFoundHospitals.join(', ')} not found`);
     }
+
+    return this.doctorModel.find({ hospitalName: { $in: names } }).exec();
+
     // Lọc bác sĩ theo tên bệnh viện (không cần kiểm tra specialty)
     // return this.doctorModel.find({ hospitalName }).exec();
   }
@@ -85,12 +93,12 @@ export class DoctorService {
   }
 
   async updateDoctor(doctorId: string, updateData: Partial<Doctor>): Promise<Doctor> {
-        return this.doctorModel.findByIdAndUpdate(doctorId, updateData, { new: true }).select('_id __v password ');
-     }
-  
-  
-    async getDoctorProfile(doctorId: string): Promise<Doctor> {
-      return await this.doctorModel.findById(doctorId).select('-password -_id -__v');
-    
-    }
+    return this.doctorModel.findByIdAndUpdate(doctorId, updateData, { new: true }).select('_id __v password ');
+  }
+
+
+  async getDoctorProfile(doctorId: string): Promise<Doctor> {
+    return await this.doctorModel.findById(doctorId).select('-password -_id -__v');
+
+  }
 }

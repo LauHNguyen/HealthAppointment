@@ -31,7 +31,7 @@ export class DoctorController {
   }
 
   @Get('filter')
-  async filterDoctors(@Query('hospitalName') hospitalName?: string) {
+  async filterDoctors(@Query('hospitalName') hospitalName?: string | string[]) {
     try {
       let response = await this.doctorService.filterDoctors(hospitalName);
       if (response) {
