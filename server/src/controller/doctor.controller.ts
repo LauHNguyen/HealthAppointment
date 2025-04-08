@@ -11,7 +11,7 @@ import {
 } from '@nestjs/common';
 import { DoctorService } from '../services/doctor.service';
 import { JwtAuthGuard } from 'src/configuration/jwt-auth.guard';
-import { Request } from 'express';
+import e, { Request } from 'express';
 import { Doctor } from 'src/schema/doctor.schema';
 import { ApiResponse } from '../dto/responses/api-response.dto';
 
@@ -31,9 +31,9 @@ export class DoctorController {
   }
 
   @Get('filter')
-  async filterDoctors(@Query('hospitalName') hospitalName?: string) {
+  async filterDoctors(@Query('hospitalName') hospitalName?: string | string[]) {
     try {
-      let response = await this.doctorService.filterDoctors(hospitalName);
+      const response = await this.doctorService.filterDoctors(hospitalName);
       if (!response) {
         throw new Error('list of doctors is empty');
       }

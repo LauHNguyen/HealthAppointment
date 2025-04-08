@@ -66,17 +66,24 @@ export class DoctorService {
     return this.doctorModel.findOne({ name }).exec();
   }
 
-  async filterDoctors(hospitalName?: string) {
-    const hospital = await this.hospitalModel.findByName(hospitalName);
-    if (!hospital) {
-      // return []; // Hoặc throw new NotFoundException('Hospital not found');
-      throw new NotFoundException(
-        `Hospital with name ${hospitalName} not found`,
+  async filterDoctors(hospitalName?: string | string[]) {
+    const names = Array.isArray(hospitalName) ? hospitalName : [hospitalName];
+    if (!names || names.length === 0) {
+      throw new Error('No hospital names provided');
+    }
+
+    const hospitals = await Promise.all(
+      names.map((name) => this.hospitalModel.findByName(name)),
+    );
+
+    const notFoundHospitals = names.filter((name, index) => !hospitals[index]);
+    if (notFoundHospitals.length > 0) {
+      throw new Error(
+        `Hospitals with names ${notFoundHospitals.join(', ')} not found`,
       );
     }
 
-    // Lọc bác sĩ theo tên bệnh viện (không cần kiểm tra specialty)
-    return this.doctorModel.find({ hospitalName }).exec();
+    return this.doctorModel.find({ hospitalName: { $in: names } }).exec();
   }
   async getDoctorById(id: string): Promise<Doctor> {
     const doctor = await this.doctorModel.findById(id).exec();
