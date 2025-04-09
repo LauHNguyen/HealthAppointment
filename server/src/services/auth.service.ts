@@ -29,6 +29,9 @@ export class AuthService {
     if (!password) {
       throw new Error('Password is blank');
     }
+    if(username.length < 4 || username.length > 20) {
+      throw new Error('Username must be between 4 and 20 characters long');
+    }
     if (password.length < 8) {
       throw new Error('Password must be at least 8 characters long');
     }
