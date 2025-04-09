@@ -101,7 +101,7 @@ export class AppointmentService {
 
   // Lấy tất cả các cuộc hẹn
   async getAllAppointments(): Promise<Appointment[]> {
-    return this.appointmentModel.find().populate('user doctor').exec();
+    return this.appointmentModel.find().exec();
   }
 
   // Lấy các cuộc hẹn của một người dùng cụ thể
