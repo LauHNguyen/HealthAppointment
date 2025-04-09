@@ -45,7 +45,7 @@ describe('DoctorService', () => {
       password: 'hashed_password',
       specialty: 'Cardiology',
       hospitalName: 'Test Hospital',
-      startTime: '9:00',
+      startTime: '09:00',
       endTime: '13:00',
       workingDays: [
         'Monday',
@@ -80,7 +80,7 @@ describe('DoctorService', () => {
     it(`TC01: Should update successfully a doctor`, async () => {
       try {
         const mockUpdateDoctor = {
-          startTime: '9:00',
+          startTime: '09:00',
           endTime: '17:00',
           workingDays: ['Monday', 'Tuesday', 'Saturday', 'Sunday'],
         };
@@ -107,7 +107,7 @@ describe('DoctorService', () => {
     it('TC02: Should throw error if doctor is not found', async () => {
       try {
         const mockUpdateDoctor = {
-          startTime: '9:00',
+          startTime: '09:00',
           endTime: '17:00',
           workingDays: ['Monday', 'Tuesday', 'Saturday', 'Sunday'],
         };
@@ -125,7 +125,7 @@ describe('DoctorService', () => {
     it('TC03: Should throw error if working days is wrong format', async () => {
       try {
         const mockUpdateDoctor = {
-          startTime: '9:00',
+          startTime: '09:00',
           endTime: '17:00',
           workingDays: [],
         };
@@ -144,7 +144,7 @@ describe('DoctorService', () => {
       let invalidDays;
       try {
         const mockUpdateDoctor = {
-          startTime: '9:00',
+          startTime: '09:00',
           endTime: '17:00',
           workingDays: ['ThangMatDay'],
         };
@@ -178,7 +178,7 @@ describe('DoctorService', () => {
     it('TC05: should throw error if startTime out of range', async () => {
       try {
         const mockUpdateDoctor = {
-          startTime: '4:00',
+          startTime: '04:00',
           endTime: '17:00',
           workingDays: ['Monday', 'Tuesday'],
         };
@@ -218,7 +218,7 @@ describe('DoctorService', () => {
     it('TC07: should throw error if endTime out of range', async () => {
       try {
         const mockUpdateDoctor = {
-          startTime: '9:00',
+          startTime: '09:00',
           endTime: '05:00',
           workingDays: ['Monday', 'Tuesday'],
         };
@@ -238,7 +238,7 @@ describe('DoctorService', () => {
     it('TC08: should throw error if endTime out of range', async () => {
       try {
         const mockUpdateDoctor = {
-          startTime: '9:00',
+          startTime: '09:00',
           endTime: '19:00',
           workingDays: ['Monday', 'Tuesday'],
         };
@@ -259,7 +259,7 @@ describe('DoctorService', () => {
     it('TC09: should throw error if dortor works less than 8 hours', async () => {
       try {
         const mockUpdateDoctor = {
-          startTime: '9:00',
+          startTime: '09:00',
           endTime: '10:00',
           workingDays: ['Monday', 'Tuesday'],
         };

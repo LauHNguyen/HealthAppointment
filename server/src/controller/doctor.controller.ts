@@ -80,8 +80,19 @@ export class DoctorController {
   @Put('update')
   async updateUser(@Req() req: Request, @Body() updateData: Partial<Doctor>) {
     // Lấy userId từ token đã xác thực
-    const doctorId = req.user['id'];
-    // Gọi service để cập nhật thông tin
-    return this.doctorService.updateDoctor(doctorId, updateData);
+    try {
+      const doctorId = req.user['id'];
+      // Gọi service để cập nhật thông tin
+      const updateDoc = await this.doctorService.updateDoctor(doctorId, updateData);
+      if (!updateDoc) {
+        throw new Error(`Doctor update failed`);
+      }
+      return new ApiResponse(200, 'Update doctor successfull', updateDoc);
+    } catch (error) {
+      throw new BadRequestException({
+        statusCode: 400,
+        message: error.message,
+      });
+    }
   }
 }
