@@ -75,7 +75,7 @@ class _UpdateDoctorInfoState extends State<UpdateDoctorInfo> {
     List<String> timeList = [];
     for (int hour = 6; hour <= 18; hour++) {
       if (hour != 12) {
-        timeList.add('${hour.toString()}:00');
+        timeList.add('${hour.toString().padLeft(2, '0')}:00');
       }
     }
     return timeList;

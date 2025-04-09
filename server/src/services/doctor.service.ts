@@ -16,7 +16,7 @@ export class DoctorService {
   constructor(
     @InjectModel(Doctor.name) private doctorModel: Model<DoctorDocument>,
     private hospitalModel: HospitalService,
-  ) {}
+  ) { }
 
   async loadDoctors() {
     // Đọc dữ liệu từ file JSON
@@ -126,6 +126,10 @@ export class DoctorService {
       throw new Error('Working days cannot be empty');
     }
 
+    if(!updateData.startTime && !updateData.endTime) {
+      throw new Error('startTime and endTime cannot be empty');
+    }
+
     const invalidDays = updateData.workingDays.filter(
       (day) => !validWeekdays.includes(day),
     );
@@ -150,7 +154,14 @@ export class DoctorService {
       // Kiểm tra khoảng cách thời gian
       const startHour = parseInt(normalizedStartTime.split(':')[0]);
       const endHour = parseInt(normalizedEndTime.split(':')[0]);
-      if (endHour - startHour < 8) {
+      let workingHours = endHour - startHour;
+
+      // Nếu endHour nhỏ hơn startHour, giả định ca làm việc qua ngày hôm sau
+      if (workingHours < 0) {
+        workingHours += 24; // Cộng thêm 24 giờ
+      }
+
+      if (workingHours < 8) {
         throw new Error('Working time must be at least 8 hours');
       }
     }
