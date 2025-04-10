@@ -146,7 +146,7 @@ describe('DoctorService', () => {
         const mockUpdateDoctor = {
           startTime: '09:00',
           endTime: '17:00',
-          workingDays: ['ThangMatDay'],
+          workingDays: ['Nottoday'],
         };
 
         const validWeekdays = [
@@ -255,7 +255,6 @@ describe('DoctorService', () => {
       }
     });
 
-    // điều kiện đần thật sự
     it('TC09: should throw error if dortor works less than 8 hours', async () => {
       try {
         const mockUpdateDoctor = {
@@ -273,6 +272,33 @@ describe('DoctorService', () => {
         expect(error.message).toContain(
           'Working time must be at least 8 hours',
         );
+      }
+    });
+
+    it('TC10: should plus 24 hours when startTime < endTime', async () => {
+      try {
+        const mockUpdateDoctor = {
+          startTime: '09:00',
+          endTime: '08:00',
+          workingDays: ['Monday', 'Tuesday'],
+        };
+
+        doctorModel.findById.mockImplementation(async (id) => {
+          return id === id ? mockDoctor : null;
+        });
+
+        const result = await service.updateDoctor(id, mockUpdateDoctor);
+
+        mockUpdateDoctor.startTime = service.normalizeTime(
+          mockUpdateDoctor.startTime,
+        );
+        mockUpdateDoctor.endTime = service.normalizeTime(
+          mockUpdateDoctor.endTime,
+        );
+
+        expect(result).toEqual(mockUpdateDoctor);
+      } catch (error) {
+        expect(error.message).toContain('error');
       }
     });
   });
