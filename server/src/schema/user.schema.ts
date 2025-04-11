@@ -26,7 +26,7 @@ export class User {
    @Prop({ default: 'local' }) // 'local' hoặc 'google'
    authProvider: string;
 
-   @Prop({required: true, default: 'user'})
+   @Prop({ required: true, enum: ['user', 'admin'], default: 'user' })
    role: string
 }
 

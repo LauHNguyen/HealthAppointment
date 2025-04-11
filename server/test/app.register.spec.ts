@@ -48,7 +48,7 @@ describe('AuthService', () => {
   });
 
   describe('register', () => {
-    it('register a new user successfully', async () => {
+    it('TC01: Should register a new user successfully', async () => {
       try {
         const username = 'testuser';
         const password = 'P@ssword123';
@@ -89,7 +89,7 @@ describe('AuthService', () => {
       }
     });
 
-    it('should throw an error if username is blank', async () => {
+    it('TC02: should throw an error if username is blank', async () => {
       try {
         const username = '';
         const password = 'P@ssword123';
@@ -100,7 +100,7 @@ describe('AuthService', () => {
       }
     });
 
-    it('should throw an error if password is blank', async () => {
+    it('TC03: should throw an error if password is blank', async () => {
       try {
         const username = 'testuser';
         const password = '';
@@ -111,7 +111,7 @@ describe('AuthService', () => {
       }
     });
 
-    it('should throw an error if password is less than 8 characters', async () => {
+    it('TC04: should throw an error if password is less than 8 characters', async () => {
       try {
         const username = 'testuser';
         const password = 'pass';
@@ -124,7 +124,7 @@ describe('AuthService', () => {
       }
     });
 
-    it('should throw an error if password does not contain at least one uppercase letter', async () => {
+    it('TC05: should throw an error if password does not contain at least one uppercase letter', async () => {
       try {
         const username = 'testuser';
         const password = 'password';
@@ -137,7 +137,7 @@ describe('AuthService', () => {
       }
     });
 
-    it('should throw an error if password does not contain at least one lowercase letter', async () => {
+    it('TC06: should throw an error if password does not contain at least one lowercase letter', async () => {
       try {
         const username = 'testuser';
         const password = 'PASSWORD';
@@ -150,7 +150,7 @@ describe('AuthService', () => {
       }
     });
 
-    it('should throw an error if password does not contain at least one number', async () => {
+    it('TC07: should throw an error if password does not contain at least one number', async () => {
       try {
         const username = 'testuser';
         const password = 'Password';
@@ -163,7 +163,7 @@ describe('AuthService', () => {
       }
     });
 
-    it('should throw an error if password does not contain at least one special character', async () => {
+    it('TC08: should throw an error if password does not contain at least one special character', async () => {
       try {
         const username = 'testuser';
         const password = 'Password123';
@@ -172,6 +172,32 @@ describe('AuthService', () => {
       } catch (error) {
         expect(error.message).toContain(
           'Password must contain at least one special character',
+        );
+      }
+    });
+
+    it('TC09: should throw an error if Username must be between 4 and 20 characters', async () => {
+      try {
+        const username = 'tes';
+        const password = 'Password123';
+
+        await authService.register(username, password);
+      } catch (error) {
+        expect(error.message).toContain(
+          'Username must be between 4 and 20 characters long',
+        );
+      }
+    });
+    
+    it('TC10: should throw an error if Username must be between 4 and 20 characters', async () => {
+      try {
+        const username = 'testuser12345678901234567890';
+        const password = 'Password123';
+
+        await authService.register(username, password);
+      } catch (error) {
+        expect(error.message).toContain(
+          'Username must be between 4 and 20 characters long',
         );
       }
     });

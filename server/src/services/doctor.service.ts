@@ -126,10 +126,6 @@ export class DoctorService {
       throw new Error('Working days cannot be empty');
     }
 
-    if(!updateData.startTime && !updateData.endTime) {
-      throw new Error('startTime and endTime cannot be empty');
-    }
-
     const invalidDays = updateData.workingDays.filter(
       (day) => !validWeekdays.includes(day),
     );
