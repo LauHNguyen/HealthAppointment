@@ -327,7 +327,7 @@ class _AppointmentState extends State<Appointment> {
       if (response.statusCode == 200) {
         final List<dynamic> appointments = jsonDecode(response.body);
         bookedTime = appointments.where((appointment) {
-          bool doctorMatch = appointment['doctor']['_id'] == widget.doctorId;
+          bool doctorMatch = appointment['doctor'] == widget.doctorId;
           DateTime appointmentDate =
               DateTime.parse(appointment['appointmentDate']);
           String formattedAppointmentDate =
