@@ -1,3 +1,4 @@
+import 'package:client/screen/Admin_Screen.dart';
 import 'package:client/screen/Home_screen.dart';
 import 'package:client/screen/Login_Screen.dart';
 import 'package:client/screen/Profile_doctor.dart';
@@ -17,6 +18,7 @@ class AppRoutes {
   static const String updateProfile = '/update';
   static const String updateDocProfile = '/docupdate';
   static const String hospital = '/hospital';
+  static const String admin = '/admin';
 
   static Map<String, WidgetBuilder> get routes {
     return {
@@ -28,6 +30,7 @@ class AppRoutes {
       docprofile: (context) => DoctorInfo(),
       updateProfile: (context) => UpdateUserInfo(),
       updateDocProfile: (context) => UpdateDoctorInfo(),
+      admin: (context) => AdminScreen(),
     };
   }
 }

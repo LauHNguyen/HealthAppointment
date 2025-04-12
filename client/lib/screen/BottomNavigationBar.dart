@@ -55,13 +55,13 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        final user = role == 'user'
+        final user = role == 'doctor'
             ? data.firstWhere(
-                (user) => user['username'].toString() == username.toString(),
+                (doctor) => doctor['name'].toString() == username.toString(),
                 orElse: () => null,
               )
             : data.firstWhere(
-                (doctor) => doctor['name'].toString() == username.toString(),
+                (user) => user['username'].toString() == username.toString(),
                 orElse: () => null,
               );
         if (user != null) {
