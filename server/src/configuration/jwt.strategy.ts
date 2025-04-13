@@ -19,7 +19,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     const { username, role } = payload;
 
   // Kiểm tra role để xác định tìm user hay doctor
-  if (role === 'user') {
+  if (role === 'user'|| role === 'admin') {
     const user = await this.usersService.findByUsername(username);
     if (!user) {
       throw new Error('User not found');

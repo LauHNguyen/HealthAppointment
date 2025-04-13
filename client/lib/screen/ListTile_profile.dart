@@ -136,7 +136,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   Text(
                     widget.role == 'doctor'
                         ? 'Bác sĩ'
-                        : 'Người dùng thông thường',
+                        : widget.role == 'user'
+                            ? 'bệnh nhân'
+                            : "ADMIN",
                     style: const TextStyle(fontSize: 16, color: Colors.black54),
                   ),
                 ],
@@ -154,9 +156,9 @@ class _ProfilePageState extends State<ProfilePage> {
               trailing: const Icon(Icons.arrow_forward_ios,
                   size: 18, color: Colors.grey),
               onTap: () {
-                widget.role == 'user'
-                    ? Navigator.pushNamed(context, '/profile')
-                    : Navigator.pushNamed(context, '/docprofile');
+                widget.role == 'doctor'
+                    ? Navigator.pushNamed(context, '/docprofile')
+                    : Navigator.pushNamed(context, '/profile');
               },
             ),
             const Divider(height: 1, thickness: 0.5),
@@ -242,6 +244,22 @@ class _ProfilePageState extends State<ProfilePage> {
                 );
               },
             ),
+            // ADMIN
+            if (widget.role == 'admin') ...[
+              const Divider(height: 1, thickness: 0.5),
+              ListTile(
+                leading: const Icon(Icons.login, color: Colors.blueAccent),
+                title: const Text(
+                  'ADMIN',
+                  style: TextStyle(fontSize: 18),
+                ),
+                trailing: const Icon(Icons.arrow_forward_ios,
+                    size: 18, color: Colors.grey),
+                onTap: () {
+                  Navigator.pushNamed(context, '/admin');
+                },
+              ),
+            ],
             const Divider(height: 1, thickness: 0.5),
             // Đăng xuất
             ListTile(
