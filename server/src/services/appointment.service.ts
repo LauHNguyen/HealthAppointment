@@ -164,6 +164,20 @@ export class AppointmentService {
     return appointment;
   }
 
+//Phú
+  async getDoctorsWithAppointments() {
+    return this.appointmentModel.aggregate([
+      { $group: { _id: '$doctorId', count: { $sum: 1 } } }, // Nhóm theo doctorId
+      { $lookup: { // Kết hợp với bảng Doctor để lấy thông tin bác sĩ
+          from: 'doctors',
+          localField: '_id',
+          foreignField: '_id',
+          as: 'doctorInfo',
+        },
+      },
+      { $unwind: '$doctorInfo' }, // Giải phóng mảng doctorInfo
+      { $project: { _id: 0, doctorId: '$_id', doctorInfo: 1, appointmentCount: '$count' } },
+    ]);
 //Phước
   async filterAppointmentsByMonth(month: number, year: number): Promise<Appointment[]> {
     // Validate month and year
@@ -201,28 +215,6 @@ export class AppointmentService {
     return appointments;
   }
 
-  async loadAppointmentsFromJson(): Promise<any> {
-    try {
-      const jsonPath = path.join(process.cwd(), 'data', 'appointments.json');
-      const jsonData = fs.readFileSync(jsonPath, 'utf8');
-      const appointments = JSON.parse(jsonData);
-
-      // Xóa tất cả các cuộc hẹn hiện có
-      await this.appointmentModel.deleteMany({});
-
-      // Thêm các cuộc hẹn mới
-      const result = await this.appointmentModel.insertMany(appointments);
-
-      return {
-        message: 'Dữ liệu đã được tải thành công',
-        count: result.length
-      };
-    } catch (error) {
-      throw new BadRequestException({
-        statusCode: 400,
-        message: `Lỗi khi tải dữ liệu: ${error.message}`,
-      });
-    }
 // Nghĩa
   async filterAppointments(
     filter: AppointmentFilterRequestDto,
