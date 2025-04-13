@@ -1,11 +1,14 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
 import * as bcrypt from 'bcrypt';
 
 export type DoctorDocument = Doctor & Document;
 
 @Schema()
 export class Doctor {
+
+  _id: Types.ObjectId;// filter by id
+
   @Prop({ required: true })
   name: string;
 

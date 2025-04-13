@@ -20,7 +20,7 @@ export class AppointmentService {
     private hospitalModel: Model<HospitalDocument>,
     @InjectModel(User.name) private userModel: Model<UserDocument>,
     @InjectModel(Doctor.name) private doctorModel: Model<DoctorDocument>,
-  ) {}
+  ) { }
 
   isValidDate(dateString: string): boolean {
     const regex = /^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/;
@@ -113,7 +113,7 @@ export class AppointmentService {
 
   // Lấy tất cả các cuộc hẹn
   async getAllAppointments(): Promise<Appointment[]> {
-    return this.appointmentModel.find().exec();
+    return this.appointmentModel.find().populate('user doctor').exec();
   }
 
   // Lấy các cuộc hẹn của một người dùng cụ thể
@@ -164,11 +164,12 @@ export class AppointmentService {
     return appointment;
   }
 
-//Phú
+  //Phú
   async getDoctorsWithAppointments() {
     return this.appointmentModel.aggregate([
       { $group: { _id: '$doctorId', count: { $sum: 1 } } }, // Nhóm theo doctorId
-      { $lookup: { // Kết hợp với bảng Doctor để lấy thông tin bác sĩ
+      {
+        $lookup: { // Kết hợp với bảng Doctor để lấy thông tin bác sĩ
           from: 'doctors',
           localField: '_id',
           foreignField: '_id',
@@ -179,7 +180,7 @@ export class AppointmentService {
       { $project: { _id: 0, doctorId: '$_id', doctorInfo: 1, appointmentCount: '$count' } },
     ]);
   }
-//Phước
+  //Phước
   async filterAppointmentsByMonth(month: number, year: number): Promise<Appointment[]> {
     // Validate month and year
     if (month < 1 || month > 12) {
@@ -216,17 +217,54 @@ export class AppointmentService {
     return appointments;
   }
 
-// Nghĩa
+  // Nghĩa
   async filterAppointments(
     filter: AppointmentFilterRequestDto,
   ): Promise<Appointment[]> {
-    let appointment = await this.appointmentModel.find();
+    let appointment = await this.appointmentModel.find()
+      .populate({
+        path: 'user',
+        select: '-password'
+      })
+      .populate({
+        path: 'doctor',
+        select: '-password'
+      })
+      .sort({ appointmentDate: 1, appointmentTime: 1 })
+      .exec();
+
     let filtered = appointment;
+
+    if (filter.doctor !== undefined) {
+      const doctor = await this.doctorModel.findOne({ name: filter.doctor }).select('-password').exec();
+      if (!doctor) {
+        throw new Error('Doctor not found');
+      }
+      filtered = filtered.filter((item) => {
+        console.log(item.doctor, doctor.name);
+        return item.doctor._id.toString() === doctor._id.toString();
+      });
+    }
+    if (filter.year !== undefined) {
+      if (filter.year < 2000 || filter.year > 2100) {
+        throw new Error('Invalid year');
+      }
+      filtered = filtered.filter((item) => {
+        return new Date(item.appointmentDate).getFullYear() == filter.year;
+      });
+    }
+    if (filter.month !== undefined) {
+      if (filter.month < 1 || filter.month > 12) {
+        throw new Error('Invalid month');
+      }
+      filtered = filtered.filter((item) => {
+        return new Date(item.appointmentDate).getMonth() + 1 == filter.month;
+      });
+    }
     if (filter.date !== undefined) {
       if (filter.date < 1 || filter.date > 31) {
         throw new Error('Invalid date');
       }
-
       filtered = filtered.filter((item) => {
         return new Date(item.appointmentDate).getDate() == filter.date;
       });
