@@ -26,6 +26,22 @@ export class AppointmentController {
     return this.appointmentService.getAppointmentsByDoctorId(doctorId);
   }
 
+  @Get('doctor')
+async getDoctorsWithAppointments() {
+  try {
+    const doctors = await this.appointmentService.getDoctorsWithAppointments();
+    if (!doctors || doctors.length === 0) {
+      throw new Error('No doctors found with appointments');
+    }
+    return new ApiResponse(200, 'List of doctors with appointments', doctors);
+  } catch (error) {
+    throw new BadRequestException({
+      statusCode: 400,
+      message: error.message,
+    });
+  }
+}
+
   // Lấy cuộc hẹn theo ID
   @Get(':appointmentId')
   async getAppointmentById(@Param('appointmentId') appointmentId: string) {

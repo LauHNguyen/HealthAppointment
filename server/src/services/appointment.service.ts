@@ -151,4 +151,19 @@ export class AppointmentService {
     }
     return appointment;
   }
+
+  async getDoctorsWithAppointments() {
+    return this.appointmentModel.aggregate([
+      { $group: { _id: '$doctorId', count: { $sum: 1 } } }, // Nhóm theo doctorId
+      { $lookup: { // Kết hợp với bảng Doctor để lấy thông tin bác sĩ
+          from: 'doctors',
+          localField: '_id',
+          foreignField: '_id',
+          as: 'doctorInfo',
+        },
+      },
+      { $unwind: '$doctorInfo' }, // Giải phóng mảng doctorInfo
+      { $project: { _id: 0, doctorId: '$_id', doctorInfo: 1, appointmentCount: '$count' } },
+    ]);
+  }
 }
