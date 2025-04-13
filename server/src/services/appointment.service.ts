@@ -178,6 +178,7 @@ export class AppointmentService {
       { $unwind: '$doctorInfo' }, // Giải phóng mảng doctorInfo
       { $project: { _id: 0, doctorId: '$_id', doctorInfo: 1, appointmentCount: '$count' } },
     ]);
+  }
 //Phước
   async filterAppointmentsByMonth(month: number, year: number): Promise<Appointment[]> {
     // Validate month and year

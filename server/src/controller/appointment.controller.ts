@@ -93,17 +93,4 @@ async getDoctorsWithAppointments() {
       });
     }
   }
-
-  @Post('load-data')
-  async loadAppointmentsData() {
-    try {
-      const result = await this.appointmentService.loadAppointmentsFromJson();
-      return new ApiResponse(200, result.message, result);
-    } catch (error) {
-      throw new BadRequestException({
-        statusCode: 400,
-        message: error.message,
-      });
-    }
-  }
 }
