@@ -9,6 +9,8 @@ import { CreateAppointmentDto } from 'src/dto/create-appoitment.dto';
 import * as fs from 'fs';
 import * as path from 'path';
 
+import { AppointmentFilterRequestDto } from 'src/dto/requests/appointment-filter-request.dto';
+
 @Injectable()
 export class AppointmentService {
   constructor(
@@ -23,25 +25,26 @@ export class AppointmentService {
   isValidDate(dateString: string): boolean {
     const regex = /^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/;
     if (!regex.test(dateString)) return false;
-  
+
     const [year, month, day] = dateString.split(/[-/]/).map(Number);
-  
+
     // Kiểm tra phạm vi cơ bản
     if (month < 1 || month > 12 || day < 1 || day > 31) return false;
-  
+
     const date = new Date(year, month - 1, day);
-  
+
     return (
       date.getFullYear() === year &&
       date.getMonth() === month - 1 &&
       date.getDate() === day
     );
   }
-  
-  
 
-  async create(createAppointmentDto: CreateAppointmentDto,): Promise<Appointment> {
-    const { user, doctor, hospitalName, appointmentDate, appointmentTime } = createAppointmentDto;
+  async create(
+    createAppointmentDto: CreateAppointmentDto,
+  ): Promise<Appointment> {
+    const { user, doctor, hospitalName, appointmentDate, appointmentTime } =
+      createAppointmentDto;
     // Kiểm tra user tồn tại
     if (!(await this.userModel.findById(user))) {
       throw new Error('User not found');
@@ -57,13 +60,21 @@ export class AppointmentService {
       throw new Error('Hospital not found');
     }
 
-    if(!this.isValidDate(appointmentDate)) {
+    if (!this.isValidDate(appointmentDate)) {
       throw new Error('Invalid appointment date');
     }
 
     // Kiểm tra appointmentDate trong workingDays
     const parsedDate = new Date(appointmentDate);
-    const weekdayMap = { 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 0: 'Sunday', };
+    const weekdayMap = {
+      1: 'Monday',
+      2: 'Tuesday',
+      3: 'Wednesday',
+      4: 'Thursday',
+      5: 'Friday',
+      6: 'Saturday',
+      0: 'Sunday',
+    };
     const dayOfWeek = weekdayMap[parsedDate.getDay()];
     if (!doctorData.workingDays.includes(dayOfWeek)) {
       throw new Error(`Doctor does not work on ${dayOfWeek}`);
@@ -72,9 +83,7 @@ export class AppointmentService {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     if (parsedDate < today) {
-      throw new Error(
-        'Appointment date must be today or in the future',
-      );
+      throw new Error('Appointment date must be today or in the future');
     }
     // Kiểm tra appointmentTime trong giờ làm việc và không trùng lịch
     const [startStr, endStr] = appointmentTime.split(' - ');
@@ -97,7 +106,8 @@ export class AppointmentService {
       throw new Error('Time slot is already booked');
     }
     // Lưu lịch hẹn
-    const createdAppointment = this.appointmentModel.create(createAppointmentDto);
+    const createdAppointment =
+      this.appointmentModel.create(createAppointmentDto);
     return createdAppointment;
   }
 
@@ -154,6 +164,7 @@ export class AppointmentService {
     return appointment;
   }
 
+//Phước
   async filterAppointmentsByMonth(month: number, year: number): Promise<Appointment[]> {
     // Validate month and year
     if (month < 1 || month > 12) {
@@ -212,5 +223,26 @@ export class AppointmentService {
         message: `Lỗi khi tải dữ liệu: ${error.message}`,
       });
     }
+// Nghĩa
+  async filterAppointments(
+    filter: AppointmentFilterRequestDto,
+  ): Promise<Appointment[]> {
+    let appointment = await this.appointmentModel.find();
+    let filtered = appointment;
+    if (filter.date !== undefined) {
+      if (filter.date < 1 || filter.date > 31) {
+        throw new Error('Invalid date');
+      }
+
+      filtered = filtered.filter((item) => {
+        return new Date(item.appointmentDate).getDate() == filter.date;
+      });
+    }
+
+    return filtered.sort((a, b) => {
+      const dateA = new Date(a.appointmentDate);
+      const dateB = new Date(b.appointmentDate);
+      return dateB.getTime() - dateA.getTime();
+    });
   }
 }

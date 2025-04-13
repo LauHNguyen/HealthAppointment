@@ -4,8 +4,9 @@ import { AppointmentController } from '../controller/appointment.controller';
 import { AppointmentService } from '../services/appointment.service';
 import { Appointment, AppointmentSchema } from '../schema/appointment.schema';
 import { Hospital, HospitalSchema } from '../schema/hospital.schema';
-import { Doctor, DoctorSchema } from 'src/schema/doctor.schema';
-import { User, UserSchema } from 'src/schema/user.schema';
+import { Doctor, DoctorSchema } from '../schema/doctor.schema';
+import { User, UserSchema } from '../schema/user.schema';
+import { AppointmentManegementController } from '../controller/admin/appointment-management.controller';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { User, UserSchema } from 'src/schema/user.schema';
       { name: User.name, schema: UserSchema },
     ]),
   ],
-  controllers: [AppointmentController],
+  controllers: [AppointmentController, AppointmentManegementController],
   providers: [AppointmentService],
 })
 export class AppointmentModule {}
