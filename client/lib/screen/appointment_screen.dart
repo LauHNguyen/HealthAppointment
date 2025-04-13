@@ -105,13 +105,20 @@ class _AppointmentState extends State<Appointment> {
 
   List<int> getValidWeekdaysFromString() {
     Map<String, int> weekdays = {
-      "Monday": 1,
-      "Tuesday": 2,
-      "Wednesday": 3,
-      "Thursday": 4,
-      "Friday": 5,
-      "Saturday": 6,
-      "Sunday": 7
+      // "Monday": 1,
+      // "Tuesday": 2,
+      // "Wednesday": 3,
+      // "Thursday": 4,
+      // "Friday": 5,
+      // "Saturday": 6,
+      // "Sunday": 7,
+      "Thứ Hai": 1,
+      "Thứ Ba": 2,
+      "Thứ Tư": 3,
+      "Thứ Năm": 4,
+      "Thứ Sáu": 5,
+      "Thứ Bảy": 6,
+      "Chủ Nhật": 7
     };
     List<String> workDays = widget.workingDays;
     List<int> validWeekdays = [];
@@ -327,7 +334,7 @@ class _AppointmentState extends State<Appointment> {
       if (response.statusCode == 200) {
         final List<dynamic> appointments = jsonDecode(response.body);
         bookedTime = appointments.where((appointment) {
-          bool doctorMatch = appointment['doctor']['_id'] == widget.doctorId;
+          bool doctorMatch = appointment['doctor'] == widget.doctorId;
           DateTime appointmentDate =
               DateTime.parse(appointment['appointmentDate']);
           String formattedAppointmentDate =

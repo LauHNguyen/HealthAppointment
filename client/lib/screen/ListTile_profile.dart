@@ -9,6 +9,8 @@ import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:jwt_decode/jwt_decode.dart';
+import '../service/appointment_service.dart';
+import '../widgets/appointment_filter.dart';
 
 class ProfilePage extends StatefulWidget {
   final String role;
@@ -182,6 +184,42 @@ class _ProfilePageState extends State<ProfilePage> {
                 );
               },
             ),
+            const Divider(height: 1, thickness: 0.5),
+            // Danh sách lịch hẹn cho admin
+            if (widget.role == 'admin')
+              ListTile(
+                leading:
+                    const Icon(Icons.filter_list, color: Colors.blueAccent),
+                title: const Text(
+                  'Lọc lịch hẹn theo tháng',
+                  style: TextStyle(fontSize: 18),
+                ),
+                trailing: const Icon(Icons.arrow_forward_ios,
+                    size: 18, color: Colors.grey),
+                onTap: () {
+                  final baseUrl = dotenv.env['LOCALHOST'];
+                  if (baseUrl == null) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Không thể kết nối đến máy chủ'),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                    return;
+                  }
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AppointmentFilter(
+                        appointmentService: AppointmentService(
+                          baseUrl: baseUrl,
+                        ),
+                        role: widget.role,
+                      ),
+                    ),
+                  );
+                },
+              ),
             const Divider(height: 1, thickness: 0.5),
             ListTile(
               leading:

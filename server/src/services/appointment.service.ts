@@ -6,6 +6,9 @@ import { Hospital, HospitalDocument } from '../schema/hospital.schema';
 import { User, UserDocument } from '../schema/user.schema';
 import { Doctor, DoctorDocument } from '../schema/doctor.schema';
 import { CreateAppointmentDto } from 'src/dto/create-appoitment.dto';
+import * as fs from 'fs';
+import * as path from 'path';
+
 import { AppointmentFilterRequestDto } from 'src/dto/requests/appointment-filter-request.dto';
 
 @Injectable()
@@ -161,6 +164,66 @@ export class AppointmentService {
     return appointment;
   }
 
+//Phước
+  async filterAppointmentsByMonth(month: number, year: number): Promise<Appointment[]> {
+    // Validate month and year
+    if (month < 1 || month > 12) {
+      throw new BadRequestException('Invalid month. Month must be between 1 and 12');
+    }
+
+    if (year < 2000 || year > 2100) {
+      throw new BadRequestException('Invalid year');
+    }
+
+    // Tạo ngày đầu và cuối tháng
+    const startDate = new Date(year, month - 1, 1);
+    const endDate = new Date(year, month, 0);
+
+    // Tìm các cuộc hẹn trong khoảng thời gian
+    const appointments = await this.appointmentModel
+      .find({
+        appointmentDate: {
+          $gte: startDate,
+          $lte: endDate
+        }
+      })
+      .populate({
+        path: 'user',
+        select: '-password'
+      })
+      .populate({
+        path: 'doctor',
+        select: '-password'
+      })
+      .sort({ appointmentDate: 1, appointmentTime: 1 })
+      .exec();
+
+    return appointments;
+  }
+
+  async loadAppointmentsFromJson(): Promise<any> {
+    try {
+      const jsonPath = path.join(process.cwd(), 'data', 'appointments.json');
+      const jsonData = fs.readFileSync(jsonPath, 'utf8');
+      const appointments = JSON.parse(jsonData);
+
+      // Xóa tất cả các cuộc hẹn hiện có
+      await this.appointmentModel.deleteMany({});
+
+      // Thêm các cuộc hẹn mới
+      const result = await this.appointmentModel.insertMany(appointments);
+
+      return {
+        message: 'Dữ liệu đã được tải thành công',
+        count: result.length
+      };
+    } catch (error) {
+      throw new BadRequestException({
+        statusCode: 400,
+        message: `Lỗi khi tải dữ liệu: ${error.message}`,
+      });
+    }
+// Nghĩa
   async filterAppointments(
     filter: AppointmentFilterRequestDto,
   ): Promise<Appointment[]> {

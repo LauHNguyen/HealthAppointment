@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param, Delete, Patch, BadRequestException } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Delete, Patch, BadRequestException, Query } from '@nestjs/common';
 import { AppointmentService } from '../services/appointment.service';
 import { CreateAppointmentDto } from 'src/dto/create-appoitment.dto';
 import { ApiResponse } from 'src/dto/responses/api-response.dto';
@@ -60,5 +60,34 @@ export class AppointmentController {
     @Body() updateAppointmentDto: Partial<CreateAppointmentDto>,
   ) {
     return this.appointmentService.updateAppointment(appointmentId, updateAppointmentDto);
+  }
+
+  @Get('filter/month')
+  async filterByMonth(
+    @Query('month') month: number,
+    @Query('year') year: number
+  ) {
+    try {
+      const appointments = await this.appointmentService.filterAppointmentsByMonth(month, year);
+      return new ApiResponse(200, 'Appointments retrieved successfully', appointments);
+    } catch (error) {
+      throw new BadRequestException({
+        statusCode: 400,
+        message: error.message,
+      });
+    }
+  }
+
+  @Post('load-data')
+  async loadAppointmentsData() {
+    try {
+      const result = await this.appointmentService.loadAppointmentsFromJson();
+      return new ApiResponse(200, result.message, result);
+    } catch (error) {
+      throw new BadRequestException({
+        statusCode: 400,
+        message: error.message,
+      });
+    }
   }
 }
