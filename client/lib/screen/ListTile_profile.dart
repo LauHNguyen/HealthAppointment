@@ -187,42 +187,6 @@ class _ProfilePageState extends State<ProfilePage> {
               },
             ),
             const Divider(height: 1, thickness: 0.5),
-            // Danh sách lịch hẹn cho admin
-            if (widget.role == 'admin')
-              ListTile(
-                leading:
-                    const Icon(Icons.filter_list, color: Colors.blueAccent),
-                title: const Text(
-                  'Lọc lịch hẹn theo tháng',
-                  style: TextStyle(fontSize: 18),
-                ),
-                trailing: const Icon(Icons.arrow_forward_ios,
-                    size: 18, color: Colors.grey),
-                onTap: () {
-                  final baseUrl = dotenv.env['LOCALHOST'];
-                  if (baseUrl == null) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Không thể kết nối đến máy chủ'),
-                        backgroundColor: Colors.red,
-                      ),
-                    );
-                    return;
-                  }
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AppointmentFilter(
-                        appointmentService: AppointmentService(
-                          baseUrl: baseUrl,
-                        ),
-                        role: widget.role,
-                      ),
-                    ),
-                  );
-                },
-              ),
-            const Divider(height: 1, thickness: 0.5),
             ListTile(
               leading:
                   const Icon(Icons.message_outlined, color: Colors.blueAccent),

@@ -20,11 +20,7 @@ export class AppointmentController {
     return this.appointmentService.getAppointmentsByUserId(userId);
   }
 
-  // Lấy các cuộc hẹn theo ID bác sĩ
-  @Get('doctor/:doctorId')
-  async getAppointmentsByDoctorId(@Param('doctorId') doctorId: string) {
-    return this.appointmentService.getAppointmentsByDoctorId(doctorId);
-  }
+ 
 
   @Get('doctor')
 async getDoctorsWithAppointments() {
@@ -41,6 +37,11 @@ async getDoctorsWithAppointments() {
     });
   }
 }
+ // Lấy các cuộc hẹn theo ID bác sĩ
+  @Get('doctor/:doctorId')
+  async getAppointmentsByDoctorId(@Param('doctorId') doctorId: string) {
+    return this.appointmentService.getAppointmentsByDoctorId(doctorId);
+  }
 
   // Lấy cuộc hẹn theo ID
   @Get(':appointmentId')

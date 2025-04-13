@@ -1,5 +1,7 @@
 import 'package:client/screen/AdminDoctorManage_Screen.dart';
 import 'package:client/screen/AdminUserManage_Screen.dart';
+import 'package:client/service/appointment_service.dart';
+import 'package:client/widgets/appointment_filter.dart';
 import 'package:flutter/material.dart';
 import 'package:client/service/flutter_secure_storage.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -122,14 +124,17 @@ class _AdminScreenState extends State<AdminScreen> {
             ),
             ListTile(
               leading: Icon(Icons.calendar_today, color: Colors.blueAccent),
-              title: Text('Quản Lý Lịch Hẹn'),
-              // onTap: () {
-              //   Navigator.push(context,
-              //       MaterialPageRoute(
-              //         builder: (context) => AdminAppointmentFilterScreen(),
-              //       ),
-              //       );
-              // },
+              title: Text('Lọc Lịch Hẹn'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AppointmentFilter(
+                      appointmentService: AppointmentService(),
+                    ),
+                  ),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.medical_services, color: Colors.blueAccent),
@@ -238,17 +243,18 @@ class _AdminScreenState extends State<AdminScreen> {
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                     children: [
-                      // _buildQuickActionCard(
-                      //   icon: Icons.calendar_today,
-                      //   title: 'Lịch Hẹn',
-                      //   onTap: () => Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) =>
-                      //           AdminAppointmentFilterScreen(),
-                      //     ),
-                      //   ),
-                      // ),
+                      _buildQuickActionCard(
+                        icon: Icons.calendar_today,
+                        title: 'Lọc Lịch Hẹn',
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppointmentFilter(
+                              appointmentService: AppointmentService(),
+                            ),
+                          ),
+                        ),
+                      ),
                       _buildQuickActionCard(
                         icon: Icons.medical_services,
                         title: 'Bác Sĩ',

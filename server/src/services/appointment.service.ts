@@ -241,7 +241,6 @@ export class AppointmentService {
         throw new Error('Doctor not found');
       }
       filtered = filtered.filter((item) => {
-        console.log(item.doctor, doctor.name);
         return item.doctor._id.toString() === doctor._id.toString();
       });
     }
