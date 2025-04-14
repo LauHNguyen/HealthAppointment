@@ -491,7 +491,10 @@ class _AppointmentFilterState extends State<AppointmentFilter> {
                                             style:
                                                 const TextStyle(fontSize: 16),
                                           ),
-                                          const SizedBox(width: 16),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
                                           const Icon(
                                             Icons.access_time,
                                             size: 20,
