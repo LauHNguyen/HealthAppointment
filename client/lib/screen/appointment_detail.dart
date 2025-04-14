@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:client/screen/Appointment_edit.dart';
+import 'package:client/screen/appointment_list.dart';
 import 'package:client/screen/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -17,6 +20,7 @@ class AppointmentDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final doctor = appointment['doctor'];
+    final user = appointment['user'];
     final hospital = appointment['hospitalName'];
     final appointmentDate = appointment['appointmentDate'];
     final appointmentTime = appointment['appointmentTime'];
@@ -83,6 +87,11 @@ class AppointmentDetail extends StatelessWidget {
                           children: [
                             Text(
                               'Bác sĩ: ${doctor['name']} (${doctor['specialty']})',
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              'Bệnh nhân: ${user['name']}',
                               style: Theme.of(context).textTheme.titleMedium,
                             ),
                             const SizedBox(height: 8),
@@ -159,6 +168,18 @@ class AppointmentDetail extends StatelessWidget {
                           style: TextStyle(color: Colors.grey),
                         ),
                     ],
+                    if (userRole == 'doctor')
+                      Center(
+                        child: ElevatedButton.icon(
+                          onPressed: () => _confirmAppointment(context),
+                          icon: const Icon(Icons.check_circle_outline),
+                          label: const Text('Xác nhận đã khám'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blueAccent,
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),
@@ -254,6 +275,47 @@ class AppointmentDetail extends StatelessWidget {
           SnackBar(
               content: Text(
                   'Chỉnh sửa lịch hẹn thất bại: ${response.reasonPhrase}')),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Đã xảy ra lỗi: $e')),
+      );
+    }
+  }
+
+  void _confirmAppointment(BuildContext context) async {
+    final appointmentId = appointment['_id'];
+    final appointmentStatus = appointment['status'];
+    final doctorId = appointment['doctor'];
+    try {
+      final response = await http.patch(
+        Uri.parse(
+            '${dotenv.env['LOCALHOST']}/appointment/$appointmentId/status'),
+        body: jsonEncode({'status': appointmentStatus == false ? true : false}),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 200) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AppointmentList(
+              userId: doctorId['_id'],
+              role: userRole,
+            ),
+          ),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Text(appointmentStatus == false
+                  ? 'Xác nhận thành công.'
+                  : 'Hủy xác nhận thành công')),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Text('Không thể thực hiện : ${response.reasonPhrase}')),
         );
       }
     } catch (e) {

@@ -38,7 +38,6 @@ export class UserService {
   }
 
   async getUserProfile(userId: string): Promise<User> {
-    console.log(`----------------------------${userId}`);
     return await this.userModel.findById(userId).select('-password -__v');
   }
 }

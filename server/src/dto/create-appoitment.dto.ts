@@ -20,4 +20,7 @@ export class CreateAppointmentDto {
   @IsNotEmpty()
   @IsString()
   appointmentTime: string;
+
+  @IsNotEmpty()
+  status: boolean;
 }

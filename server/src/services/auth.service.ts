@@ -60,8 +60,6 @@ export class AuthService {
       user: newUser,
     };
   }
-
-  //sửa lại return access token
   async login(username: string, password: string, role: string) {
     let user;
 

@@ -30,6 +30,14 @@ class Appointment extends StatefulWidget {
 
 class _AppointmentState extends State<Appointment> {
   String? userName;
+  @override
+  void initState() {
+    super.initState();
+    getUserName();
+    getBookedList();
+  }
+
+  String? username;
   final SecureStorageService storage = SecureStorageService();
   DateTime selectedDate =
       DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
@@ -301,18 +309,27 @@ class _AppointmentState extends State<Appointment> {
         throw Exception('No token found');
       }
       final response = await http.get(
-        Uri.parse('${dotenv.env['LOCALHOST']}/user/name'),
+        Uri.parse('${dotenv.env['LOCALHOST']}/user/${widget.userId}'),
         headers: {
           'Authorization': 'Bearer $token',
         },
       );
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        setState(() {
-          userName = data['username'];
-        });
+        // final user = data.firstWhere(
+        //   (user) => user['username'].toString() == username.toString(),
+        //   orElse: () => null,
+        // );
+        if (data != null) {
+          setState(() {
+            username = data['name'] ?? '';
+          });
+        } else {
+          print('User not found in the response data');
+        }
       } else {
-        throw Exception('Failed to get user name');
+        print('Fetched user ID does not match token ID');
+        return null;
       }
     } catch (e) {
       print('Error when get user name: $e');
@@ -399,6 +416,37 @@ class _AppointmentState extends State<Appointment> {
                     margin: EdgeInsets.only(bottom: 16.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Thông tin người dùng, bác sĩ và bệnh viện
+            Card(
+              elevation: 3,
+              margin: EdgeInsets.only(bottom: 16.0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Bệnh Nhân: $username",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Bác sĩ: ${widget.doctorName}",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Bệnh viện: ${widget.hospitalName}",
+                      style: TextStyle(fontSize: 16),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),

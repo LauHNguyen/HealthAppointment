@@ -93,5 +93,12 @@ async getDoctorsWithAppointments() {
         message: error.message,
       });
     }
+
+  @Patch(':appointmentId/status')
+  async updateAppointmentStatus(
+    @Param('appointmentId') appointmentId: string,
+    @Body() updateAppointmentDto: {status: boolean},
+  ) {
+    return this.appointmentService.updateAppointmentStatus(appointmentId, updateAppointmentDto.status);
   }
 }
