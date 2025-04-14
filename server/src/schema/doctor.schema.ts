@@ -1,11 +1,14 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
 import * as bcrypt from 'bcrypt';
 
 export type DoctorDocument = Doctor & Document;
 
 @Schema()
 export class Doctor {
+
+  _id: Types.ObjectId;// filter by id
+
   @Prop({ required: true })
   name: string;
 
@@ -24,7 +27,7 @@ export class Doctor {
   @Prop({ type: String, default:"18:00"})
   endTime: string; 
 
-  @Prop({ type: [String], default:['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật',]})
+  @Prop({ type: [String], default:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday',]})
   workingDays: string[]; 
 
   @Prop({required: true, default: 'doctor'})

@@ -155,8 +155,9 @@ class _DoctorListScreenState extends State<DoctorListScreen> {
         );
         // Kiểm tra phản hồi
         if (response.statusCode == 200) {
+          final Map<String, dynamic> responseData = json.decode(response.body);
           setState(() {
-            doctors = json.decode(response.body);
+            doctors = responseData['data'] ?? [];
             specialty =
                 doctors.map((doctor) => doctor['specialty']).toSet().toList();
             filteredDoctors = doctors;

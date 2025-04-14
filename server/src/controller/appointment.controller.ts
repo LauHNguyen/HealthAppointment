@@ -1,6 +1,9 @@
-import { Controller, Post, Body, Get, Param, Delete, Patch } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Delete, Patch, BadRequestException, Query } from '@nestjs/common';
 import { AppointmentService } from '../services/appointment.service';
 import { CreateAppointmentDto } from 'src/dto/create-appoitment.dto';
+import { ApiResponse } from 'src/dto/responses/api-response.dto';
+import { BadRequestError } from 'openai';
+import { error } from 'console';
 
 @Controller('appointment')
 export class AppointmentController {
@@ -17,7 +20,24 @@ export class AppointmentController {
     return this.appointmentService.getAppointmentsByUserId(userId);
   }
 
-  // Lấy các cuộc hẹn theo ID bác sĩ
+ 
+
+  @Get('doctor')
+async getDoctorsWithAppointments() {
+  try {
+    const doctors = await this.appointmentService.getDoctorsWithAppointments();
+    if (!doctors || doctors.length === 0) {
+      throw new Error('No doctors found with appointments');
+    }
+    return new ApiResponse(200, 'List of doctors with appointments', doctors);
+  } catch (error) {
+    throw new BadRequestException({
+      statusCode: 400,
+      message: error.message,
+    });
+  }
+}
+ // Lấy các cuộc hẹn theo ID bác sĩ
   @Get('doctor/:doctorId')
   async getAppointmentsByDoctorId(@Param('doctorId') doctorId: string) {
     return this.appointmentService.getAppointmentsByDoctorId(doctorId);
@@ -31,7 +51,19 @@ export class AppointmentController {
 
   @Post('create')
   async create(@Body() createAppointmentDto: CreateAppointmentDto) {
-    return this.appointmentService.create(createAppointmentDto);
+    try {
+      let response = await this.appointmentService.create(createAppointmentDto);
+      if (!response) {
+        throw new Error('Create failed');
+      }
+      return new ApiResponse(200, 'Create successfully', response);
+    }
+    catch (error) {
+      throw new BadRequestException({
+              statusCode: 400,
+              message: error.message,
+            });
+    }
   }
 
   @Delete(':appointmentId')
@@ -46,6 +78,21 @@ export class AppointmentController {
   ) {
     return this.appointmentService.updateAppointment(appointmentId, updateAppointmentDto);
   }
+
+  @Get('filter/month')
+  async filterByMonth(
+    @Query('month') month: number,
+    @Query('year') year: number
+  ) {
+    try {
+      const appointments = await this.appointmentService.filterAppointmentsByMonth(month, year);
+      return new ApiResponse(200, 'Appointments retrieved successfully', appointments);
+    } catch (error) {
+      throw new BadRequestException({
+        statusCode: 400,
+        message: error.message,
+      });
+    }
 
   @Patch(':appointmentId/status')
   async updateAppointmentStatus(

@@ -22,6 +22,9 @@ export class Appointment {
   @Prop({ required: true })
   appointmentTime: string; // Thời gian khám, định dạng như "HH:mm"
 
+  @Prop()
+  googleCalendarEventId: string;
+
   @Prop({ default: Date.now })
   createdAt: Date; // Thời gian tạo đơn
 
