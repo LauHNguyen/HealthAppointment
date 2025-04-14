@@ -6,10 +6,8 @@ import { Hospital, HospitalDocument } from '../schema/hospital.schema';
 import { User, UserDocument } from '../schema/user.schema';
 import { Doctor, DoctorDocument } from '../schema/doctor.schema';
 import { CreateAppointmentDto } from 'src/dto/create-appoitment.dto';
-import * as fs from 'fs';
-import * as path from 'path';
-
 import { AppointmentFilterRequestDto } from 'src/dto/requests/appointment-filter-request.dto';
+import { GoogleCalendarService } from './google-calendar.service';
 
 @Injectable()
 export class AppointmentService {
@@ -20,7 +18,8 @@ export class AppointmentService {
     private hospitalModel: Model<HospitalDocument>,
     @InjectModel(User.name) private userModel: Model<UserDocument>,
     @InjectModel(Doctor.name) private doctorModel: Model<DoctorDocument>,
-  ) { }
+    private googleCalendarService: GoogleCalendarService, // Inject GoogleCalendarService
+  ) {}
 
   isValidDate(dateString: string): boolean {
     const regex = /^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/;
@@ -107,7 +106,16 @@ export class AppointmentService {
     }
     // Lưu lịch hẹn
     const createdAppointment =
-      this.appointmentModel.create(createAppointmentDto);
+      await this.appointmentModel.create(createAppointmentDto);
+    // Tạo sự kiện Google Calendar
+    const populatedAppointment =
+      await createdAppointment.populate('user doctor');
+    const eventId =
+      await this.googleCalendarService.createEvent(populatedAppointment);
+
+    // Lưu eventId
+    createdAppointment.googleCalendarEventId = eventId;
+    await createdAppointment.save();
     return createdAppointment;
   }
 
@@ -169,7 +177,8 @@ export class AppointmentService {
     return this.appointmentModel.aggregate([
       { $group: { _id: '$doctorId', count: { $sum: 1 } } }, // Nhóm theo doctorId
       {
-        $lookup: { // Kết hợp với bảng Doctor để lấy thông tin bác sĩ
+        $lookup: {
+          // Kết hợp với bảng Doctor để lấy thông tin bác sĩ
           from: 'doctors',
           localField: '_id',
           foreignField: '_id',
@@ -177,14 +186,26 @@ export class AppointmentService {
         },
       },
       { $unwind: '$doctorInfo' }, // Giải phóng mảng doctorInfo
-      { $project: { _id: 0, doctorId: '$_id', doctorInfo: 1, appointmentCount: '$count' } },
+      {
+        $project: {
+          _id: 0,
+          doctorId: '$_id',
+          doctorInfo: 1,
+          appointmentCount: '$count',
+        },
+      },
     ]);
   }
   //Phước
-  async filterAppointmentsByMonth(month: number, year: number): Promise<Appointment[]> {
+  async filterAppointmentsByMonth(
+    month: number,
+    year: number,
+  ): Promise<Appointment[]> {
     // Validate month and year
     if (month < 1 || month > 12) {
-      throw new BadRequestException('Invalid month. Month must be between 1 and 12');
+      throw new BadRequestException(
+        'Invalid month. Month must be between 1 and 12',
+      );
     }
 
     if (year < 2000 || year > 2100) {
@@ -200,16 +221,16 @@ export class AppointmentService {
       .find({
         appointmentDate: {
           $gte: startDate,
-          $lte: endDate
-        }
+          $lte: endDate,
+        },
       })
       .populate({
         path: 'user',
-        select: '-password'
+        select: '-password',
       })
       .populate({
         path: 'doctor',
-        select: '-password'
+        select: '-password',
       })
       .sort({ appointmentDate: 1, appointmentTime: 1 })
       .exec();
@@ -221,14 +242,15 @@ export class AppointmentService {
   async filterAppointments(
     filter: AppointmentFilterRequestDto,
   ): Promise<Appointment[]> {
-    let appointment = await this.appointmentModel.find()
+    let appointment = await this.appointmentModel
+      .find()
       .populate({
         path: 'user',
-        select: '-password'
+        select: '-password',
       })
       .populate({
         path: 'doctor',
-        select: '-password'
+        select: '-password',
       })
       .sort({ appointmentDate: 1, appointmentTime: 1 })
       .exec();
@@ -236,7 +258,10 @@ export class AppointmentService {
     let filtered = appointment;
 
     if (filter.doctor !== undefined) {
-      const doctor = await this.doctorModel.findOne({ name: filter.doctor }).select('-password').exec();
+      const doctor = await this.doctorModel
+        .findOne({ name: filter.doctor })
+        .select('-password')
+        .exec();
       if (!doctor) {
         throw new Error('Doctor not found');
       }
