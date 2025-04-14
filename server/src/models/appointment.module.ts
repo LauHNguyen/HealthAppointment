@@ -1,3 +1,4 @@
+import { GoogleCalendarService } from './../services/google-calendar.service';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppointmentController } from '../controller/appointment.controller';
@@ -18,6 +19,6 @@ import { AppointmentManegementController } from '../controller/admin/appointment
     ]),
   ],
   controllers: [AppointmentController, AppointmentManegementController],
-  providers: [AppointmentService],
+  providers: [AppointmentService, GoogleCalendarService],
 })
 export class AppointmentModule {}
